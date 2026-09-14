@@ -624,7 +624,27 @@
   .zone-ctas.left{justify-content:flex-start;}
   .local-copy{display:grid; gap:14px; max-width:68ch;}
   .local-copy p{margin:0; color:var(--ink-soft); font-size:1.02rem;}
-  .gift-band{display:flex; flex-wrap:wrap; gap:12px;}</style>
+  .gift-band{display:flex; flex-wrap:wrap; gap:12px;}  /* ---------- articles conseils ---------- */
+  .article-head{padding-block:48px 26px;}
+  .article-head h1{font-size:clamp(2rem, 1.3rem + 3vw, 3.1rem); line-height:1.05; max-width:24ch; text-wrap:balance; margin:0;}
+  .article-head .lede{margin-top:16px;}
+  .article-meta{margin:14px 0 0; font-family:"IBM Plex Mono", monospace; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);}
+  .article{max-width:760px; margin:0 auto; padding-bottom:36px;}
+  .keypoints{background:var(--glass-strong); border:1px solid var(--glass-border); box-shadow:var(--glass-shadow); border-radius:18px; padding:20px 24px; margin:0 0 10px;}
+  .keypoints .eyebrow{display:block; margin-bottom:10px;}
+  .keypoints ul{margin:0; padding-left:20px; display:grid; gap:8px; color:var(--ink);}
+  .article h2{font-size:clamp(1.35rem, 1.1rem + 1vw, 1.8rem); line-height:1.15; margin:38px 0 12px; text-wrap:balance;}
+  .article p{margin:0 0 14px; color:var(--ink-soft); font-size:1.04rem; max-width:68ch;}
+  .article ul, .article ol{margin:0 0 16px; padding-left:22px; color:var(--ink-soft); display:grid; gap:8px; font-size:1.02rem; max-width:66ch;}
+  .article .more{font-size:.98rem;}
+  .article a{color:var(--accent-deep); font-weight:600;}
+  .faq-more{margin:22px 0 0; font-size:.95rem; color:var(--ink-soft);}
+  .faq-more a{color:var(--accent-deep); font-weight:600;}  #article{padding-top:0;}
+  .article-head{padding-bottom:22px;}
+  .article-figure{margin:0 0 22px;}
+  .article-figure img{width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:18px; border:1px solid var(--glass-border); box-shadow:var(--glass-shadow);}
+  .article-figure figcaption{margin-top:8px; font-size:.86rem; color:var(--ink-soft);}
+</style>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png"></head>
@@ -715,7 +735,7 @@
         </div>
       </div>
       <div class="windshield-art">
-        <img width="900" height="1200" src="images/camion-super-glass-intervention.jpg" alt="Camion Super Glass en intervention dans l'allée d'un client, pare-brise neuf prêt à être posé" fetchpriority="high" decoding="async">
+        <img width="840" height="1120" src="images/camion-super-glass-intervention.jpg" alt="Camion Super Glass en intervention dans l'allée d'un client, pare-brise neuf prêt à être posé" fetchpriority="high" decoding="async">
       </div>
     </div>
 
@@ -1031,6 +1051,7 @@
         </details>
       </div>
     </div>
+      <div class="wrap"><p class="faq-more">Pour aller plus loin : <a href="pare-brise-fissure-peut-on-rouler.html">Pare-brise fissuré : peut-on rouler ?</a> &middot; <a href="franchise-bris-de-glace.html">Franchise bris de glace</a> &middot; <a href="loi-hamon-choisir-reparateur-pare-brise.html">Loi Hamon et libre choix</a></p></div>
   </section>
 
   <!-- FINAL CTA -->
@@ -1104,6 +1125,9 @@
         <li><a href="#realisations">Nos réalisations</a></li>
         <li><a href="#zone">Zone d'intervention</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li><a href="pare-brise-fissure-peut-on-rouler.html">Pare-brise fissuré : peut-on rouler ?</a></li>
+        <li><a href="franchise-bris-de-glace.html">Franchise bris de glace</a></li>
+        <li><a href="loi-hamon-choisir-reparateur-pare-brise.html">Loi Hamon et libre choix</a></li>
       </ul>
     </div>
   </div>
@@ -1148,6 +1172,7 @@
   "logo": "https://super-glass.fr/images/logo-super-glass.png",
   "image": ["https://super-glass.fr/partage-super-glass.jpg", "https://super-glass.fr/images/camion-super-glass-intervention.jpg"],
   "sameAs": ["https://www.instagram.com/superglass28/", "https://www.facebook.com/p/SUPER-GLASS-61582986310866/"],
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Super+Glass+Vernouillet",
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "09:00", "closes": "18:00" },
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "12:00" },
