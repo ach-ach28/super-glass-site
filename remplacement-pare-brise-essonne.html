@@ -23,7 +23,7 @@
     --ink:#14171c;
     --ink-soft:#4c5462;
     --ink-faint:#7b8291;
-    --paper:#f3f5f7;
+    --paper:#f9fafb;
     --surface:#ffffff;
     --surface-alt:#eaeef1;
     --line:#dee3e8;
@@ -70,7 +70,7 @@
     position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none;
   }
   .liquid-bg span{
-    position:absolute; border-radius:50%; filter:blur(70px); opacity:.55;
+    position:absolute; border-radius:50%; opacity:.3;
   }
   .blob-red{width:46vmax; height:46vmax; left:-14vmax; top:-16vmax; background:radial-gradient(circle, rgba(239,28,28,.55), rgba(239,28,28,0) 70%);}
   .blob-gold{width:40vmax; height:40vmax; right:-12vmax; top:8vmax; background:radial-gradient(circle, rgba(198,134,46,.5), rgba(198,134,46,0) 70%);}
@@ -644,7 +644,63 @@
   .article-figure{margin:0 0 22px;}
   .article-figure img{width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:18px; border:1px solid var(--glass-border); box-shadow:var(--glass-shadow);}
   .article-figure figcaption{margin-top:8px; font-size:.86rem; color:var(--ink-soft);}
-</style>
+  /* ---------- bandeau cadeaux ---------- */
+  .gift-strip{display:grid; grid-template-columns:minmax(200px,240px) 1fr; gap:28px; align-items:center;}
+  .gift-strip-head{display:grid; grid-template-columns:auto 1fr; gap:4px 14px; align-items:center;}
+  .gift-strip-head svg{width:46px; height:46px; color:var(--accent); grid-row:span 2;}
+  .gift-strip-head h2{margin:0; font-size:1rem; letter-spacing:.04em; line-height:1.1; color:var(--ink);}
+  .gift-strip-head h2 span{display:block; font-size:clamp(1.9rem, 1.4rem + 1.6vw, 2.4rem); color:var(--accent); font-weight:700; letter-spacing:.01em;}
+  .gift-strip-note{grid-column:1 / -1; display:flex; align-items:center; gap:10px; margin:14px 0 0; font-size:.9rem; font-weight:600; color:var(--ink-soft);}
+  .gift-strip-note i{flex-shrink:0; width:26px; height:26px; border-radius:50%; background:var(--accent-tint, #fdecec); color:var(--accent); display:grid; place-items:center; font-style:normal; font-weight:700;}
+  .gift-rail{list-style:none; margin:0; padding:4px 2px 8px; display:grid; grid-auto-flow:column; grid-auto-columns:minmax(118px,1fr); gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;}
+  .gift-rail li{scroll-snap-align:start;}
+  .gift-rail a{display:block; text-decoration:none; color:var(--ink);}
+  .gift-tile{display:grid; place-items:center; aspect-ratio:1 / .86; border-radius:18px; overflow:hidden; background:#ff3131; box-shadow:0 10px 22px -12px rgba(183,18,18,.55); transition:transform .2s ease;}
+  .gift-tile img{width:100%; height:100%; object-fit:cover;}
+  .gift-rail a:hover .gift-tile{transform:translateY(-3px);}
+  .gift-name{display:block; margin-top:9px; text-align:center; font-size:.88rem; font-weight:500;}
+  .gift-more .gift-tile{color:#fff; text-align:center; font-family:"Oswald","Arial Narrow",sans-serif; font-weight:600; font-size:1rem; line-height:1.15; letter-spacing:.02em;}
+  .gift-more .gift-tile b{display:block; font-size:1.6rem; font-weight:400; margin-bottom:4px;}
+  @media (prefers-reduced-motion: reduce){ .gift-tile{transition:none;} .gift-rail a:hover .gift-tile{transform:none;} }
+  @media (max-width:900px){ .gift-strip{grid-template-columns:1fr; gap:20px;} .gift-rail{grid-auto-columns:40%;} }
+  @media (max-width:520px){ .gift-rail{grid-auto-columns:44%; gap:12px;} }
+  .page-head{padding-block:48px 10px;}
+  .page-head h1{font-size:clamp(2rem, 1.3rem + 3vw, 3.2rem); line-height:1.05; max-width:22ch; text-wrap:balance; margin:0;}  /* perf mobile */
+  @media (max-width:760px){ .feature-card, .presta-card, .gift-card, .proof-card, .zone-card, details.faq, .offer-callout, .city-list li, .keypoints{backdrop-filter:none; -webkit-backdrop-filter:none;} .liquid-bg{display:none;} }
+  .wrap.wide{max-width:none;}
+  @media (min-width:901px){ .gift-strip{grid-template-columns:minmax(190px,220px) 1fr;} }
+  /* ---------- hero : puces illustrees ---------- */
+  .hero-points{list-style:none; margin:22px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:14px 20px; max-width:600px;}
+  .hero-points li{display:grid; grid-template-columns:46px 1fr; gap:12px; align-items:center;}
+  .hp-ico{width:46px; height:46px; border-radius:14px; display:grid; place-items:center; color:var(--accent); background:rgba(239,28,28,.09); border:1px solid rgba(239,28,28,.16);}
+  .hp-ico svg{width:23px; height:23px;}
+  .hero-points strong{display:block; font-weight:600; font-size:1rem; color:var(--ink); line-height:1.25;}
+  .hero-points small{display:block; font-size:.88rem; color:var(--ink-soft); line-height:1.35; margin-top:2px;}
+  @media (max-width:560px){ .hero-points{grid-template-columns:1fr; gap:12px;} }
+  /* ---------- deroule avec avant / apres ---------- */
+  .process-split{display:grid; grid-template-columns:1fr 1.05fr; gap:36px; align-items:center;}
+  @media (max-width:860px){ .process-split{grid-template-columns:1fr; gap:24px;} }
+  .process-steps{list-style:none; margin:0; padding:0; display:grid; gap:12px;}
+  .process-steps li{display:flex; align-items:center; gap:16px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:15px 18px; box-shadow:var(--shadow-1);}
+  .ps-num{flex-shrink:0; font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:1rem; color:var(--accent); min-width:30px;}
+  .process-steps h3{margin:0; font-size:1.08rem; line-height:1.25;}  /* ---------- hero : photo fondue ---------- */
+  html, body{overflow-x:clip;}
+  .hero-bleed{position:relative;}
+  .hero-bleed > .hero-grid > div:first-child{position:relative; z-index:1;}
+  @media (min-width:861px){
+    .hero-bleed{padding-block:64px 84px; min-height:620px;}
+    .hero-bleed .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);}
+    .hero-bleed .windshield-art{position:absolute; top:0; bottom:0; left:auto; right:min(-20px, calc((1160px - 100vw) / 2)); width:min(62vw, 820px); max-width:none; aspect-ratio:auto; margin:0; border:0; border-radius:0; box-shadow:none; z-index:0;
+      -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 42%), linear-gradient(0deg, transparent 0%, #000 24%); -webkit-mask-composite:source-in;
+      mask-image:linear-gradient(90deg, transparent 0%, #000 42%), linear-gradient(0deg, transparent 0%, #000 24%); mask-composite:intersect;}
+    .hero-bleed .windshield-art img{object-position:42% 60%;}
+  }
+  @media (max-width:860px){
+    .hero-bleed{padding-top:0;}
+    .hero-bleed .windshield-art{order:-1; max-width:none; width:auto; aspect-ratio:auto; height:min(80vw, 400px); margin:0 -20px -104px; border:0; border-radius:0; box-shadow:none;
+      -webkit-mask-image:linear-gradient(180deg, #000 45%, transparent 100%); mask-image:linear-gradient(180deg, #000 45%, transparent 100%);}
+    .hero-bleed .windshield-art img{object-position:45% 62%;}
+  }</style>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png"></head>
@@ -661,12 +717,12 @@
 <header class="site">
   <div class="nav-inner">
     <a class="brand" href="./" aria-label="Super Glass — accueil">
-      <img width="1278" height="150" src="images/logo-super-glass.png" alt="Super Glass">
+      <img width="1278" height="150" src="images/logo-super-glass.webp" alt="Super Glass">
     </a>
     <nav class="links" aria-label="Navigation principale">
-      <a href="./#cadeau">Offre cadeau</a>
+      <a href="offres-cadeaux.html">Offre cadeau</a>
       <a href="./#avis">Avis</a>
-      <a href="./#prestations">Prestations</a>
+      <a href="nos-prestations.html">Prestations</a>
       <a href="./#realisations">Réalisations</a>
       <a href="./#zone">Zone d'intervention</a>
       <a href="./#faq">FAQ</a>
@@ -687,9 +743,9 @@
       </button>
       <nav class="mobile-menu" id="mobile-menu" aria-label="Menu" hidden>
         <ul>
-          <li><a href="./#cadeau">Offre cadeau</a></li>
+          <li><a href="offres-cadeaux.html">Offre cadeau</a></li>
           <li><a href="./#avis">Avis clients</a></li>
-          <li><a href="./#prestations">Prestations</a></li>
+          <li><a href="nos-prestations.html">Prestations</a></li>
           <li><a href="./#realisations">Réalisations</a></li>
           <li><a href="./#zone">Zone d'intervention</a></li>
           <li><a href="./#faq">FAQ</a></li>
@@ -725,11 +781,9 @@
             Discuter sur WhatsApp
           </a>
         </div>
-        <p class="cta-reassure">Équipe réactive · Intervention sous 24 à 72 h</p>
-        <p class="cta-reassure cta-hours">Lun–jeu 9h–18h · Ven 9h–12h / 15h30–18h · Sam 10h–17h</p>
       </div>
       <div class="windshield-art">
-        <img width="840" height="1120" src="images/camion-super-glass-intervention.jpg" alt="Camion Super Glass en intervention dans l'allée d'un client, pare-brise neuf prêt à être posé" fetchpriority="high" decoding="async">
+        <img width="1200" height="1600" src="images/hero-super-glass-intervention.webp" srcset="images/hero-super-glass-intervention-mobile.webp 750w, images/hero-super-glass-intervention.webp 1200w" sizes="(max-width: 860px) 100vw, 820px" alt="Camion Super Glass en intervention chez un client, avec le pare-brise neuf prêt à être posé" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>
@@ -776,11 +830,9 @@
       </div>
     </div>
     <div class="wrap">
-      <div class="process-grid">
-        <div class="step"><div class="step-num mono">01</div><h3>Vous nous contactez</h3><p>Par téléphone, WhatsApp ou email. On identifie le dommage, votre couverture d'assurance — et on vous dit tout de suite à quel cadeau vous avez droit.</p></div>
-        <div class="step"><div class="step-num mono">02</div><h3>On monte le dossier</h3><p>Devis transmis à votre assurance, prise en charge validée : aucune avance de frais si vous êtes couvert.</p></div>
-        <div class="step"><div class="step-num mono">03</div><h3>Intervention chez vous</h3><p>Un technicien se déplace à la date convenue, où vous le souhaitez, généralement sous 24 à 72 h.</p></div>
-        <div class="step"><div class="step-num mono">04</div><h3>Votre cadeau vous est remis</h3><p>Le jour de l'intervention, une fois le pare-brise remplacé, on vous remet le cadeau choisi. Rien à réclamer ensuite.</p></div>
+      <div class="process-split">
+        <ol class="process-steps"><li><span class="ps-num">01</span><h3>Vous nous contactez</h3></li><li><span class="ps-num">02</span><h3>On monte le dossier</h3></li><li><span class="ps-num">03</span><h3>Intervention chez vous</h3></li><li><span class="ps-num">04</span><h3>Votre cadeau vous est remis</h3></li></ol>
+        <div class="ba-pair"><figure class="ba-item"><img width="700" height="933" src="images/pare-brise-avant-remplacement.webp" alt="Pare-brise éclaté avant son remplacement par Super Glass" loading="lazy" decoding="async"><figcaption>Avant</figcaption></figure><figure class="ba-item is-after"><img width="700" height="933" src="images/pare-brise-apres-remplacement.webp" alt="Le même véhicule avec son pare-brise neuf posé par Super Glass" loading="lazy" decoding="async"><figcaption>Après</figcaption></figure></div>
       </div>
     </div>
   </section>
@@ -792,7 +844,7 @@
         <p class="eyebrow gold">Offre fidélité</p>
         <h2 class="h-section">Jusqu'à 300 € offert à chaque remplacement</h2>
         <p class="lede">Franchise prise en charge, puis un cadeau à choisir : équipement auto, high-tech, sorties en famille… On vous confirme votre éligibilité dès votre premier appel, et le cadeau vous est remis le jour de l'intervention.</p>
-        <div class="gift-band"><a class="btn btn-red" href="./#cadeau">Voir les fiches cadeaux</a></div>
+        <div class="gift-band"><a class="btn btn-red" href="offres-cadeaux.html">Voir les fiches cadeaux</a></div>
       </div>
     </div>
   </section>
@@ -865,7 +917,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-logo">
-      <img width="1278" height="150" src="images/logo-super-glass.png" alt="Super Glass">
+      <img width="1278" height="150" src="images/logo-super-glass.webp" alt="Super Glass">
       <p class="footer-tag">Remplacement de pare-brise à domicile, pris en charge par votre assurance.</p>
     </div>
     <div>
@@ -899,9 +951,9 @@
     <div>
       <p class="footer-title">Le site</p>
       <ul>
-        <li><a href="./#cadeau">Offre cadeau</a></li>
+        <li><a href="offres-cadeaux.html">Offre cadeau</a></li>
         <li><a href="./#avis">Avis clients</a></li>
-        <li><a href="./#prestations">Nos prestations</a></li>
+        <li><a href="nos-prestations.html">Nos prestations</a></li>
         <li><a href="./#realisations">Nos réalisations</a></li>
         <li><a href="./#zone">Zone d'intervention</a></li>
         <li><a href="./#faq">FAQ</a></li>
