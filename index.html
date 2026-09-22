@@ -3,6 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Ads + Consent Mode v2 (refus par défaut) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500 });
+(function(){ try { var v = JSON.parse(localStorage.getItem('sg-consent')); if (v && v.c === 'granted' && Date.now() - v.t < 182 * 864e5) { gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' }); } } catch (e) {} })();
+gtag('js', new Date());
+gtag('config', 'AW-17915506691');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17915506691"></script>
 <title>Remplacement de pare-brise à domicile | Super Glass</title>
 <meta name="description" content="Remplacement de pare-brise à domicile à Dreux, Chartres et alentours. Prise en charge assurance, 0 € à avancer et jusqu'à 300 € offert. 06 51 84 24 35.">
 <link rel="canonical" href="https://super-glass.fr/">
@@ -498,7 +508,7 @@
   .gift-cta{margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;}
 
   /* ---------- zone ---------- */
-  .zone-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px;}
+  .zone-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:20px;}
   @media (max-width:860px){ .zone-grid{grid-template-columns:1fr;} }
   .zone-card{
     background:var(--glass); backdrop-filter:blur(var(--glass-blur)) saturate(160%);
@@ -700,7 +710,17 @@
     .hero-bleed .windshield-art{order:-1; max-width:none; width:auto; aspect-ratio:auto; height:min(80vw, 400px); margin:0 -20px -104px; border:0; border-radius:0; box-shadow:none;
       -webkit-mask-image:linear-gradient(180deg, #000 45%, transparent 100%); mask-image:linear-gradient(180deg, #000 45%, transparent 100%);}
     .hero-bleed .windshield-art img{object-position:45% 62%;}
-  }</style>
+  }  /* ---------- bandeau cookies ---------- */
+  .cookie-banner{position:fixed; left:16px; right:16px; bottom:16px; z-index:95; max-width:540px; margin:0 auto; display:grid; gap:12px; padding:18px 20px; background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:18px; box-shadow:0 18px 40px -12px rgba(20,23,28,.35); font-size:.9rem; line-height:1.5;}
+  .cookie-banner p{margin:0;}
+  .cookie-banner strong{display:block; font-size:.95rem; margin-bottom:2px;}
+  .cookie-banner a{color:var(--accent-deep); font-weight:600;}
+  .cookie-actions{display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap;}
+  .cookie-actions .btn{padding:10px 22px; font-size:.82rem; background:transparent; color:var(--ink); border:1.5px solid var(--ink); box-shadow:none;}
+  .cookie-actions .btn:hover{background:var(--ink); color:#fff;}
+  @media (max-width:760px){ .cookie-banner{bottom:84px;} .cookie-actions .btn{flex:1;} }
+  .cookie-manage{background:none; border:0; padding:0; font:inherit; color:inherit; text-decoration:underline; cursor:pointer;}
+</style>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png"></head>
@@ -764,7 +784,7 @@
     <div class="hero-grid">
       <div>
         <h1>Pare-brise fissuré ?<br>On le remplace <span class="hl">chez vous</span>, sans avancer un centime.</h1>
-        <ul class="hero-points"><li><span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><strong>Chez vous ou au travail</strong><small>Centre-Val de Loire, Normandie et Île-de-France</small></span></li><li><span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><span><strong>0 € à avancer</strong><small>Prise en charge directe par votre assurance</small></span></li><li><span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg></span><span><strong>Vitrage certifié</strong><small>Calibration ADAS si votre véhicule le nécessite</small></span></li><li><span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2.2-5.5A2 2 0 0 1 7.1 6h9.8a2 2 0 0 1 1.9 1.5L21 13v4a1 1 0 0 1-1 1h-1.5M3 13v4a1 1 0 0 0 1 1h1.5M3 13h18"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/><path d="M9.5 17.5h5"/></svg></span><span><strong>Toutes marques</strong><small>Particuliers et professionnels</small></span></li></ul>
+        <ul class="hero-points"><li><span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><strong>Chez vous ou au travail</strong><small>14 départements, de Paris au Mans et d'Orléans à Beauvais</small></span></li><li><span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><span><strong>0 € à avancer</strong><small>Prise en charge directe par votre assurance</small></span></li><li><span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg></span><span><strong>Vitrage certifié</strong><small>Calibration ADAS si votre véhicule le nécessite</small></span></li><li><span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2.2-5.5A2 2 0 0 1 7.1 6h9.8a2 2 0 0 1 1.9 1.5L21 13v4a1 1 0 0 1-1 1h-1.5M3 13v4a1 1 0 0 0 1 1h1.5M3 13h18"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/><path d="M9.5 17.5h5"/></svg></span><span><strong>Toutes marques</strong><small>Particuliers et professionnels</small></span></li></ul>
         <div class="offer-callout">
           <span class="offer-callout-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/></svg>
@@ -807,7 +827,7 @@
     <div class="section-band">
       <div class="wrap kicker-row">
         <p class="eyebrow">Avis clients</p>
-        <h2 class="h-section">Ils ont fait remplacer leur pare-brise chez eux</h2>
+        <h2 class="h-section">Ils ont fait remplacer leur pare-brise par Super Glass</h2>
         <p class="lede">Des avis Google laissés par des clients réels, après une intervention à domicile.</p>
       </div>
     </div>
@@ -835,10 +855,10 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <blockquote>« Société réactive, à l'écoute et très professionnelle. Merci beaucoup. »</blockquote>
+          <blockquote>« Très bonne expérience ! Ils se sont déplacés directement à domicile, service rapide et très professionnel. Équipe sympathique et travail réalisé avec sérieux et efficacité. Je recommande sans hésiter ! »</blockquote>
           <div class="proof-author">
-            <span class="proof-name">Alcantara</span>
-            <span class="proof-city">Chartres (28)</span>
+            <span class="proof-name">Rayhan Fernandez</span>
+            <span class="proof-city">Avis Google</span>
           </div>
         </div>
         <div class="proof-card gold">
@@ -964,14 +984,16 @@
       <div class="wrap kicker-row">
         <p class="eyebrow">Zone d'intervention</p>
         <h2 class="h-section">Êtes-vous dans notre zone ?</h2>
-        <p class="lede">Pas besoin de venir en garage : Super Glass se déplace à l'adresse de votre choix, domicile ou lieu de travail. Nous intervenons en Centre-Val de Loire, en Normandie et en Île-de-France.</p>
+        <p class="lede">Pas besoin de venir en garage : Super Glass se déplace à l'adresse de votre choix, domicile ou lieu de travail. Nous intervenons dans quatorze départements, en Centre-Val de Loire, Normandie, Île-de-France, Pays de la Loire et Hauts-de-France.</p>
       </div>
     </div>
     <div class="wrap">
       <div class="zone-grid">
-        <div class="zone-card"><h3>Centre-Val de Loire</h3><ul class="zone-depts"><li><a href="remplacement-pare-brise-eure-et-loir.html">Eure-et-Loir (28)</a></li></ul></div>
-        <div class="zone-card"><h3>Normandie</h3><ul class="zone-depts"><li><a href="remplacement-pare-brise-eure.html">Eure (27)</a></li></ul></div>
-        <div class="zone-card"><h3>Île-de-France</h3><ul class="zone-depts"><li><a href="remplacement-pare-brise-yvelines.html">Yvelines (78)</a></li><li><a href="remplacement-pare-brise-essonne.html">Essonne (91)</a></li><li><a href="remplacement-pare-brise-val-d-oise.html">Val-d'Oise (95)</a></li><li><a href="remplacement-pare-brise-paris.html">Paris (75)</a></li></ul></div>
+        <div class="zone-card"><h3>Centre-Val de Loire</h3><ul class="zone-depts"><li><a href="remplacement-pare-brise-eure-et-loir.html">Eure-et-Loir (28)</a></li><li><a href="remplacement-pare-brise-loiret.html">Loiret (45)</a></li><li><a href="remplacement-pare-brise-loir-et-cher.html">Loir-et-Cher (41)</a></li></ul></div>
+        <div class="zone-card"><h3>Normandie</h3><ul class="zone-depts"><li><a href="remplacement-pare-brise-eure.html">Eure (27)</a></li><li><a href="remplacement-pare-brise-orne.html">Orne (61)</a></li></ul></div>
+        <div class="zone-card"><h3>Île-de-France</h3><ul class="zone-depts"><li><a href="remplacement-pare-brise-paris.html">Paris (75)</a></li><li><a href="remplacement-pare-brise-hauts-de-seine.html">Hauts-de-Seine (92)</a></li><li><a href="remplacement-pare-brise-seine-saint-denis.html">Seine-Saint-Denis (93)</a></li><li><a href="remplacement-pare-brise-val-de-marne.html">Val-de-Marne (94)</a></li><li><a href="remplacement-pare-brise-yvelines.html">Yvelines (78)</a></li><li><a href="remplacement-pare-brise-essonne.html">Essonne (91)</a></li><li><a href="remplacement-pare-brise-val-d-oise.html">Val-d'Oise (95)</a></li></ul></div>
+        <div class="zone-card"><h3>Pays de la Loire</h3><ul class="zone-depts"><li><a href="remplacement-pare-brise-sarthe.html">Sarthe (72)</a></li></ul></div>
+        <div class="zone-card"><h3>Hauts-de-France</h3><ul class="zone-depts"><li><a href="remplacement-pare-brise-oise.html">Oise (60)</a></li></ul></div>
       </div>
       <p class="zone-note">Un doute sur votre adresse ? Un appel ou un message suffit pour savoir si on peut venir jusqu'à vous.</p>
       <div class="zone-ctas">
@@ -1003,7 +1025,7 @@
         </details>
         <details class="faq">
           <summary>Dois-je me déplacer en garage ?</summary>
-          <p>Non. Nous intervenons directement chez vous, sur votre lieu de travail ou tout autre endroit qui vous convient, en Centre-Val de Loire, en Normandie et en Île-de-France. Appelez-nous pour vérifier votre adresse.</p>
+          <p>Non. Nous intervenons directement chez vous, sur votre lieu de travail ou tout autre endroit qui vous convient, dans quatorze départements autour de Vernouillet, de Paris au Mans et d'Orléans à Beauvais. Appelez-nous pour vérifier votre adresse.</p>
         </details>
         <details class="faq">
           <summary>Combien de temps dure une intervention ?</summary>
@@ -1094,6 +1116,14 @@
         <li><a href="remplacement-pare-brise-essonne.html">Essonne (91)</a></li>
         <li><a href="remplacement-pare-brise-val-d-oise.html">Val-d'Oise (95)</a></li>
         <li><a href="remplacement-pare-brise-paris.html">Paris (75)</a></li>
+        <li><a href="remplacement-pare-brise-hauts-de-seine.html">Hauts-de-Seine (92)</a></li>
+        <li><a href="remplacement-pare-brise-loiret.html">Loiret (45)</a></li>
+        <li><a href="remplacement-pare-brise-loir-et-cher.html">Loir-et-Cher (41)</a></li>
+        <li><a href="remplacement-pare-brise-sarthe.html">Sarthe (72)</a></li>
+        <li><a href="remplacement-pare-brise-orne.html">Orne (61)</a></li>
+        <li><a href="remplacement-pare-brise-oise.html">Oise (60)</a></li>
+        <li><a href="remplacement-pare-brise-seine-saint-denis.html">Seine-Saint-Denis (93)</a></li>
+        <li><a href="remplacement-pare-brise-val-de-marne.html">Val-de-Marne (94)</a></li>
       </ul>
     </div>
     <div>
@@ -1113,6 +1143,7 @@
   </div>
   <div class="footer-legal">
     <a href="mentions-legales.html">Mentions légales</a>
+    <button type="button" class="cookie-manage" hidden>Gérer les cookies</button>
     <span>SUPER GLASS — SAS au capital de 200 €</span>
     <span class="mono">SIREN 934 562 042</span>
     <span>Vernouillet (28500)</span>
@@ -1136,6 +1167,50 @@
     if(e.key === 'Escape' && !menu.hidden){ setOpen(false); toggle.focus(); }
   });
   window.addEventListener('resize', function(){ if(window.innerWidth > 1200 && !menu.hidden) setOpen(false); });
+})();
+</script>
+
+<script>
+/* Bandeau cookies (CNIL) + conversions Google Ads (Appel / WhatsApp). Choix conservé 6 mois. */
+(function(){
+  var KEY = 'sg-consent', MAX = 182 * 864e5;
+  var GRANTED = { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' };
+  var DENIED = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' };
+  function g(){ if (typeof window.gtag === 'function') window.gtag.apply(null, arguments); }
+  function read(){ try { var v = JSON.parse(localStorage.getItem(KEY)); if (v && Date.now() - v.t < MAX) return v.c; } catch (e) {} return null; }
+  function save(c){ try { localStorage.setItem(KEY, JSON.stringify({ c: c, t: Date.now() })); } catch (e) {} }
+  function clearCookies(){
+    document.cookie.split(';').forEach(function(c){
+      var n = c.split('=')[0].trim();
+      if (/^(_gcl|_ga|_gid|_gac)/.test(n)) { document.cookie = n + '=; Max-Age=0; path=/'; document.cookie = n + '=; Max-Age=0; path=/; domain=.' + location.hostname.replace(/^www\./, ''); }
+    });
+  }
+
+  /* un seul écouteur global : couvre tous les boutons, y compris ceux ajoutés plus tard */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (/^tel:/i.test(h)) g('event', 'conversion', { send_to: 'AW-17915506691/X6sNCImLqIEdEIPg495C' });
+    else if (/wa\.me|api\.whatsapp\.com/i.test(h)) g('event', 'conversion', { send_to: 'AW-17915506691/z8-8CIyLqIEdEIPg495C' });
+  });
+
+  var bar = document.createElement('div');
+  bar.className = 'cookie-banner'; bar.setAttribute('role', 'dialog'); bar.setAttribute('aria-label', 'Cookies'); bar.hidden = true;
+  bar.innerHTML = '<p><strong>Cookies</strong> Avec votre accord, nous utilisons des cookies Google pour mesurer l’efficacité de nos publicités (appels et messages reçus). Vous pouvez accepter ou refuser. <a href="mentions-legales.html#cookies">En savoir plus</a></p>' +
+    '<div class="cookie-actions"><button type="button" class="btn btn-outline" data-c="denied">Refuser</button><button type="button" class="btn btn-outline" data-c="granted">Accepter</button></div>';
+  document.body.appendChild(bar);
+  bar.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-c]'); if (!b) return;
+    var c = b.getAttribute('data-c'), before = read();
+    save(c); bar.hidden = true;
+    if (c === 'granted') g('consent', 'update', GRANTED);
+    else { g('consent', 'update', DENIED); if (before === 'granted') clearCookies(); }
+  });
+  document.querySelectorAll('.cookie-manage').forEach(function(m){
+    m.hidden = false;
+    m.addEventListener('click', function(){ bar.hidden = false; var f = bar.querySelector('button'); if (f) f.focus(); });
+  });
+  if (read() === null) bar.hidden = false;
 })();
 </script>
 
@@ -1164,7 +1239,9 @@
   "areaServed": [
     { "@type": "AdministrativeArea", "name": "Centre-Val de Loire" },
     { "@type": "AdministrativeArea", "name": "Normandie" },
-    { "@type": "AdministrativeArea", "name": "Île-de-France" }
+    { "@type": "AdministrativeArea", "name": "Île-de-France" },
+    { "@type": "AdministrativeArea", "name": "Pays de la Loire" },
+    { "@type": "AdministrativeArea", "name": "Hauts-de-France" }
   ],
   "serviceType": ["Remplacement de pare-brise", "Calibration ADAS", "Prise en charge assurance bris de glace"],
   "identifier": "SIREN 934 562 042"
@@ -1177,7 +1254,7 @@
   "mainEntity": [
     { "@type": "Question", "name": "Le remplacement de mon pare-brise est-il vraiment gratuit ?", "acceptedAnswer": { "@type": "Answer", "text": "Si votre contrat inclut la garantie bris de glace, oui : nous avançons les frais et gérons directement la prise en charge avec votre assurance. Vous n'avez rien à payer de votre poche." } },
     { "@type": "Question", "name": "Mon assurance m'oriente vers un autre réparateur : puis-je choisir Super Glass ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Depuis la loi Hamon de 2014 (article L211-5-1 du Code des assurances), vous êtes libre de choisir le professionnel qui remplace votre pare-brise. Votre assureur peut vous recommander un réseau partenaire, mais il ne peut pas vous l'imposer. Il suffit d'indiquer que vous faites appel à Super Glass lors de votre déclaration." } },
-    { "@type": "Question", "name": "Dois-je me déplacer en garage ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Nous intervenons directement chez vous, sur votre lieu de travail ou tout autre endroit qui vous convient, en Centre-Val de Loire, en Normandie et en Île-de-France. Appelez-nous pour vérifier votre adresse." } },
+    { "@type": "Question", "name": "Dois-je me déplacer en garage ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Nous intervenons directement chez vous, sur votre lieu de travail ou tout autre endroit qui vous convient, dans quatorze départements autour de Vernouillet, de Paris au Mans et d'Orléans à Beauvais. Appelez-nous pour vérifier votre adresse." } },
     { "@type": "Question", "name": "Combien de temps dure une intervention ?", "acceptedAnswer": { "@type": "Answer", "text": "En moyenne entre 45 minutes et 1 h 30 pour un remplacement standard. Un peu plus si votre pare-brise nécessite une calibration de caméra ou de capteurs ADAS." } },
     { "@type": "Question", "name": "Le remplacement impacte-t-il mon bonus/malus ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Un sinistre bris de glace est traité séparément et n'a aucun impact sur votre coefficient bonus-malus." } },
     { "@type": "Question", "name": "Quels véhicules prenez-vous en charge ?", "acceptedAnswer": { "@type": "Answer", "text": "Toutes marques et tous modèles, véhicules particuliers comme utilitaires." } },

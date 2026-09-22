@@ -3,6 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Ads + Consent Mode v2 (refus par défaut) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500 });
+(function(){ try { var v = JSON.parse(localStorage.getItem('sg-consent')); if (v && v.c === 'granted' && Date.now() - v.t < 182 * 864e5) { gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' }); } } catch (e) {} })();
+gtag('js', new Date());
+gtag('config', 'AW-17915506691');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17915506691"></script>
 <title>Offre cadeau : jusqu'à 300 € offert | Super Glass</title>
 <meta name="description" content="Franchise prise en charge et un cadeau au choix à chaque remplacement de pare-brise pris en charge par votre assurance. Découvrez toutes nos offres.">
 <link rel="canonical" href="https://super-glass.fr/offres-cadeaux.html">
@@ -498,7 +508,7 @@
   .gift-cta{margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;}
 
   /* ---------- zone ---------- */
-  .zone-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px;}
+  .zone-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:20px;}
   @media (max-width:860px){ .zone-grid{grid-template-columns:1fr;} }
   .zone-card{
     background:var(--glass); backdrop-filter:blur(var(--glass-blur)) saturate(160%);
@@ -700,7 +710,17 @@
     .hero-bleed .windshield-art{order:-1; max-width:none; width:auto; aspect-ratio:auto; height:min(80vw, 400px); margin:0 -20px -104px; border:0; border-radius:0; box-shadow:none;
       -webkit-mask-image:linear-gradient(180deg, #000 45%, transparent 100%); mask-image:linear-gradient(180deg, #000 45%, transparent 100%);}
     .hero-bleed .windshield-art img{object-position:45% 62%;}
-  }</style>
+  }  /* ---------- bandeau cookies ---------- */
+  .cookie-banner{position:fixed; left:16px; right:16px; bottom:16px; z-index:95; max-width:540px; margin:0 auto; display:grid; gap:12px; padding:18px 20px; background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:18px; box-shadow:0 18px 40px -12px rgba(20,23,28,.35); font-size:.9rem; line-height:1.5;}
+  .cookie-banner p{margin:0;}
+  .cookie-banner strong{display:block; font-size:.95rem; margin-bottom:2px;}
+  .cookie-banner a{color:var(--accent-deep); font-weight:600;}
+  .cookie-actions{display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap;}
+  .cookie-actions .btn{padding:10px 22px; font-size:.82rem; background:transparent; color:var(--ink); border:1.5px solid var(--ink); box-shadow:none;}
+  .cookie-actions .btn:hover{background:var(--ink); color:#fff;}
+  @media (max-width:760px){ .cookie-banner{bottom:84px;} .cookie-actions .btn{flex:1;} }
+  .cookie-manage{background:none; border:0; padding:0; font:inherit; color:inherit; text-decoration:underline; cursor:pointer;}
+</style>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png"></head>
@@ -867,6 +887,12 @@
         <li><a href="remplacement-pare-brise-essonne.html">Essonne (91)</a></li>
         <li><a href="remplacement-pare-brise-val-d-oise.html">Val-d'Oise (95)</a></li>
         <li><a href="remplacement-pare-brise-paris.html">Paris (75)</a></li>
+        <li><a href="remplacement-pare-brise-hauts-de-seine.html">Hauts-de-Seine (92)</a></li>
+        <li><a href="remplacement-pare-brise-loiret.html">Loiret (45)</a></li>
+        <li><a href="remplacement-pare-brise-loir-et-cher.html">Loir-et-Cher (41)</a></li>
+        <li><a href="remplacement-pare-brise-sarthe.html">Sarthe (72)</a></li>
+        <li><a href="remplacement-pare-brise-orne.html">Orne (61)</a></li>
+        <li><a href="remplacement-pare-brise-oise.html">Oise (60)</a></li>
       </ul>
     </div>
     <div>
@@ -886,6 +912,7 @@
   </div>
   <div class="footer-legal">
     <a href="mentions-legales.html">Mentions légales</a>
+    <button type="button" class="cookie-manage" hidden>Gérer les cookies</button>
     <span>SUPER GLASS — SAS au capital de 200 €</span>
     <span class="mono">SIREN 934 562 042</span>
     <span>Vernouillet (28500)</span>
@@ -909,6 +936,50 @@
     if(e.key === 'Escape' && !menu.hidden){ setOpen(false); toggle.focus(); }
   });
   window.addEventListener('resize', function(){ if(window.innerWidth > 1200 && !menu.hidden) setOpen(false); });
+})();
+</script>
+
+<script>
+/* Bandeau cookies (CNIL) + conversions Google Ads (Appel / WhatsApp). Choix conservé 6 mois. */
+(function(){
+  var KEY = 'sg-consent', MAX = 182 * 864e5;
+  var GRANTED = { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' };
+  var DENIED = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' };
+  function g(){ if (typeof window.gtag === 'function') window.gtag.apply(null, arguments); }
+  function read(){ try { var v = JSON.parse(localStorage.getItem(KEY)); if (v && Date.now() - v.t < MAX) return v.c; } catch (e) {} return null; }
+  function save(c){ try { localStorage.setItem(KEY, JSON.stringify({ c: c, t: Date.now() })); } catch (e) {} }
+  function clearCookies(){
+    document.cookie.split(';').forEach(function(c){
+      var n = c.split('=')[0].trim();
+      if (/^(_gcl|_ga|_gid|_gac)/.test(n)) { document.cookie = n + '=; Max-Age=0; path=/'; document.cookie = n + '=; Max-Age=0; path=/; domain=.' + location.hostname.replace(/^www\./, ''); }
+    });
+  }
+
+  /* un seul écouteur global : couvre tous les boutons, y compris ceux ajoutés plus tard */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (/^tel:/i.test(h)) g('event', 'conversion', { send_to: 'AW-17915506691/X6sNCImLqIEdEIPg495C' });
+    else if (/wa\.me|api\.whatsapp\.com/i.test(h)) g('event', 'conversion', { send_to: 'AW-17915506691/z8-8CIyLqIEdEIPg495C' });
+  });
+
+  var bar = document.createElement('div');
+  bar.className = 'cookie-banner'; bar.setAttribute('role', 'dialog'); bar.setAttribute('aria-label', 'Cookies'); bar.hidden = true;
+  bar.innerHTML = '<p><strong>Cookies</strong> Avec votre accord, nous utilisons des cookies Google pour mesurer l’efficacité de nos publicités (appels et messages reçus). Vous pouvez accepter ou refuser. <a href="mentions-legales.html#cookies">En savoir plus</a></p>' +
+    '<div class="cookie-actions"><button type="button" class="btn btn-outline" data-c="denied">Refuser</button><button type="button" class="btn btn-outline" data-c="granted">Accepter</button></div>';
+  document.body.appendChild(bar);
+  bar.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-c]'); if (!b) return;
+    var c = b.getAttribute('data-c'), before = read();
+    save(c); bar.hidden = true;
+    if (c === 'granted') g('consent', 'update', GRANTED);
+    else { g('consent', 'update', DENIED); if (before === 'granted') clearCookies(); }
+  });
+  document.querySelectorAll('.cookie-manage').forEach(function(m){
+    m.hidden = false;
+    m.addEventListener('click', function(){ bar.hidden = false; var f = bar.querySelector('button'); if (f) f.focus(); });
+  });
+  if (read() === null) bar.hidden = false;
 })();
 </script>
 

@@ -3,6 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Ads + Consent Mode v2 (refus par défaut) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500 });
+(function(){ try { var v = JSON.parse(localStorage.getItem('sg-consent')); if (v && v.c === 'granted' && Date.now() - v.t < 182 * 864e5) { gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' }); } } catch (e) {} })();
+gtag('js', new Date());
+gtag('config', 'AW-17915506691');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17915506691"></script>
 <title>Mentions légales | Super Glass</title>
 <meta name="description" content="Mentions légales du site super-glass.fr : éditeur, hébergeur, propriété intellectuelle et données personnelles.">
 <link rel="canonical" href="https://super-glass.fr/mentions-legales.html">
@@ -43,6 +53,16 @@
   @media (max-width:560px){ dl{grid-template-columns:1fr; gap:2px;} dd{margin-bottom:10px;} section{padding:22px 18px 18px;} }
   footer{background:var(--header-bg); color:#8b8f96; font-size:.8rem; padding:22px 20px 28px; text-align:center;}
   footer a{color:#c4c8ce;}
+  /* ---------- bandeau cookies ---------- */
+  .cookie-banner{position:fixed; left:16px; right:16px; bottom:16px; z-index:95; max-width:540px; margin:0 auto; display:grid; gap:12px; padding:18px 20px; background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:18px; box-shadow:0 18px 40px -12px rgba(20,23,28,.35); font-size:.9rem; line-height:1.5;}
+  .cookie-banner p{margin:0;}
+  .cookie-banner strong{display:block; font-size:.95rem; margin-bottom:2px;}
+  .cookie-banner a{color:var(--accent-deep); font-weight:600;}
+  .cookie-actions{display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap;}
+  .cookie-actions .btn{padding:10px 22px; font-size:.82rem; background:transparent; color:var(--ink); border:1.5px solid var(--ink); box-shadow:none;}
+  .cookie-actions .btn:hover{background:var(--ink); color:#fff;}
+  @media (max-width:760px){ .cookie-banner{bottom:84px;} .cookie-actions .btn{flex:1;} }
+  .cookie-manage{background:none; border:0; padding:0; font:inherit; color:inherit; text-decoration:underline; cursor:pointer;}
 </style>
 </head>
 <body>
@@ -90,20 +110,65 @@
 
   <section>
     <h2>Données personnelles</h2>
-    <p>Ce site ne comporte aucun formulaire et ne collecte aucune donnée personnelle de manière automatique. Lorsque vous nous contactez par téléphone, WhatsApp ou e-mail, les informations que vous nous transmettez sont utilisées uniquement pour traiter votre demande et le suivi de votre intervention. Elles ne sont ni vendues ni cédées à des tiers.</p>
+    <p>Ce site ne comporte aucun formulaire. Il ne collecte aucune donnée personnelle de manière automatique, sauf les cookies de mesure publicitaire décrits ci-dessous, et uniquement avec votre accord. Lorsque vous nous contactez par téléphone, WhatsApp ou e-mail, les informations que vous nous transmettez sont utilisées uniquement pour traiter votre demande et le suivi de votre intervention. Elles ne sont ni vendues ni cédées à des tiers.</p>
     <p>Conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition concernant vos données. Pour l'exercer, écrivez à <a href="mailto:contact@super-glass.fr">contact@super-glass.fr</a>. Vous pouvez également adresser une réclamation à la CNIL (<a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>).</p>
     <p>L'hébergeur peut enregistrer des données techniques de connexion (comme l'adresse IP) à des fins de sécurité et de bon fonctionnement du service.</p>
   </section>
 
-  <section>
+  <section id="cookies">
     <h2>Cookies</h2>
-    <p>Ce site n'utilise aucun cookie publicitaire ni outil de mesure d'audience. Les polices de caractères sont hébergées directement sur le site : aucune donnée n'est transmise à un service tiers lors de votre visite.</p>
+    <p>Avec votre accord uniquement, nous utilisons les cookies de Google Ads (Google Ireland Limited) pour mesurer l'efficacité de nos annonces : ils permettent de savoir si une personne arrivée depuis une publicité nous a appelés ou contactés sur WhatsApp. Ces cookies ne sont déposés qu'après un clic sur « Accepter » dans le bandeau affiché lors de votre première visite. Si vous refusez, aucun cookie publicitaire n'est déposé et le site fonctionne normalement ; seuls des signaux techniques anonymes, sans cookie, peuvent être transmis à Google pour mesurer globalement nos annonces.</p>
+    <p>Votre choix est conservé 6 mois. Vous pouvez le modifier à tout moment grâce au lien « Gérer les cookies » en bas de page. Les cookies Google Ads ont une durée de vie maximale de 13 mois. Pour en savoir plus sur l'utilisation des données par Google : <a href="https://policies.google.com/technologies/ads" rel="noopener">policies.google.com</a>.</p>
+    <p>Les polices de caractères sont hébergées directement sur le site : aucune donnée n'est transmise à un service tiers pour les afficher.</p>
   </section>
 </main>
 
 <footer>
-  <p>© 2026 SUPER GLASS — <a href="./">super-glass.fr</a></p>
+  <p>© 2026 SUPER GLASS — <a href="./">super-glass.fr</a> · <button type="button" class="cookie-manage" hidden>Gérer les cookies</button></p>
 </footer>
 
+<script>
+/* Bandeau cookies (CNIL) + conversions Google Ads (Appel / WhatsApp). Choix conservé 6 mois. */
+(function(){
+  var KEY = 'sg-consent', MAX = 182 * 864e5;
+  var GRANTED = { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' };
+  var DENIED = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' };
+  function g(){ if (typeof window.gtag === 'function') window.gtag.apply(null, arguments); }
+  function read(){ try { var v = JSON.parse(localStorage.getItem(KEY)); if (v && Date.now() - v.t < MAX) return v.c; } catch (e) {} return null; }
+  function save(c){ try { localStorage.setItem(KEY, JSON.stringify({ c: c, t: Date.now() })); } catch (e) {} }
+  function clearCookies(){
+    document.cookie.split(';').forEach(function(c){
+      var n = c.split('=')[0].trim();
+      if (/^(_gcl|_ga|_gid|_gac)/.test(n)) { document.cookie = n + '=; Max-Age=0; path=/'; document.cookie = n + '=; Max-Age=0; path=/; domain=.' + location.hostname.replace(/^www\./, ''); }
+    });
+  }
+
+  /* un seul écouteur global : couvre tous les boutons, y compris ceux ajoutés plus tard */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (/^tel:/i.test(h)) g('event', 'conversion', { send_to: 'AW-17915506691/X6sNCImLqIEdEIPg495C' });
+    else if (/wa\.me|api\.whatsapp\.com/i.test(h)) g('event', 'conversion', { send_to: 'AW-17915506691/z8-8CIyLqIEdEIPg495C' });
+  });
+
+  var bar = document.createElement('div');
+  bar.className = 'cookie-banner'; bar.setAttribute('role', 'dialog'); bar.setAttribute('aria-label', 'Cookies'); bar.hidden = true;
+  bar.innerHTML = '<p><strong>Cookies</strong> Avec votre accord, nous utilisons des cookies Google pour mesurer l’efficacité de nos publicités (appels et messages reçus). Vous pouvez accepter ou refuser. <a href="mentions-legales.html#cookies">En savoir plus</a></p>' +
+    '<div class="cookie-actions"><button type="button" class="btn btn-outline" data-c="denied">Refuser</button><button type="button" class="btn btn-outline" data-c="granted">Accepter</button></div>';
+  document.body.appendChild(bar);
+  bar.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-c]'); if (!b) return;
+    var c = b.getAttribute('data-c'), before = read();
+    save(c); bar.hidden = true;
+    if (c === 'granted') g('consent', 'update', GRANTED);
+    else { g('consent', 'update', DENIED); if (before === 'granted') clearCookies(); }
+  });
+  document.querySelectorAll('.cookie-manage').forEach(function(m){
+    m.hidden = false;
+    m.addEventListener('click', function(){ bar.hidden = false; var f = bar.querySelector('button'); if (f) f.focus(); });
+  });
+  if (read() === null) bar.hidden = false;
+})();
+</script>
 </body>
 </html>
