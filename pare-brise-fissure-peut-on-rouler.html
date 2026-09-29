@@ -721,6 +721,147 @@ gtag('config', 'AW-17915506691');
   .cookie-actions .btn:hover{background:var(--ink); color:#fff;}
   @media (max-width:760px){ .cookie-banner{bottom:84px;} .cookie-actions .btn{flex:1;} }
   .cookie-manage{background:none; border:0; padding:0; font:inherit; color:inherit; text-decoration:underline; cursor:pointer;}
+  /* ==conversion== */
+  /* --- badge offre --- */
+  .offer-badge{display:flex; align-items:center; gap:14px; margin-top:18px; max-width:560px; padding:12px 18px 12px 12px; border-radius:18px; color:#fff;
+    background:linear-gradient(135deg, #e11d1d 0%, #a90f0f 100%); box-shadow:0 14px 30px -14px rgba(169,15,15,.7);}
+  .ob-seal{position:relative; flex-shrink:0; width:98px; height:98px; display:grid; place-items:center;}
+  .ob-seal svg{position:absolute; inset:0; width:100%; height:100%;}
+  .ob-seal polygon{fill:#f0b84f; stroke:#fff3d6; stroke-width:1.5;}
+  .ob-seal-txt{position:relative; display:grid; justify-items:center; line-height:1; color:#3b2304; font-family:"Oswald","Arial Narrow",sans-serif; text-transform:uppercase; font-weight:700;}
+  .ob-seal-txt small{font-size:.66rem; letter-spacing:.06em; font-weight:600;}
+  .ob-seal-txt b{font-size:1.6rem; margin:2px 0 1px; letter-spacing:-.01em;}
+  .ob-text{display:grid; gap:4px;}
+  .ob-text strong{font-family:"Oswald","Arial Narrow",sans-serif; font-weight:600; font-size:1.18rem; line-height:1.2; text-transform:uppercase; letter-spacing:.01em;}
+  .ob-text em{font-style:normal; font-size:.76rem; color:rgba(255,255,255,.86);}
+  .hero-wa{flex-basis:100%; font-size:.9rem; color:var(--ink-soft); text-decoration:underline; text-underline-offset:3px;}
+  .hero-wa:hover{color:var(--accent-deep);}
+  .hero .hero-ctas{margin-top:18px; align-items:center;}
+  .hero .hero-points{margin-top:24px;}
+  button.btn{cursor:pointer; font:inherit; font-family:"Oswald", sans-serif; font-weight:600;}
+  @media (max-width:860px){
+    .hero-bleed .windshield-art{height:min(56vw, 30vh, 280px); margin:0 -20px -64px;}
+    .hero-bleed .windshield-art img{object-position:40% 27%;}
+  }
+  /* cadrage : logo SUPER GLASS du camion visible (haut / milieu de la photo) */
+  @media (min-width:861px){
+    .hero-bleed .windshield-art img{object-position:50% 30%;}
+    .hero-bleed .windshield-art{-webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 26%), linear-gradient(0deg, transparent 0%, #000 22%); mask-image:linear-gradient(90deg, transparent 0%, #000 26%), linear-gradient(0deg, transparent 0%, #000 22%);}
+  }
+  @media (max-width:560px){
+    .hero h1{font-size:1.86rem; line-height:1.04;}
+    .offer-badge{gap:12px; padding:10px 14px 10px 10px; margin-top:14px;}
+    .ob-seal{width:84px; height:84px;}
+    .ob-seal-txt b{font-size:1.36rem;}
+    .ob-text strong{font-size:1.02rem;}
+    .hero .hero-ctas{gap:10px; margin-top:14px;}
+    .hero .hero-ctas .btn-lg{flex:1 1 auto; justify-content:center; padding:13px 16px;}
+  }
+  @media (max-width:370px){ .hero h1{font-size:1.7rem;} .ob-text strong{font-size:.95rem;} }
+
+  /* --- avis en carrousel --- */
+  .rv-top{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px;}
+  .rv-score{display:flex; align-items:center; gap:10px; margin:0; font-size:1rem; color:var(--ink-soft);}
+  .rv-score strong{font-family:"Oswald","Arial Narrow",sans-serif; font-size:1.5rem; color:var(--ink);}
+  .rv-score .stars svg{width:20px; height:20px;}
+  .rv-nav{display:flex; gap:8px;}
+  .rv-btn{width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:var(--surface); color:var(--ink); display:grid; place-items:center; cursor:pointer;}
+  .rv-btn:hover{border-color:var(--accent); color:var(--accent-deep);}
+  .rv-btn svg{width:20px; height:20px;}
+  .rv-rail{list-style:none; margin:0; padding:4px 2px 16px; display:grid; grid-auto-flow:column; grid-auto-columns:calc((100% - 40px) / 3); gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding:0 2px; -webkit-overflow-scrolling:touch; overscroll-behavior-x:contain;}
+  .rv-rail > li{scroll-snap-align:start; display:flex;}
+  .rv-rail .proof-card{width:100%;}
+  .rv-rail:focus-visible{outline:3px solid var(--accent); outline-offset:4px; border-radius:12px;}
+  @media (max-width:900px){ .rv-rail{grid-auto-columns:62%;} }
+  @media (max-width:560px){ .rv-rail{grid-auto-columns:86%; gap:14px;} .rv-nav{display:none;} .rv-top{justify-content:center;} }
+
+  /* --- barre mobile a 3 boutons --- */
+  .mobile-cta-bar{gap:8px; padding-inline:12px;}
+  .mobile-cta-bar .btn{padding:13px 6px; font-size:.8rem; gap:6px; justify-content:center;}
+
+  /* --- bandeau cookies compact --- */
+  @media (max-width:760px){
+    .cookie-banner{left:10px; right:10px; padding:12px 14px; gap:10px; font-size:.8rem; line-height:1.4; border-radius:14px;}
+    .cookie-banner strong{display:inline; margin-right:4px;}
+    .cookie-actions{gap:8px;}
+    .cookie-actions .btn{padding:9px 12px;}
+  }
+
+  /* bandeau cookies a droite sur ordinateur : ne cache pas les boutons du hero */
+  @media (min-width:761px){ .cookie-banner{left:auto; right:24px; bottom:24px; margin:0; max-width:440px;} }
+
+  /* --- formulaire de rappel --- */
+  html.rf-lock{overflow:hidden;}
+  .rf{padding:0; border:0; background:transparent; color:var(--ink); width:min(560px, calc(100vw - 32px)); max-width:none; max-height:min(92vh, 860px); overflow:visible;}
+  .rf::backdrop{background:rgba(10,10,12,.62);}
+  .rf-box{display:flex; flex-direction:column; max-height:min(92vh, 860px); background:var(--surface); border-radius:22px; box-shadow:0 30px 70px -20px rgba(0,0,0,.5); overflow:hidden; font-family:"IBM Plex Sans","Segoe UI",Arial,sans-serif;}
+  .rf-head{position:relative; display:flex; align-items:center; justify-content:space-between; padding:16px 18px 14px 22px; border-bottom:1px solid var(--line);}
+  .rf-count{margin:0; font-family:"IBM Plex Mono", monospace; font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft);}
+  .rf-count b{color:var(--accent);}
+  .rf-close{width:40px; height:40px; border-radius:50%; border:0; background:var(--surface-alt); color:var(--ink); display:grid; place-items:center; cursor:pointer;}
+  .rf-close svg{width:20px; height:20px;}
+  .rf-bar{position:absolute; left:0; right:0; bottom:-1px; height:4px; background:var(--surface-alt);}
+  .rf-bar span{display:block; height:100%; width:33.33%; background:linear-gradient(90deg, #f33232, #b71212); transition:width .3s ease;}
+  @media (prefers-reduced-motion: reduce){ .rf-bar span{transition:none;} }
+  .rf-step{padding:22px 22px 24px; overflow-y:auto; -webkit-overflow-scrolling:touch;}
+  .rf-step h2{margin:0 0 6px; font-size:1.55rem; line-height:1.1; outline:none;}
+  .rf-hint{margin:0 0 16px; color:var(--ink-soft); font-size:.94rem;}
+  .rf-choices{display:grid; gap:12px;}
+  .rf-choice input, .rf-gift input{position:absolute; opacity:0; pointer-events:none;}
+  .rf-card{display:grid; grid-template-columns:78px 1fr; grid-template-rows:auto auto; align-items:center; column-gap:14px; padding:14px 16px; border:2px solid var(--line); border-radius:16px; cursor:pointer; background:var(--surface); transition:border-color .15s, background .15s;}
+  .rf-card svg{grid-row:span 2; width:78px; height:48px;}
+  .rf-card svg .c{fill:none; stroke:var(--ink); stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round;}
+  .rf-card svg .g{fill:rgba(239,28,28,.16); stroke:var(--accent); stroke-width:2; stroke-linejoin:round;}
+  .rf-card b{font-size:1.08rem; align-self:end;}
+  .rf-card small{grid-column:2; color:var(--ink-soft); font-size:.86rem; align-self:start;}
+  .rf-card:has(small) b{align-self:end;}
+  .rf-card:not(:has(small)) b{grid-row:span 2; align-self:center;}
+  .rf-choice input:checked + .rf-card{border-color:var(--accent); background:rgba(239,28,28,.06); box-shadow:0 0 0 3px rgba(239,28,28,.12);}
+  .rf-choice input:focus-visible + .rf-card, .rf-gift input:focus-visible + span{outline:3px solid var(--accent); outline-offset:2px;}
+  .rf-gifts{display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; margin-top:14px;}
+  .rf-gift span{display:grid; gap:6px; justify-items:center; text-align:center; padding:6px 6px 8px; border:2px solid var(--line); border-radius:14px; cursor:pointer; height:100%;}
+  .rf-gift img{width:100%; height:auto; aspect-ratio:1; border-radius:10px; background:#ff3131;}
+  .rf-gift b{font-size:.8rem; font-weight:600; line-height:1.2;}
+  .rf-gift input:checked + span{border-color:var(--accent); background:rgba(239,28,28,.06); box-shadow:0 0 0 3px rgba(239,28,28,.12);}
+  .rf-later{grid-column:1 / -1;}
+  .rf-later span{padding:14px;}
+  .rf-later b{font-size:.95rem;}
+  .rf-later small{font-size:.8rem; color:var(--ink-soft); font-weight:400;}
+  .rf-other{margin-top:12px;}
+  .rf-more{margin:10px 0 0; font-size:.86rem;}
+  .rf-more a{color:var(--accent-deep); font-weight:600;}
+  .rf-note{margin:14px 0 0; font-size:.86rem; color:var(--ink-soft);}
+  .rf-fields{display:grid; gap:12px; margin-top:12px;}
+  .rf-field{display:grid; gap:6px;}
+  .rf-field span{font-size:.9rem; font-weight:600;}
+  .rf-field i{font-style:normal; color:var(--accent);}
+  .rf-field em{font-style:normal; font-weight:400; color:var(--ink-soft); font-size:.82rem; margin-left:4px;}
+  .rf-field input{font:inherit; font-size:16px; padding:13px 14px; border:1.5px solid var(--line); border-radius:12px; background:#fff; color:var(--ink); width:100%;}
+  .rf-field input::placeholder{color:#9aa1ac; font-style:italic;}
+  .rf-field input:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(239,28,28,.15);}
+  .rf-field input[aria-invalid="true"]{border-color:var(--accent-deep);}
+  .rf-err{margin:-4px 0 0; font-size:.86rem; color:var(--accent-deep); font-weight:600;}
+  .rf-send-err{margin:14px 0 0;}
+  .rf-zone{margin:-4px 0 0; font-size:.86rem; color:var(--gold-deep); background:var(--gold-soft); padding:8px 12px; border-radius:10px;}
+  .rf-hp{position:absolute !important; left:-9999px !important; width:1px; height:1px; opacity:0;}
+  .rf-actions{display:flex; align-items:center; justify-content:flex-end; gap:12px; margin-top:20px;}
+  .rf-actions .rf-go{flex:1; justify-content:center;}
+  .rf-actions-col{flex-direction:column; align-items:stretch;}
+  .rf-back{background:none; border:0; padding:12px 8px; font:inherit; font-weight:600; color:var(--ink-soft); cursor:pointer; text-decoration:underline; text-underline-offset:3px;}
+  .rf-legal{margin:14px 0 0; font-size:.8rem; color:var(--ink-soft); line-height:1.45;}
+  .rf-legal a{color:var(--accent-deep); font-weight:600;}
+  .rf-submit[disabled]{opacity:.7; cursor:progress;}
+  .rf-done{text-align:center; padding-top:34px;}
+  .rf-done p{color:var(--ink-soft); max-width:40ch; margin:10px auto 0;}
+  .rf-ok{display:grid; place-items:center; width:64px; height:64px; margin:0 auto 14px; border-radius:50%; background:rgba(31,122,77,.12); color:#1f7a4d;}
+  .rf-ok svg{width:34px; height:34px;}
+  @media (max-width:640px){
+    .rf{width:100vw; height:100dvh; max-height:none; margin:0;}
+    .rf-box{height:100%; max-height:none; border-radius:0;}
+    .rf-step{flex:1; padding:20px 18px calc(22px + env(safe-area-inset-bottom));}
+    .rf-step h2{font-size:1.4rem;}
+  }
+  /* ==/conversion== */
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -813,7 +954,7 @@ gtag('config', 'AW-17915506691');
       <ul><li>Limitez les longs trajets et l'autoroute si la fissure est importante.</li><li>Évitez le dégivrage à pleine puissance sur un pare-brise froid et les lavages haute pression.</li><li>Fermez les portières sans les claquer.</li><li>Déclarez le bris de glace à votre assurance, souvent par simple appel, puis contactez Super Glass : nous prenons le relais pour le suivi du dossier.</li></ul>
       <p class="more">&rarr; <a href="franchise-bris-de-glace.html">Franchise bris de glace : comment ça marche ?</a></p>
       <h2>Super Glass remplace votre pare-brise chez vous</h2>
-      <p>Nous intervenons à domicile ou sur votre lieu de travail dans quatorze départements autour de Vernouillet, de Paris au Mans et d'Orléans à Beauvais, généralement sous 24 à 72 h. Comptez entre 45 minutes et 1 h 30 sur place, avec calibration des caméras ADAS si votre véhicule le nécessite.</p>
+      <p>Nous intervenons à domicile ou sur votre lieu de travail dans 17 départements, jusqu'à environ 100 km autour de Dreux, généralement sous 24 à 72 h. Comptez entre 45 minutes et 1 h 30 sur place, avec calibration des caméras ADAS si votre véhicule le nécessite.</p>
     </article>
   </section>
 
@@ -834,7 +975,7 @@ gtag('config', 'AW-17915506691');
       <div class="wrap kicker-row">
         <p class="eyebrow">Zone d'intervention</p>
         <h2 class="h-section">Remplacement de pare-brise à domicile près de chez vous</h2>
-        <ul class="zone-depts dept-links"><li><a href="remplacement-pare-brise-eure-et-loir.html">Eure-et-Loir (28)</a></li><li><a href="remplacement-pare-brise-yvelines.html">Yvelines (78)</a></li><li><a href="remplacement-pare-brise-eure.html">Eure (27)</a></li><li><a href="remplacement-pare-brise-essonne.html">Essonne (91)</a></li><li><a href="remplacement-pare-brise-val-d-oise.html">Val-d'Oise (95)</a></li><li><a href="remplacement-pare-brise-paris.html">Paris (75)</a></li><li><a href="remplacement-pare-brise-hauts-de-seine.html">Hauts-de-Seine (92)</a></li><li><a href="remplacement-pare-brise-loiret.html">Loiret (45)</a></li><li><a href="remplacement-pare-brise-loir-et-cher.html">Loir-et-Cher (41)</a></li><li><a href="remplacement-pare-brise-sarthe.html">Sarthe (72)</a></li><li><a href="remplacement-pare-brise-orne.html">Orne (61)</a></li><li><a href="remplacement-pare-brise-oise.html">Oise (60)</a></li><li><a href="remplacement-pare-brise-seine-saint-denis.html">Seine-Saint-Denis (93)</a></li><li><a href="remplacement-pare-brise-val-de-marne.html">Val-de-Marne (94)</a></li></ul>
+        <ul class="zone-depts dept-links"><li><a href="remplacement-pare-brise-eure-et-loir.html">Eure-et-Loir (28)</a></li><li><a href="remplacement-pare-brise-yvelines.html">Yvelines (78)</a></li><li><a href="remplacement-pare-brise-eure.html">Eure (27)</a></li><li><a href="remplacement-pare-brise-essonne.html">Essonne (91)</a></li><li><a href="remplacement-pare-brise-val-d-oise.html">Val-d'Oise (95)</a></li><li><a href="remplacement-pare-brise-paris.html">Paris (75)</a></li><li><a href="remplacement-pare-brise-hauts-de-seine.html">Hauts-de-Seine (92)</a></li><li><a href="remplacement-pare-brise-loiret.html">Loiret (45)</a></li><li><a href="remplacement-pare-brise-loir-et-cher.html">Loir-et-Cher (41)</a></li><li><a href="remplacement-pare-brise-sarthe.html">Sarthe (72)</a></li><li><a href="remplacement-pare-brise-orne.html">Orne (61)</a></li><li><a href="remplacement-pare-brise-oise.html">Oise (60)</a></li><li><a href="remplacement-pare-brise-seine-saint-denis.html">Seine-Saint-Denis (93)</a></li><li><a href="remplacement-pare-brise-val-de-marne.html">Val-de-Marne (94)</a></li><li><a href="remplacement-pare-brise-seine-et-marne.html">Seine-et-Marne (77)</a></li><li><a href="remplacement-pare-brise-seine-maritime.html">Seine-Maritime (76)</a></li><li><a href="remplacement-pare-brise-calvados.html">Calvados (14)</a></li></ul>
       </div>
     </div>
   </section>
@@ -848,6 +989,7 @@ gtag('config', 'AW-17915506691');
       <div class="final-ctas">
         <a class="btn btn-red btn-lg" href="tel:+33651842435">Appeler le 06 51 84 24 35</a>
         <a class="btn btn-ghost-dark btn-lg" href="https://wa.me/33651842435?text=Bonjour%20Super%20Glass%2C%20je%20souhaite%20profiter%20de%20votre%20offre%20pour%20remplacer%20mon%20pare-brise" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+        <button type="button" class="btn btn-ghost-dark btn-lg" data-rappel="fin">Être rappelé gratuitement</button>
       </div>
       <p class="cta-reassure">Équipe réactive · Intervention sous 24 à 72 h</p>
       <p class="cta-reassure cta-hours">Lun–jeu 9h–18h · Ven 9h–12h / 15h30–18h · Sam 10h–17h · Dim fermé</p>
@@ -864,7 +1006,91 @@ gtag('config', 'AW-17915506691');
     <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.42 1.27 4.86L2 22l5.34-1.31a9.9 9.9 0 0 0 4.7 1.2h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.87 14.2c-.25.7-1.45 1.34-2 1.42-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.69-.63-2.97-1.28-4.9-4.27-5.05-4.47-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.45.27-.29.6-.36.8-.36l.57.01c.18.01.43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.32.03.51-.1.19-.15.31-.3.48-.15.17-.31.38-.45.51-.15.14-.3.29-.13.58.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.65-.05.18-.19.75-.86.95-1.16.2-.29.4-.24.67-.15.28.1 1.75.83 2.05.98.3.15.5.22.57.35.08.13.08.71-.17 1.4z"/></svg>
     WhatsApp
   </a>
+  <button type="button" class="btn btn-outline" data-rappel="barre">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M21 12a9 9 0 1 1-3.4-7.05"/><path d="M21 4v5h-5"/><path d="M12 7v5l3 2"/></svg>
+    Rappel
+  </button>
 </div>
+
+<!-- ==rappel== -->
+<dialog class="rf" id="rappel" aria-labelledby="rf-t1" data-clarity-mask="true">
+  <form class="rf-box" novalidate>
+    <div class="rf-head">
+      <p class="rf-count">Étape <b>1</b> sur 3</p>
+      <button type="button" class="rf-close" data-rf-close aria-label="Fermer le formulaire"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <div class="rf-bar" aria-hidden="true"><span></span></div>
+    </div>
+
+    <section class="rf-step" data-step="1">
+      <h2 id="rf-t1" tabindex="-1">Quel vitrage est endommagé ?</h2>
+      <p class="rf-hint">Plusieurs choix possibles.</p>
+      <div class="rf-choices">
+        <label class="rf-choice"><input type="checkbox" name="vitrage" value="Pare-brise"><span class="rf-card">
+          <svg viewBox="0 0 64 40" aria-hidden="true"><path class="c" d="M6 34V25l7-15h38l7 15v9"/><path class="g" d="M15 23l5-10h24l5 10z"/><path class="c" d="M4 34h56M12 34v3M52 34v3"/><circle class="c" cx="14" cy="29" r="2.5"/><circle class="c" cx="50" cy="29" r="2.5"/></svg>
+          <b>Pare-brise</b></span></label>
+        <label class="rf-choice"><input type="checkbox" name="vitrage" value="Vitres latérales"><span class="rf-card">
+          <svg viewBox="0 0 64 40" aria-hidden="true"><path class="c" d="M3 29v-6l8-3 9-9h21l10 9 9 2v7H3z"/><path class="g" d="M22 13h8v7H15zM33 13h7l7 7H33z"/><circle class="c" cx="16" cy="30" r="4.5"/><circle class="c" cx="48" cy="30" r="4.5"/></svg>
+          <b>Vitres latérales</b></span></label>
+        <label class="rf-choice"><input type="checkbox" name="vitrage" value="Autres vitres"><span class="rf-card">
+          <svg viewBox="0 0 64 40" aria-hidden="true"><path class="c" d="M6 34V24l6-13h40l6 13v10"/><path class="g" d="M16 22l4-8h24l4 8z"/><path class="g" d="M24 6h16v4H24z"/><path class="c" d="M4 34h56M11 28h7M46 28h7"/></svg>
+          <b>Autres vitres</b><small>Lunette arrière, toit ouvrant…</small></span></label>
+      </div>
+      <p class="rf-err" data-err="vitrage" hidden>Choisissez au moins un vitrage.</p>
+      <div class="rf-actions"><button type="button" class="btn btn-red btn-lg rf-go" data-rf-next>Continuer</button></div>
+    </section>
+
+    <section class="rf-step" data-step="2" hidden>
+      <h2 id="rf-t2" tabindex="-1">Choisissez votre cadeau</h2>
+      <div class="rf-gifts">
+        <label class="rf-gift"><input type="radio" name="cadeau" value="iPad"><span><img src="images/cadeaux/ipad.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>iPad</b></span></label>
+        <label class="rf-gift"><input type="radio" name="cadeau" value="Nintendo Switch 2"><span><img src="images/cadeaux/nintendo-switch-2.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>Nintendo Switch 2</b></span></label>
+        <label class="rf-gift"><input type="radio" name="cadeau" value="4 pneus"><span><img src="images/cadeaux/pneus.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>4 pneus</b></span></label>
+        <label class="rf-gift"><input type="radio" name="cadeau" value="Lisseur Dyson"><span><img src="images/cadeaux/lisseur-dyson.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>Lisseur Dyson</b></span></label>
+        <label class="rf-gift"><input type="radio" name="cadeau" value="Parc Astérix ou Disneyland"><span><img src="images/cadeaux/parc-asterix-disneyland.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>Parc Astérix ou Disneyland</b></span></label>
+        <label class="rf-gift"><input type="radio" name="cadeau" value="Aspirateur Dyson"><span><img src="images/cadeaux/aspirateur-dyson.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>Aspirateur Dyson</b></span></label>
+        <label class="rf-gift"><input type="radio" name="cadeau" value="Trottinette électrique"><span><img src="images/cadeaux/trottinette-electrique.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>Trottinette électrique</b></span></label>
+        <label class="rf-gift"><input type="radio" name="cadeau" value="Air fryer Ninja"><span><img src="images/cadeaux/air-fryer-ninja.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>Air fryer Ninja</b></span></label>
+        <label class="rf-gift rf-later"><input type="radio" name="cadeau" value="Autre cadeau"><span><b>Autre cadeau</b><small>Un autre cadeau de nos fiches</small></span></label>
+        <label class="rf-gift rf-later"><input type="radio" name="cadeau" value="Je choisirai plus tard"><span><b>Je choisirai plus tard</b></span></label>
+      </div>
+      <label class="rf-field rf-other" hidden><span>Quel cadeau ? <em>facultatif</em></span><input type="text" name="autre_cadeau" maxlength="80" placeholder="Ex. : Apple Watch"></label>
+      <p class="rf-more"><a href="offres-cadeaux.html" target="_blank" rel="noopener">Voir toutes les fiches cadeaux</a></p>
+      <p class="rf-note">Cadeau remis le jour de l'intervention, si votre assurance couvre le bris de glace.</p>
+      <div class="rf-actions"><button type="button" class="rf-back" data-rf-back>Retour</button><button type="button" class="btn btn-red btn-lg rf-go" data-rf-next>Continuer</button></div>
+    </section>
+
+    <section class="rf-step" data-step="3" hidden>
+      <h2 id="rf-t3" tabindex="-1">Vos coordonnées</h2>
+      <div class="rf-fields">
+        <label class="rf-field"><span>Nom <i>*</i></span><input type="text" name="nom" autocomplete="name" maxlength="80" required aria-describedby="rf-e-nom"></label>
+        <p class="rf-err" id="rf-e-nom" data-err="nom" hidden>Indiquez votre nom.</p>
+        <label class="rf-field"><span>Téléphone <i>*</i></span><input type="tel" name="tel" inputmode="tel" autocomplete="tel" maxlength="20" required aria-describedby="rf-e-tel" placeholder="06 12 34 56 78"></label>
+        <p class="rf-err" id="rf-e-tel" data-err="tel" hidden>Indiquez un numéro de téléphone français valide (10 chiffres).</p>
+        <label class="rf-field"><span>Code postal <i>*</i></span><input type="text" name="cp" inputmode="numeric" autocomplete="postal-code" maxlength="5" required aria-describedby="rf-e-cp rf-zone"></label>
+        <p class="rf-err" id="rf-e-cp" data-err="cp" hidden>Indiquez un code postal à 5 chiffres.</p>
+        <p class="rf-zone" id="rf-zone" hidden>Nous vérifions et vous rappelons si nous pouvons venir chez vous.</p>
+        <label class="rf-field"><span>Véhicule, marque et modèle <em>facultatif</em></span><input type="text" name="vehicule" maxlength="80" placeholder="Ex. : Peugeot 208"></label>
+        <label class="rf-field"><span>Assurance <em>facultatif</em></span><input type="text" name="assurance" maxlength="80"></label>
+        <input type="checkbox" name="botcheck" class="rf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      </div>
+      <p class="rf-err rf-send-err" data-err="envoi" hidden>L'envoi n'a pas fonctionné. Réessayez, ou appelez-nous au 06 51 84 24 35.</p>
+      <div class="rf-actions"><button type="button" class="rf-back" data-rf-back>Retour</button><button type="submit" class="btn btn-red btn-lg rf-go rf-submit">Être rappelé gratuitement</button></div>
+      <p class="rf-legal">Vos coordonnées servent uniquement à vous rappeler au sujet de votre demande. <a href="mentions-legales.html#donnees">Politique de confidentialité</a></p>
+    </section>
+
+    <section class="rf-step rf-done" data-step="ok" hidden>
+      <span class="rf-ok" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <h2 id="rf-tok" tabindex="-1">Merci, c'est bien reçu !</h2>
+      <p>L'équipe Super Glass vous rappelle rapidement. Pour aller plus vite, écrivez-nous sur WhatsApp.</p>
+      <div class="rf-actions rf-actions-col">
+        <a class="btn btn-red btn-lg" href="https://wa.me/33651842435?text=Bonjour%20Super%20Glass%2C%20je%20viens%20de%20demander%20%C3%AAtre%20rappel%C3%A9%20sur%20le%20site" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+        <button type="button" class="rf-back" data-rf-close>Fermer</button>
+      </div>
+    </section>
+  </form>
+</dialog>
+<script src="rappel.js" defer></script>
+<!-- ==/rappel== -->
 
 <footer>
   <div class="footer-grid">
@@ -906,6 +1132,9 @@ gtag('config', 'AW-17915506691');
         <li><a href="remplacement-pare-brise-oise.html">Oise (60)</a></li>
         <li><a href="remplacement-pare-brise-seine-saint-denis.html">Seine-Saint-Denis (93)</a></li>
         <li><a href="remplacement-pare-brise-val-de-marne.html">Val-de-Marne (94)</a></li>
+        <li><a href="remplacement-pare-brise-seine-et-marne.html">Seine-et-Marne (77)</a></li>
+        <li><a href="remplacement-pare-brise-seine-maritime.html">Seine-Maritime (76)</a></li>
+        <li><a href="remplacement-pare-brise-calvados.html">Calvados (14)</a></li>
       </ul>
     </div>
     <div>
@@ -953,46 +1182,61 @@ gtag('config', 'AW-17915506691');
 </script>
 
 <script>
-/* Bandeau cookies (CNIL) + conversions Google Ads (Appel / WhatsApp). Choix conservé 6 mois. */
+/* Bandeau cookies (CNIL) + conversions Google Ads + Microsoft Clarity (après consentement uniquement). Choix conservé 6 mois. */
 (function(){
-  var KEY = 'sg-consent', MAX = 182 * 864e5;
+  var KEY = 'sg-consent', MAX = 182 * 864e5, CLARITY_ID = 'yptvd09l6a', clarityOn = false;
   var GRANTED = { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' };
   var DENIED = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' };
   function g(){ if (typeof window.gtag === 'function') window.gtag.apply(null, arguments); }
   function read(){ try { var v = JSON.parse(localStorage.getItem(KEY)); if (v && Date.now() - v.t < MAX) return v.c; } catch (e) {} return null; }
   function save(c){ try { localStorage.setItem(KEY, JSON.stringify({ c: c, t: Date.now() })); } catch (e) {} }
+  function loadClarity(){
+    if (clarityOn) return; clarityOn = true;
+    (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){ (c[a].q=c[a].q||[]).push(arguments); }; t=l.createElement(r); t.async=1; t.src='https://www.clarity.ms/tag/'+i; y=l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t,y); })(window, document, 'clarity', 'script', CLARITY_ID);
+    window.clarity('consentv2', { ad_Storage: 'granted', analytics_Storage: 'granted' });
+  }
+  /* événement Clarity (ignoré tant que Clarity n'est pas autorisé) */
+  window.sgTrack = function(name){ if (clarityOn && typeof window.clarity === 'function') window.clarity('event', name); };
   function clearCookies(){
     document.cookie.split(';').forEach(function(c){
       var n = c.split('=')[0].trim();
-      if (/^(_gcl|_ga|_gid|_gac)/.test(n)) { document.cookie = n + '=; Max-Age=0; path=/'; document.cookie = n + '=; Max-Age=0; path=/; domain=.' + location.hostname.replace(/^www\./, ''); }
+      if (/^(_gcl|_ga|_gid|_gac|_clck|_clsk)/.test(n)) { document.cookie = n + '=; Max-Age=0; path=/'; document.cookie = n + '=; Max-Age=0; path=/; domain=.' + location.hostname.replace(/^www\./, ''); }
     });
+    try { sessionStorage.removeItem('sg-campagne'); } catch (e) {}
   }
 
   /* un seul écouteur global : couvre tous les boutons, y compris ceux ajoutés plus tard */
   document.addEventListener('click', function(e){
     var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
     var h = a.getAttribute('href') || '';
-    if (/^tel:/i.test(h)) g('event', 'conversion', { send_to: 'AW-17915506691/X6sNCImLqIEdEIPg495C' });
-    else if (/wa\.me|api\.whatsapp\.com/i.test(h)) g('event', 'conversion', { send_to: 'AW-17915506691/z8-8CIyLqIEdEIPg495C' });
+    if (/^tel:/i.test(h)) { g('event', 'conversion', { send_to: 'AW-17915506691/X6sNCImLqIEdEIPg495C' }); window.sgTrack('clic_appel'); }
+    else if (/wa\.me|api\.whatsapp\.com/i.test(h)) { g('event', 'conversion', { send_to: 'AW-17915506691/z8-8CIyLqIEdEIPg495C' }); window.sgTrack('clic_whatsapp'); }
   });
 
   var bar = document.createElement('div');
   bar.className = 'cookie-banner'; bar.setAttribute('role', 'dialog'); bar.setAttribute('aria-label', 'Cookies'); bar.hidden = true;
-  bar.innerHTML = '<p><strong>Cookies</strong> Avec votre accord, nous utilisons des cookies Google pour mesurer l’efficacité de nos publicités (appels et messages reçus). Vous pouvez accepter ou refuser. <a href="mentions-legales.html#cookies">En savoir plus</a></p>' +
+  bar.innerHTML = '<p><strong>Cookies</strong> Avec votre accord, nous utilisons Google Ads et Microsoft Clarity pour mesurer l’audience du site et l’efficacité de nos publicités. <a href="mentions-legales.html#cookies">En savoir plus</a></p>' +
     '<div class="cookie-actions"><button type="button" class="btn btn-outline" data-c="denied">Refuser</button><button type="button" class="btn btn-outline" data-c="granted">Accepter</button></div>';
   document.body.appendChild(bar);
   bar.addEventListener('click', function(e){
     var b = e.target.closest('button[data-c]'); if (!b) return;
     var c = b.getAttribute('data-c'), before = read();
     save(c); bar.hidden = true;
-    if (c === 'granted') g('consent', 'update', GRANTED);
-    else { g('consent', 'update', DENIED); if (before === 'granted') clearCookies(); }
+    if (c === 'granted') { g('consent', 'update', GRANTED); loadClarity(); }
+    else {
+      g('consent', 'update', DENIED);
+      if (clarityOn && typeof window.clarity === 'function') window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
+      if (before === 'granted') clearCookies();
+    }
+    try { document.dispatchEvent(new CustomEvent('sg:consent', { detail: c })); } catch (err) {}
   });
   document.querySelectorAll('.cookie-manage').forEach(function(m){
     m.hidden = false;
     m.addEventListener('click', function(){ bar.hidden = false; var f = bar.querySelector('button'); if (f) f.focus(); });
   });
-  if (read() === null) bar.hidden = false;
+  var choice = read();
+  if (choice === 'granted') loadClarity();
+  else if (choice === null) bar.hidden = false;
 })();
 </script>
 

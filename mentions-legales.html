@@ -64,6 +64,8 @@ gtag('config', 'AW-17915506691');
   .cookie-actions .btn:hover{background:var(--ink); color:#fff;}
   @media (max-width:760px){ .cookie-banner{bottom:84px;} .cookie-actions .btn{flex:1;} }
   .cookie-manage{background:none; border:0; padding:0; font:inherit; color:inherit; text-decoration:underline; cursor:pointer;}
+  /* ==cookies-compact== */
+  @media (max-width:760px){ .cookie-banner{left:10px; right:10px; bottom:16px; padding:12px 14px; gap:10px; font-size:.8rem; line-height:1.4;} .cookie-banner strong{display:inline; margin-right:4px;} }
 </style>
 </head>
 <body>
@@ -109,17 +111,22 @@ gtag('config', 'AW-17915506691');
     <p>Les marques et noms de produits cités dans les offres cadeaux appartiennent à leurs propriétaires respectifs et ne sont mentionnés qu'à titre descriptif.</p>
   </section>
 
-  <section>
+  <section id="donnees">
     <h2>Données personnelles</h2>
-    <p>Ce site ne comporte aucun formulaire. Il ne collecte aucune donnée personnelle de manière automatique, sauf les cookies de mesure publicitaire décrits ci-dessous, et uniquement avec votre accord. Lorsque vous nous contactez par téléphone, WhatsApp ou e-mail, les informations que vous nous transmettez sont utilisées uniquement pour traiter votre demande et le suivi de votre intervention. Elles ne sont ni vendues ni cédées à des tiers.</p>
-    <p>Conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition concernant vos données. Pour l'exercer, écrivez à <a href="mailto:contact@super-glass.fr">contact@super-glass.fr</a>. Vous pouvez également adresser une réclamation à la CNIL (<a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>).</p>
+    <p>Lorsque vous remplissez notre formulaire « Être rappelé », nous recueillons les informations que vous saisissez : nom, numéro de téléphone, code postal, vitrage(s) concerné(s), cadeau choisi et, si vous les indiquez, votre véhicule et votre assurance. Nous y ajoutons la page d'où vous avez envoyé la demande, sa date et, uniquement si vous avez accepté les cookies, la campagne publicitaire qui vous a amené sur le site.</p>
+    <p>Ces données servent uniquement à vous rappeler et à traiter votre demande de remplacement de vitrage (base légale : mesures précontractuelles prises à votre demande). Elles sont transmises par e-mail à SUPER GLASS via le service Web3Forms, qui assure l'acheminement du formulaire. Elles ne sont ni vendues ni cédées à des tiers et sont conservées au maximum 3 ans après notre dernier échange.</p>
+    <p>Lorsque vous nous contactez par téléphone, WhatsApp ou e-mail, les informations que vous nous transmettez sont utilisées uniquement pour traiter votre demande et le suivi de votre intervention.</p>
+    <p>Conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation et d'opposition concernant vos données. Pour l'exercer, écrivez à <a href="mailto:contact@super-glass.fr">contact@super-glass.fr</a>. Vous pouvez également adresser une réclamation à la CNIL (<a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>).</p>
     <p>L'hébergeur peut enregistrer des données techniques de connexion (comme l'adresse IP) à des fins de sécurité et de bon fonctionnement du service.</p>
   </section>
 
   <section id="cookies">
-    <h2>Cookies</h2>
-    <p>Avec votre accord uniquement, nous utilisons les cookies de Google Ads (Google Ireland Limited) pour mesurer l'efficacité de nos annonces : ils permettent de savoir si une personne arrivée depuis une publicité nous a appelés ou contactés sur WhatsApp. Ces cookies ne sont déposés qu'après un clic sur « Accepter » dans le bandeau affiché lors de votre première visite. Si vous refusez, aucun cookie publicitaire n'est déposé et le site fonctionne normalement ; seuls des signaux techniques anonymes, sans cookie, peuvent être transmis à Google pour mesurer globalement nos annonces.</p>
-    <p>Votre choix est conservé 6 mois. Vous pouvez le modifier à tout moment grâce au lien « Gérer les cookies » en bas de page. Les cookies Google Ads ont une durée de vie maximale de 13 mois. Pour en savoir plus sur l'utilisation des données par Google : <a href="https://policies.google.com/technologies/ads" rel="noopener">policies.google.com</a>.</p>
+    <h2>Cookies et mesure d'audience</h2>
+    <p>Avec votre accord uniquement, nous utilisons deux services :</p>
+    <p><strong>Google Ads</strong> (Google Ireland Limited) pour mesurer l'efficacité de nos annonces : savoir si une personne arrivée depuis une publicité nous a appelés, contactés sur WhatsApp ou a envoyé une demande de rappel. Les cookies Google Ads ont une durée de vie maximale de 13 mois. En savoir plus : <a href="https://policies.google.com/technologies/ads" rel="noopener">policies.google.com</a>.</p>
+    <p><strong>Microsoft Clarity</strong> (Microsoft Corporation) pour comprendre comment le site est utilisé : pages consultées, zones cliquées, défilement et enregistrements anonymisés de navigation. Les champs du formulaire sont masqués et ne sont jamais enregistrés. Les cookies Clarity ont une durée de vie maximale de 13 mois. En savoir plus : <a href="https://privacy.microsoft.com/fr-fr/privacystatement" rel="noopener">privacy.microsoft.com</a>.</p>
+    <p>Ces outils ne sont chargés qu'après un clic sur « Accepter » dans le bandeau affiché lors de votre première visite. Si vous refusez, aucun cookie publicitaire ou de mesure d'audience n'est déposé et le site fonctionne normalement ; seuls des signaux techniques anonymes, sans cookie, peuvent être transmis à Google pour mesurer globalement nos annonces.</p>
+    <p>Votre choix est conservé 6 mois. Vous pouvez le modifier à tout moment grâce au lien « Gérer les cookies » en bas de page.</p>
     <p>Les polices de caractères sont hébergées directement sur le site : aucune donnée n'est transmise à un service tiers pour les afficher.</p>
   </section>
 </main>
@@ -129,46 +136,61 @@ gtag('config', 'AW-17915506691');
 </footer>
 
 <script>
-/* Bandeau cookies (CNIL) + conversions Google Ads (Appel / WhatsApp). Choix conservé 6 mois. */
+/* Bandeau cookies (CNIL) + conversions Google Ads + Microsoft Clarity (après consentement uniquement). Choix conservé 6 mois. */
 (function(){
-  var KEY = 'sg-consent', MAX = 182 * 864e5;
+  var KEY = 'sg-consent', MAX = 182 * 864e5, CLARITY_ID = 'yptvd09l6a', clarityOn = false;
   var GRANTED = { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' };
   var DENIED = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' };
   function g(){ if (typeof window.gtag === 'function') window.gtag.apply(null, arguments); }
   function read(){ try { var v = JSON.parse(localStorage.getItem(KEY)); if (v && Date.now() - v.t < MAX) return v.c; } catch (e) {} return null; }
   function save(c){ try { localStorage.setItem(KEY, JSON.stringify({ c: c, t: Date.now() })); } catch (e) {} }
+  function loadClarity(){
+    if (clarityOn) return; clarityOn = true;
+    (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){ (c[a].q=c[a].q||[]).push(arguments); }; t=l.createElement(r); t.async=1; t.src='https://www.clarity.ms/tag/'+i; y=l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t,y); })(window, document, 'clarity', 'script', CLARITY_ID);
+    window.clarity('consentv2', { ad_Storage: 'granted', analytics_Storage: 'granted' });
+  }
+  /* événement Clarity (ignoré tant que Clarity n'est pas autorisé) */
+  window.sgTrack = function(name){ if (clarityOn && typeof window.clarity === 'function') window.clarity('event', name); };
   function clearCookies(){
     document.cookie.split(';').forEach(function(c){
       var n = c.split('=')[0].trim();
-      if (/^(_gcl|_ga|_gid|_gac)/.test(n)) { document.cookie = n + '=; Max-Age=0; path=/'; document.cookie = n + '=; Max-Age=0; path=/; domain=.' + location.hostname.replace(/^www\./, ''); }
+      if (/^(_gcl|_ga|_gid|_gac|_clck|_clsk)/.test(n)) { document.cookie = n + '=; Max-Age=0; path=/'; document.cookie = n + '=; Max-Age=0; path=/; domain=.' + location.hostname.replace(/^www\./, ''); }
     });
+    try { sessionStorage.removeItem('sg-campagne'); } catch (e) {}
   }
 
   /* un seul écouteur global : couvre tous les boutons, y compris ceux ajoutés plus tard */
   document.addEventListener('click', function(e){
     var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
     var h = a.getAttribute('href') || '';
-    if (/^tel:/i.test(h)) g('event', 'conversion', { send_to: 'AW-17915506691/X6sNCImLqIEdEIPg495C' });
-    else if (/wa\.me|api\.whatsapp\.com/i.test(h)) g('event', 'conversion', { send_to: 'AW-17915506691/z8-8CIyLqIEdEIPg495C' });
+    if (/^tel:/i.test(h)) { g('event', 'conversion', { send_to: 'AW-17915506691/X6sNCImLqIEdEIPg495C' }); window.sgTrack('clic_appel'); }
+    else if (/wa\.me|api\.whatsapp\.com/i.test(h)) { g('event', 'conversion', { send_to: 'AW-17915506691/z8-8CIyLqIEdEIPg495C' }); window.sgTrack('clic_whatsapp'); }
   });
 
   var bar = document.createElement('div');
   bar.className = 'cookie-banner'; bar.setAttribute('role', 'dialog'); bar.setAttribute('aria-label', 'Cookies'); bar.hidden = true;
-  bar.innerHTML = '<p><strong>Cookies</strong> Avec votre accord, nous utilisons des cookies Google pour mesurer l’efficacité de nos publicités (appels et messages reçus). Vous pouvez accepter ou refuser. <a href="mentions-legales.html#cookies">En savoir plus</a></p>' +
+  bar.innerHTML = '<p><strong>Cookies</strong> Avec votre accord, nous utilisons Google Ads et Microsoft Clarity pour mesurer l’audience du site et l’efficacité de nos publicités. <a href="mentions-legales.html#cookies">En savoir plus</a></p>' +
     '<div class="cookie-actions"><button type="button" class="btn btn-outline" data-c="denied">Refuser</button><button type="button" class="btn btn-outline" data-c="granted">Accepter</button></div>';
   document.body.appendChild(bar);
   bar.addEventListener('click', function(e){
     var b = e.target.closest('button[data-c]'); if (!b) return;
     var c = b.getAttribute('data-c'), before = read();
     save(c); bar.hidden = true;
-    if (c === 'granted') g('consent', 'update', GRANTED);
-    else { g('consent', 'update', DENIED); if (before === 'granted') clearCookies(); }
+    if (c === 'granted') { g('consent', 'update', GRANTED); loadClarity(); }
+    else {
+      g('consent', 'update', DENIED);
+      if (clarityOn && typeof window.clarity === 'function') window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
+      if (before === 'granted') clearCookies();
+    }
+    try { document.dispatchEvent(new CustomEvent('sg:consent', { detail: c })); } catch (err) {}
   });
   document.querySelectorAll('.cookie-manage').forEach(function(m){
     m.hidden = false;
     m.addEventListener('click', function(){ bar.hidden = false; var f = bar.querySelector('button'); if (f) f.focus(); });
   });
-  if (read() === null) bar.hidden = false;
+  var choice = read();
+  if (choice === 'granted') loadClarity();
+  else if (choice === null) bar.hidden = false;
 })();
 </script>
 </body>
