@@ -734,6 +734,15 @@ gtag('config', 'AW-17915506691');
   .ob-text{display:grid; gap:4px;}
   .ob-text strong{font-family:"Oswald","Arial Narrow",sans-serif; font-weight:600; font-size:1.18rem; line-height:1.2; text-transform:uppercase; letter-spacing:.01em;}
   .ob-text em{font-style:normal; font-size:.76rem; color:rgba(255,255,255,.86);}
+  /* elements cliquables : badge, fiches cadeaux, liens departements */
+  a.offer-badge{text-decoration:none; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;}
+  a.offer-badge:hover{color:#fff; transform:translateY(-2px); filter:brightness(1.06); box-shadow:0 18px 34px -14px rgba(169,15,15,.8);}
+  a.offer-badge:focus-visible{outline:3px solid #f0b84f; outline-offset:3px;}
+  .flyer-link{display:block; border-radius:18px; cursor:pointer; transition:transform .18s ease, filter .18s ease;}
+  .flyer-link:hover{transform:translateY(-3px); filter:brightness(1.03);}
+  .flyer-link:focus-visible{outline:3px solid var(--accent); outline-offset:4px;}
+  a.dept-link{color:var(--accent-deep); text-decoration:underline; text-underline-offset:3px;}
+  @media (prefers-reduced-motion:reduce){ a.offer-badge, .flyer-link{transition:none;} a.offer-badge:hover, .flyer-link:hover{transform:none;} }
   .hero-wa{flex-basis:100%; font-size:.9rem; color:var(--ink-soft); text-decoration:underline; text-underline-offset:3px;}
   .hero-wa:hover{color:var(--accent-deep);}
   .hero .hero-ctas{margin-top:18px; align-items:center;}
@@ -833,6 +842,7 @@ gtag('config', 'AW-17915506691');
   .rf-note{margin:14px 0 0; font-size:.86rem; color:var(--ink-soft);}
   .rf-fields{display:grid; gap:12px; margin-top:12px;}
   .rf-field{display:grid; gap:6px;}
+  .rf [hidden]{display:none !important;}
   .rf-field span{font-size:.9rem; font-weight:600;}
   .rf-field i{font-style:normal; color:var(--accent);}
   .rf-field em{font-style:normal; font-weight:400; color:var(--ink-soft); font-size:.82rem; margin-left:4px;}
@@ -928,10 +938,10 @@ gtag('config', 'AW-17915506691');
         <nav class="crumbs" aria-label="Fil d'Ariane"><a href="./">Accueil</a><span aria-hidden="true">&rsaquo;</span><a href="./#zone">Zone d'intervention</a><span aria-hidden="true">&rsaquo;</span><span>Eure (27)</span></nav>
         <h1>Remplacement de pare-brise à domicile <span class="hl">dans l'Eure</span></h1>
         <p class="hero-sub">Super Glass remplace votre pare-brise à domicile ou sur votre lieu de travail dans l'Eure, avec prise en charge directe de votre assurance. Vous n'avez pas à vous déplacer.</p>
-        <div class="offer-badge">
+        <a class="offer-badge" href="#rappel" data-rappel="badge" aria-label="Jusqu'à 300 € offerts : franchise prise en charge et un cadeau au choix, si votre assurance couvre le bris de glace. Être rappelé gratuitement">
           <span class="ob-seal"><svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 58.4,7.8 69.1,3.8 73.9,14.2 85.4,14.6 85.8,26.1 96.2,30.9 92.2,41.6 100,50 92.2,58.4 96.2,69.1 85.8,73.9 85.4,85.4 73.9,85.8 69.1,96.2 58.4,92.2 50,100 41.6,92.2 30.9,96.2 26.1,85.8 14.6,85.4 14.2,73.9 3.8,69.1 7.8,58.4 0,50 7.8,41.6 3.8,30.9 14.2,26.1 14.6,14.6 26.1,14.2 30.9,3.8 41.6,7.8"/></svg><span class="ob-seal-txt"><small>Jusqu'à</small><b>300&nbsp;€</b><small>offerts*</small></span></span>
           <span class="ob-text"><strong>Franchise prise en charge + un cadeau au choix*</strong><em>*si votre assurance couvre le bris de glace</em></span>
-        </div>
+        </a>
         <div class="hero-ctas">
           <a class="btn btn-red btn-lg" href="tel:+33651842435">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -976,7 +986,7 @@ gtag('config', 'AW-17915506691');
     </div>
     <div class="wrap">
       <div class="local-copy">
-        <p>Ézy-sur-Eure et Ivry-la-Bataille sont tout proches de Vernouillet, juste de l'autre côté de la limite avec l'Eure-et-Loir. Évreux est accessible par la N154, et nous intervenons jusqu'à Vernon et Louviers.</p>
+        <p>Ézy-sur-Eure et Ivry-la-Bataille sont tout proches de Vernouillet, juste de l'autre côté de la limite avec l'<a class="dept-link" href="remplacement-pare-brise-eure-et-loir.html">Eure-et-Loir</a>. Évreux est accessible par la N154, et nous intervenons jusqu'à Vernon et Louviers.</p>
         <p>Que vous soyez à Évreux en centre-ville ou dans un village du plateau, nous venons à l'adresse de votre choix. Le rendez-vous est fixé avec vous, généralement sous 24 à 72 h selon la disponibilité du vitrage.</p>
         <p>Nous assurons le suivi de votre dossier avec votre assurance : si votre contrat comprend la garantie bris de glace, vous n'avancez aucun frais.</p>
       </div>
@@ -1189,7 +1199,7 @@ gtag('config', 'AW-17915506691');
       <ul>
         <li><a href="remplacement-pare-brise-eure-et-loir.html">Eure-et-Loir (28)</a></li>
         <li><a href="remplacement-pare-brise-yvelines.html">Yvelines (78)</a></li>
-        <li><a href="remplacement-pare-brise-eure.html">Eure (27)</a></li>
+        <li><span aria-current="page">Eure (27)</span></li>
         <li><a href="remplacement-pare-brise-essonne.html">Essonne (91)</a></li>
         <li><a href="remplacement-pare-brise-val-d-oise.html">Val-d'Oise (95)</a></li>
         <li><a href="remplacement-pare-brise-paris.html">Paris (75)</a></li>
