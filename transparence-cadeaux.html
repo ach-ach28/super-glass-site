@@ -1,0 +1,1359 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Ads + Consent Mode v2 (refus par défaut) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500 });
+(function(){ try { var v = JSON.parse(localStorage.getItem('sg-consent')); if (v && v.c === 'granted' && Date.now() - v.t < 182 * 864e5) { gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' }); } } catch (e) {} })();
+gtag('js', new Date());
+gtag('config', 'AW-17915506691');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17915506691"></script>
+<title>Nos cadeaux, en toute transparence | Super Glass</title>
+<meta name="description" content="Comment Super Glass peut offrir un cadeau et prendre en charge votre franchise sans surfacturer votre assurance. Nos engagements, vérifiables.">
+<link rel="canonical" href="https://super-glass.fr/transparence-cadeaux.html">
+<meta name="theme-color" content="#ef1c1c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Super Glass">
+<meta property="og:url" content="https://super-glass.fr/transparence-cadeaux.html">
+<meta property="og:title" content="Nos cadeaux, en toute transparence">
+<meta property="og:description" content="Comment Super Glass peut offrir un cadeau et prendre en charge votre franchise sans surfacturer votre assurance. Nos engagements, vérifiables.">
+<meta property="og:image" content="https://super-glass.fr/partage-super-glass.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  :root{
+    --ink:#14171c;
+    --ink-soft:#4c5462;
+    --ink-faint:#7b8291;
+    --paper:#f9fafb;
+    --surface:#ffffff;
+    --surface-alt:#eaeef1;
+    --line:#dee3e8;
+    --accent:#ef1c1c;
+    --accent-deep:#b71212;
+    --accent-ink:#ffffff;
+    --gold:#c6862e;
+    --gold-deep:#8f5f1c;
+    --gold-soft:#f7ecd9;
+    --header-bg:#0a0a0b;
+    --radius-card:14px;
+    --shadow-1:0 1px 2px rgba(20,23,28,.06), 0 8px 24px -12px rgba(20,23,28,.12);
+    --shadow-2:0 2px 4px rgba(20,23,28,.08), 0 20px 40px -20px rgba(20,23,28,.22);
+    color-scheme: light;
+
+    /* liquid glass tokens */
+    --glass:rgba(255,255,255,.52);
+    --glass-strong:rgba(255,255,255,.68);
+    --glass-border:rgba(255,255,255,.75);
+    --glass-blur:20px;
+    --glass-shadow:0 1px 1px rgba(255,255,255,.6) inset, 0 10px 30px -8px rgba(31,38,45,.22), 0 1px 0 rgba(31,38,45,.04);
+    --glass-dark:rgba(10,10,12,.5);
+    --glass-dark-border:rgba(255,255,255,.16);
+    --glass-red:linear-gradient(155deg, rgba(243,50,50,.92), rgba(183,18,18,.92));
+    --glass-gold:linear-gradient(155deg, rgba(214,157,71,.9), rgba(143,95,28,.92));
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    padding:0 20px;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+  }
+
+  /* ---------- ambient liquid background ---------- */
+  .liquid-bg{
+    position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none;
+  }
+  .liquid-bg span{
+    position:absolute; border-radius:50%; opacity:.3;
+  }
+  .blob-red{width:46vmax; height:46vmax; left:-14vmax; top:-16vmax; background:radial-gradient(circle, rgba(239,28,28,.55), rgba(239,28,28,0) 70%);}
+  .blob-gold{width:40vmax; height:40vmax; right:-12vmax; top:8vmax; background:radial-gradient(circle, rgba(198,134,46,.5), rgba(198,134,46,0) 70%);}
+  .blob-blue{width:44vmax; height:44vmax; left:18vmax; bottom:-20vmax; background:radial-gradient(circle, rgba(120,170,214,.45), rgba(120,170,214,0) 70%);}
+
+  /* ---------- glass sheen (shared) ---------- */
+  .feature-card, .presta-card, .gift-card, .proof-card, .zone-card, .stat-cell,
+  details.faq, .offer-callout, .final-cta, .glass-pill{
+    position:relative; isolation:isolate;
+  }
+  .feature-card::before, .presta-card::before, .gift-card::before, .proof-card::before,
+  .zone-card::before, .stat-cell::before, details.faq::before, .offer-callout::before,
+  .final-cta::before{
+    content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; z-index:-1;
+    background:linear-gradient(to bottom, rgba(255,255,255,.45), rgba(255,255,255,0) 55%);
+  }
+  .final-cta::before{background:linear-gradient(to bottom, rgba(255,255,255,.14), rgba(255,255,255,0) 55%);}
+  @supports not (backdrop-filter: blur(1px)){
+    .feature-card, .presta-card, .gift-card, .proof-card, .zone-card, .stat-cell,
+    details.faq, .offer-callout, .mobile-cta-bar{ background:var(--surface) !important; }
+    header.site{ background:#0a0a0b !important; }
+  }
+  img{max-width:100%; display:block;}
+  h1,h2,h3,h4{
+    font-family:"Oswald","Arial Narrow",sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.01em;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  .mono{font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums;}
+
+  .wrap{max-width:1160px; margin:0 auto;}
+  .eyebrow{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent-deep);
+  }
+  .eyebrow.gold{color:var(--gold-deep);}
+
+  /* ---------- header (noir) ---------- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,10,11,.94);
+    backdrop-filter:blur(var(--glass-blur)) saturate(160%);
+    -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(160%);
+    margin:0 -20px;
+    padding-inline:20px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    box-shadow:0 10px 30px -14px rgba(0,0,0,.55);
+  }
+  .nav-inner{
+    max-width:1160px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px; padding:10px 0;
+  }
+  .brand{display:flex; align-items:center; flex-shrink:0; text-decoration:none;}
+  .brand img{height:32px; width:auto; display:block;}
+  nav.links{display:flex; gap:22px; font-size:.86rem; font-weight:500;}
+  nav.links a{
+    color:#c4c8ce; text-decoration:none; white-space:nowrap;
+    transition:color .15s ease;
+  }
+  nav.links a:hover, nav.links a:focus-visible{color:#fff;}
+  .header-ctas{display:flex; gap:10px; align-items:center; flex-shrink:0;}
+  .header-ctas > .btn{width:44px; height:44px; padding:0; justify-content:center;}
+  .header-ctas > .btn svg{width:20px; height:20px;}
+  .btn-label{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+  .tel-chip{
+    display:flex; align-items:center; gap:8px;
+    color:#fff; text-decoration:none;
+    font-family:"IBM Plex Mono", monospace;
+    font-weight:600; font-size:.92rem;
+    padding:8px 14px; border-radius:999px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.16);
+    white-space:nowrap;
+  }
+  .tel-chip svg{color:#ff5a5a;}
+  .tel-chip:hover{background:rgba(255,255,255,.13);}
+  .btn{
+    position:relative; isolation:isolate; overflow:hidden;
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:"Oswald", sans-serif; font-weight:600;
+    text-transform:uppercase; letter-spacing:.03em; font-size:.86rem;
+    text-decoration:none; border-radius:999px; padding:10px 18px;
+    border:1px solid transparent; cursor:pointer;
+    transition:transform .12s ease, box-shadow .12s ease, background .15s ease;
+  }
+  .btn::before{
+    content:""; position:absolute; inset:0 0 auto 0; height:52%; border-radius:inherit;
+    background:linear-gradient(to bottom, rgba(255,255,255,.5), rgba(255,255,255,0));
+    pointer-events:none; z-index:-1;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-red{background:var(--glass-red); color:#fff; backdrop-filter:blur(8px); box-shadow:var(--glass-shadow), 0 8px 20px -6px rgba(183,18,18,.45);}
+  .btn-red:hover{filter:brightness(1.06);}
+  .btn-ghost-dark{background:var(--glass-strong); color:var(--ink); backdrop-filter:blur(10px); border:1px solid var(--glass-border); box-shadow:0 1px 0 rgba(255,255,255,.8) inset;}
+  .btn-ghost-dark:hover{background:var(--surface);}
+  .btn-outline{background:var(--glass); backdrop-filter:blur(10px); color:var(--ink); border-color:var(--glass-border); box-shadow:0 1px 0 rgba(255,255,255,.7) inset;}
+  .btn-outline:hover{background:var(--glass-strong);}
+  .btn-lg{padding:14px 26px; font-size:.94rem;}
+  .btn svg, .tel-chip svg{width:16px; height:16px; flex-shrink:0;}
+
+  /* ---------- menu mobile ---------- */
+  .menu-toggle{
+    display:none; align-items:center; justify-content:center;
+    width:44px; height:44px; padding:0; border-radius:12px; cursor:pointer;
+    color:#fff; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16);
+  }
+  .menu-toggle svg{width:22px; height:22px;}
+  .menu-toggle .i-close{display:none;}
+  .menu-toggle[aria-expanded="true"] .i-open{display:none;}
+  .menu-toggle[aria-expanded="true"] .i-close{display:block;}
+  .menu-toggle:focus-visible{outline:3px solid var(--accent); outline-offset:3px;}
+  .mobile-menu{
+    position:absolute; left:0; right:0; top:100%;
+    background:#0a0a0b; border-top:1px solid rgba(255,255,255,.08);
+    box-shadow:0 18px 30px -12px rgba(0,0,0,.6);
+    padding:6px 20px 20px;
+  }
+  .mobile-menu ul{list-style:none; margin:0 auto; padding:0; max-width:1160px;}
+  .mobile-menu ul a{
+    display:flex; align-items:center; min-height:52px;
+    color:#e6e8eb; text-decoration:none;
+    font-family:"Oswald", sans-serif; font-weight:500; text-transform:uppercase;
+    letter-spacing:.03em; font-size:1.05rem;
+    border-bottom:1px solid rgba(255,255,255,.07);
+  }
+  .mobile-menu ul a:hover{color:#fff;}
+  .mobile-menu li:last-child a{border-bottom:0;}
+  .mobile-menu .menu-call{display:flex; justify-content:center; width:100%; max-width:1160px; margin:14px auto 0;}
+
+  @media (max-width:1200px){
+    nav.links{display:none;}
+    .menu-toggle{display:inline-flex;}
+  }
+  @media (min-width:1201px){ .mobile-menu{display:none !important;} }
+  @media (max-width:700px){
+    .tel-chip span.num{display:none;}
+    .tel-chip{padding:0; width:44px; height:44px; justify-content:center;}
+    .brand img{height:auto; width:calc(100vw - 214px); max-width:273px;}
+  }
+  @media (max-width:420px){
+    .header-ctas > .btn{display:none;}
+    .brand img{height:auto; width:calc(100vw - 160px); max-width:230px;}
+  }
+
+  /* ---------- section rhythm ---------- */
+  section{padding-block:64px;}
+  section.tight{padding-block:44px;}
+  @media (max-width:640px){
+    section{padding-block:42px;}
+    section.tight{padding-block:30px;}
+  }
+  #prestations{padding-top:12px;}
+  section[id]{scroll-margin-top:84px;}
+  a:focus-visible, summary:focus-visible, .btn:focus-visible{
+    outline:3px solid var(--accent); outline-offset:3px; border-radius:6px;
+  }
+  .surface{background:transparent; margin:0 -20px; padding-inline:20px;}
+  .alt{background:transparent; margin:0 -20px; padding-inline:20px;}
+  .kicker-row{display:flex; flex-direction:column; gap:14px; max-width:720px;}
+  h2.h-section{font-size:clamp(2.1rem, 1.3rem + 3vw, 3.4rem); line-height:1.05;}
+  .lede{color:var(--ink-soft); font-size:1.08rem; max-width:56ch;}
+
+  /* ---------- section band ---------- */
+  .section-band{
+    margin:0 -20px 44px; padding:36px 20px 32px;
+    background:var(--glass); backdrop-filter:blur(var(--glass-blur)) saturate(160%);
+    border-top:1px solid var(--glass-border); border-bottom:1px solid var(--glass-border);
+    box-shadow:var(--glass-shadow); position:relative; isolation:isolate;
+  }
+  .section-band::before{
+    content:""; position:absolute; inset:0 0 auto 0; height:60%; z-index:-1;
+    background:linear-gradient(to bottom, rgba(255,255,255,.4), rgba(255,255,255,0));
+  }
+  .section-band.gold{
+    background:rgba(247,236,217,.55);
+    border-top-color:rgba(226,192,127,.65); border-bottom-color:rgba(226,192,127,.65);
+  }
+  .section-band .eyebrow{font-size:.8rem;}
+  @media (max-width:640px){ .section-band{padding:28px 20px 26px; margin-bottom:32px;} }
+
+  /* ---------- hero ---------- */
+  .hero{padding-block:56px 68px;}
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr 1fr; gap:48px; align-items:center;
+  }
+  @media (max-width:860px){ .hero-grid{grid-template-columns:1fr; gap:28px;} }
+  @media (max-width:640px){
+    .hero{padding-block:32px 40px;}
+    .hero-grid{gap:18px;}
+    .stat-strip{margin-top:34px;}
+    .windshield-art{max-width:330px;}
+  }
+  .hero h1{font-size:clamp(2.1rem, 1.3rem + 3.3vw, 3.4rem); line-height:1.05;}
+  .hero h1 .hl{color:var(--accent);}
+  .hero-sub{margin-top:18px; font-size:1.08rem; color:var(--ink-soft); max-width:52ch;}
+  .offer-callout{
+    display:flex; align-items:center; gap:14px; margin-top:20px; max-width:54ch;
+    background:rgba(247,236,217,.6); backdrop-filter:blur(var(--glass-blur)) saturate(160%);
+    border:1.5px solid rgba(226,192,127,.7); border-radius:16px;
+    padding:14px 18px; font-size:.96rem; color:var(--ink);
+    box-shadow:var(--glass-shadow);
+  }
+  .offer-callout-icon{
+    flex-shrink:0; width:38px; height:38px; border-radius:10px;
+    background:var(--glass-gold); backdrop-filter:blur(8px);
+    display:flex; align-items:center; justify-content:center; color:#fff;
+    box-shadow:0 1px 0 rgba(255,255,255,.4) inset;
+  }
+  .offer-callout-icon svg{width:20px; height:20px;}
+  .offer-callout strong{color:var(--gold-deep);}
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:12px; margin-top:24px;}
+  .trust-row{
+    display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:30px;
+  }
+  .trust-item{
+    display:flex; align-items:center; gap:8px; font-size:.86rem; font-weight:600; color:var(--ink);
+  }
+  .trust-item svg{width:16px; height:16px; color:var(--accent); flex-shrink:0;}
+  @media (max-width:640px){
+    .trust-row{gap:8px 16px; margin-top:22px;}
+    .trust-item:nth-child(n+4){display:none;}
+  }
+
+  .windshield-art{
+    position:relative; aspect-ratio:6/5; max-width:460px; margin-inline:auto;
+    border-radius:24px; overflow:hidden;
+    border:1px solid var(--glass-border); box-shadow:var(--glass-shadow);
+  }
+  .windshield-art img{width:100%; height:100%; display:block; object-fit:cover; object-position:50% 42%;}
+  .crack-line{
+    stroke-dasharray:340; stroke-dashoffset:340;
+    animation:draw 1.6s .3s ease-out forwards;
+  }
+  @media (prefers-reduced-motion:reduce){ .crack-line{animation:none; stroke-dashoffset:0;} }
+  @keyframes draw{ to{stroke-dashoffset:0;} }
+
+  /* ---------- stat strip ---------- */
+  .stat-strip{
+    margin-top:56px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    background:var(--glass); backdrop-filter:blur(var(--glass-blur)) saturate(160%);
+    border:1px solid var(--glass-border); border-radius:16px; overflow:hidden;
+    box-shadow:var(--glass-shadow);
+  }
+  .stat-cell{background:transparent; padding:22px 18px; text-align:center; border-left:1px solid rgba(255,255,255,.5);}
+  .stat-cell:first-child{border-left:none;}
+  .stat-num{font-family:"Oswald"; font-weight:700; font-size:1.7rem; color:var(--accent);}
+  .stat-label{font-size:.78rem; color:var(--ink-soft); margin-top:4px; text-transform:uppercase; letter-spacing:.04em;}
+  @media (max-width:700px){ .stat-strip{grid-template-columns:repeat(2,1fr);} }
+
+  /* ---------- avant / après ---------- */
+  .swap-diagram{max-width:760px; margin:0 auto 42px;}
+  .ba-pair{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .ba-item{margin:0; position:relative;}
+  .ba-item img{
+    width:100%; height:auto; aspect-ratio:3/4; object-fit:cover; display:block;
+    border-radius:16px; border:1px solid var(--glass-border); box-shadow:var(--glass-shadow);
+  }
+  .ba-item figcaption{
+    position:absolute; top:12px; left:12px;
+    font-family:"IBM Plex Mono", monospace; font-size:.68rem; font-weight:600;
+    letter-spacing:.1em; text-transform:uppercase;
+    padding:5px 11px; border-radius:999px; color:#fff;
+    background:rgba(10,10,12,.62); backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.22);
+  }
+  .ba-item.is-after figcaption{background:var(--glass-red); border-color:rgba(255,255,255,.3);}
+  .ba-note{
+    margin-top:14px; text-align:center;
+    font-family:"IBM Plex Mono", monospace; font-size:.72rem; font-weight:600;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--accent-deep);
+  }
+  @media (max-width:640px){ .swap-diagram{margin-bottom:30px;} .ba-pair{gap:10px;} .ba-item figcaption{font-size:.6rem; padding:4px 9px;} }
+
+  /* ---------- réalisations ---------- */
+  .real-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:26px;}
+  @media (max-width:900px){ .real-grid{grid-template-columns:1fr;} }
+  .real-case .ba-pair{gap:10px;}
+  .real-case .ba-item img{aspect-ratio:4/3; border-radius:14px;}
+  .real-case .ba-item figcaption{top:9px; left:9px; font-size:.6rem; padding:4px 9px;}
+  .real-label{
+    margin:11px 0 0; text-align:center;
+    font-family:"IBM Plex Mono", monospace; font-size:.74rem; font-weight:600;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft);
+  }
+  @media (max-width:640px){ .real-grid{gap:20px;} .real-case .ba-pair{gap:8px;} }
+
+  /* ---------- scene illustration ---------- */
+  .scene-wrap{max-width:840px; margin:0 auto; aspect-ratio:16/8; border-radius:20px; overflow:hidden; border:1px solid var(--glass-border); box-shadow:var(--glass-shadow);}
+  .scene-wrap img{width:100%; height:100%; display:block; object-fit:cover; object-position:50% 35%;}
+  @media (max-width:640px){ .scene-wrap{aspect-ratio:4/5;} }
+  .scene-caption{text-align:center; margin-top:22px; color:var(--ink-soft); font-size:.98rem; max-width:56ch; margin-inline:auto;}
+
+  /* ---------- feature cards ---------- */
+  .grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  @media (max-width:960px){ .grid-4{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .grid-4{grid-template-columns:1fr;} }
+  .feature-card{
+    background:var(--glass); backdrop-filter:blur(var(--glass-blur)) saturate(160%);
+    border:1px solid var(--glass-border); border-radius:20px;
+    padding:24px 20px; box-shadow:var(--glass-shadow);
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .icon-badge{
+    width:46px; height:40px;
+    clip-path:polygon(14% 0%, 86% 0%, 100% 100%, 0% 100%);
+    background:var(--glass-red); backdrop-filter:blur(6px);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 1px 0 rgba(255,255,255,.4) inset;
+  }
+  .icon-badge.gold{background:var(--glass-gold);}
+  .icon-badge svg{width:22px; height:22px; color:#fff;}
+  .feature-card h3{font-size:1.02rem;}
+  .feature-card p{color:var(--ink-soft); font-size:.92rem;}
+
+  /* ---------- prestations ---------- */
+  .presta-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:860px){ .presta-grid{grid-template-columns:1fr;} }
+  .presta-card{
+    background:var(--glass); backdrop-filter:blur(var(--glass-blur)) saturate(160%);
+    border:1px solid var(--glass-border); border-radius:20px;
+    padding:30px 28px; box-shadow:var(--glass-shadow);
+  }
+  .presta-card h3{font-size:1.3rem; margin-bottom:6px;}
+  .presta-card .eyebrow{display:block; margin-bottom:8px;}
+  .presta-list{list-style:none; margin:18px 0 0; padding:0; display:flex; flex-direction:column; gap:12px;}
+  .presta-list li{display:flex; gap:10px; font-size:.94rem; color:var(--ink-soft);}
+  .presta-list li svg{width:18px; height:18px; color:var(--accent); flex-shrink:0; margin-top:2px;}
+  .presta-card.gold-border{border-color:rgba(226,192,127,.7);}
+  .presta-list.gold li svg{color:var(--gold);}
+
+  /* ---------- process ---------- */
+  .process-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; counter-reset:step;}
+  @media (max-width:860px){ .process-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .process-grid{grid-template-columns:1fr;} }
+  .step{position:relative; padding-top:6px;}
+  .step-num{
+    font-family:"Oswald"; font-weight:700; font-size:.95rem;
+    color:var(--accent); border:1.5px solid var(--accent); border-radius:999px;
+    width:34px; height:34px; display:flex; align-items:center; justify-content:center;
+    margin-bottom:14px;
+  }
+  .step h3{font-size:1rem; margin-bottom:6px;}
+  .step p{font-size:.9rem; color:var(--ink-soft);}
+
+  /* ---------- proof ---------- */
+  .proof-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:start;}
+  @media (max-width:900px){ .proof-grid{grid-template-columns:1fr;} }
+  .proof-card{
+    background:var(--glass); backdrop-filter:blur(var(--glass-blur)) saturate(160%);
+    border:1px solid var(--glass-border); border-left:4px solid var(--accent);
+    border-radius:20px; padding:24px 26px; box-shadow:var(--glass-shadow);
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .proof-card.gold{border-left-color:var(--gold);}
+  .stars{display:flex; gap:3px; color:var(--gold);}
+  .stars svg{width:16px; height:16px; fill:currentColor;}
+  .proof-card blockquote{margin:0; font-size:1rem; color:var(--ink); line-height:1.55;}
+  .proof-author{
+    display:flex; flex-direction:column; gap:2px; margin-top:auto;
+    padding-top:12px; border-top:1px solid var(--glass-border);
+  }
+  .proof-name{font-weight:600; font-size:.92rem; color:var(--ink);}
+  .proof-city{
+    font-family:"IBM Plex Mono", monospace; font-size:.74rem; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-soft);
+  }
+  .proof-source{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    margin-top:26px; font-size:.9rem; color:var(--ink-soft);
+  }
+  .proof-source a{color:var(--accent-deep); font-weight:600;}
+
+  /* ---------- fiches cadeaux ---------- */
+  .flyer-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px; max-width:900px; margin:0 auto;}
+  .flyer-hint{display:none;}
+  @media (max-width:820px){
+    .flyer-grid{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:80%; gap:14px; max-width:none; overflow-x:auto; scroll-snap-type:x mandatory; padding:4px 2px 12px; -webkit-overflow-scrolling:touch;}
+    .flyer{scroll-snap-align:start;}
+    .flyer-hint{display:block; text-align:center; margin:6px 0 0; font-family:"IBM Plex Mono", monospace; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft);}
+  }
+  .flyer{margin:0;}
+  .flyer img{
+    width:100%; height:auto; display:block; border-radius:18px;
+    border:1px solid var(--glass-border); box-shadow:var(--glass-shadow);
+  }
+
+  /* ---------- gifts ---------- */
+  .gift-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  @media (max-width:900px){ .gift-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .gift-grid{grid-template-columns:1fr;} }
+  .gift-card{
+    background:var(--glass); backdrop-filter:blur(var(--glass-blur)) saturate(160%);
+    border:1px solid var(--glass-border); border-radius:20px;
+    padding:22px; box-shadow:var(--glass-shadow);
+  }
+  .gift-card h3{
+    font-size:.98rem; color:var(--gold-deep); display:flex; align-items:center; gap:8px; margin-bottom:12px;
+  }
+  .gift-card h3 svg{width:18px; height:18px; color:var(--gold); flex-shrink:0;}
+  .gift-card ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
+  .gift-card li{
+    display:flex; align-items:center; gap:10px;
+    font-size:.88rem; color:var(--ink-soft);
+  }
+  .gift-card li img{
+    width:38px; height:38px; border-radius:50%; object-fit:cover; flex-shrink:0;
+    border:2px solid rgba(255,255,255,.85); box-shadow:0 1px 3px rgba(20,23,28,.18);
+  }
+  .gift-note{
+    margin-top:22px; font-size:.86rem; color:var(--ink-faint); font-style:italic;
+    display:flex; gap:10px; align-items:flex-start; max-width:70ch;
+  }
+  .gift-cta{margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;}
+
+  /* ---------- zone ---------- */
+  .zone-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:20px;}
+  @media (max-width:860px){ .zone-grid{grid-template-columns:1fr;} }
+  .zone-card{
+    background:var(--glass); backdrop-filter:blur(var(--glass-blur)) saturate(160%);
+    border:1px solid var(--glass-border); border-radius:20px; padding:22px;
+    box-shadow:var(--glass-shadow);
+  }
+  .zone-card h3{font-size:1rem; margin-bottom:0; color:var(--accent-deep);}
+  .zone-card:has(h3:only-child){text-align:center; padding:26px 22px;}
+  .zone-note{margin:24px auto 0; text-align:center; max-width:52ch; color:var(--ink-soft); font-size:.98rem;}
+  .zone-ctas{display:flex; justify-content:center; margin-top:20px;}
+  .chip-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-size:.8rem; padding:5px 11px; border-radius:999px;
+    background:rgba(255,255,255,.55); color:var(--ink-soft); border:1px solid var(--glass-border);
+    backdrop-filter:blur(6px);
+  }
+
+  /* ---------- faq ---------- */
+  .faq-list{display:flex; flex-direction:column; gap:10px; max-width:800px;}
+  @media (min-width:900px){
+    .faq-list{
+      display:grid; grid-template-columns:1fr 1fr; gap:12px 20px;
+      max-width:none; align-items:start;
+    }
+  }
+  details.faq{
+    background:var(--glass); backdrop-filter:blur(var(--glass-blur)) saturate(160%);
+    border:1px solid var(--glass-border); border-radius:16px;
+    padding:2px 20px; box-shadow:var(--glass-shadow);
+  }
+  details.faq summary{
+    cursor:pointer; list-style:none; padding:16px 0;
+    font-family:"Oswald"; font-weight:600; text-transform:none; letter-spacing:0;
+    font-size:1rem; color:var(--ink);
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+  }
+  details.faq summary::-webkit-details-marker{display:none;}
+  details.faq summary::after{
+    content:"+"; font-family:"IBM Plex Mono"; font-size:1.3rem; color:var(--accent); flex-shrink:0;
+  }
+  details.faq[open] summary::after{content:"–";}
+  details.faq p{padding-bottom:18px; color:var(--ink-soft); font-size:.92rem; max-width:70ch;}
+
+  /* ---------- final cta ---------- */
+  .final-cta{
+    background:
+      radial-gradient(120% 140% at 15% 0%, rgba(239,28,28,.38), rgba(239,28,28,0) 55%),
+      radial-gradient(100% 120% at 100% 100%, rgba(198,134,46,.18), rgba(198,134,46,0) 58%),
+      linear-gradient(160deg, #1b1e24 0%, #0a0a0b 100%);
+    color:#fff; border-radius:24px; border:1px solid rgba(255,255,255,.14);
+    padding:52px 40px; text-align:center; margin:0 -20px;
+    display:flex; flex-direction:column; align-items:center; gap:16px;
+    box-shadow:0 1px 0 rgba(255,255,255,.16) inset, 0 26px 60px -24px rgba(10,10,11,.7);
+  }
+  @media (min-width:640px){ .final-cta{margin:0;} }
+  .final-cta::before{background:linear-gradient(to bottom, rgba(255,255,255,.10), rgba(255,255,255,0) 60%);}
+  .final-cta .eyebrow{color:#ff8f8f;}
+  .final-cta h2{color:#fff; font-size:clamp(1.6rem,1rem+2.2vw,2.4rem);}
+  .final-cta p{color:#d2d6dd; max-width:58ch;}
+  .final-cta .cta-reassure{max-width:none;}
+  .final-ctas{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:10px;}
+  .cta-reassure{
+    font-family:"IBM Plex Mono", monospace; font-size:.74rem; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:14px;
+  }
+  .final-cta .cta-reassure{color:#9aa0a9;}
+  .cta-reassure.cta-hours{margin-top:6px;}
+  .footer-grid ul + .footer-title{margin-top:22px;}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--header-bg); color:#a9adb3; margin:0 -20px; padding-inline:20px; margin-top:64px;}
+  .footer-grid{
+    max-width:1160px; margin:0 auto; padding:56px 0 28px;
+    display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:32px;
+  }
+  @media (max-width:860px){ .footer-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .footer-grid{grid-template-columns:1fr;} }
+  .footer-grid .footer-title{
+    color:#fff; font-family:"IBM Plex Mono"; font-size:.75rem; letter-spacing:.1em;
+    text-transform:uppercase; margin-bottom:14px; font-weight:600;
+  }
+  .footer-grid ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px; font-size:.88rem;}
+  .footer-grid a{text-decoration:none; color:#a9adb3;}
+  .footer-grid a:hover{color:#fff;}
+  .footer-logo img{width:100%; max-width:240px; height:auto; margin-bottom:16px;}
+  .footer-tag{font-size:.86rem; max-width:32ch; color:#8b8f96;}
+  .footer-legal{
+    max-width:1160px; margin:0 auto; border-top:1px solid #26272a;
+    padding:20px 0 32px; display:flex; flex-wrap:wrap; gap:8px 18px;
+    font-size:.76rem; color:#71747a;
+  }
+  .footer-legal span.mono{color:#8b8f96;}
+
+  .skip-link{position:absolute; left:-999px;}
+  .skip-link:focus{left:20px; top:8px; z-index:100; background:#fff; padding:8px 14px; border-radius:8px;}
+
+  /* ---------- mobile sticky cta ---------- */
+  .mobile-cta-bar{
+    display:none;
+    position:fixed; left:0; right:0; bottom:0; z-index:70;
+    background:var(--glass-strong); backdrop-filter:blur(22px) saturate(180%);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    gap:10px; border-top:1px solid rgba(255,255,255,.6);
+    box-shadow:0 -8px 24px -6px rgba(20,23,28,.18);
+  }
+  .mobile-cta-bar .btn{flex:1; padding:13px 10px; font-size:.82rem; white-space:nowrap;}
+  @media (max-width:760px){
+    .mobile-cta-bar{display:flex;}
+    section:last-of-type{padding-bottom:8px;}
+    footer{padding-bottom:82px;}
+  }
+  /* ---------- pages departements ---------- */
+  .zone-card:has(.zone-depts){text-align:center; padding:26px 22px;}
+  .zone-depts{list-style:none; margin:14px 0 0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;}
+  .zone-depts a{display:inline-block; padding:7px 13px; border-radius:999px; background:var(--surface); border:1px solid var(--line); color:var(--ink); font-size:.86rem; font-weight:500; text-decoration:none;}
+  .zone-depts a:hover{border-color:var(--accent); color:var(--accent-deep);}
+  .zone-depts.dept-links{justify-content:flex-start; margin-top:0;}
+  .crumbs{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 14px; font-family:"IBM Plex Mono", monospace; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);}
+  .crumbs a{color:var(--accent-deep); text-decoration:none;}
+  .city-list{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:10px;}
+  .city-list li{padding:8px 14px; border-radius:999px; background:var(--glass-strong); border:1px solid var(--glass-border); box-shadow:var(--glass-shadow); font-size:.92rem;}
+  .zone-note.left{margin-left:0; text-align:left;}
+  .zone-ctas.left{justify-content:flex-start;}
+  .local-copy{display:grid; gap:14px; max-width:68ch;}
+  .local-copy p{margin:0; color:var(--ink-soft); font-size:1.02rem;}
+  .gift-band{display:flex; flex-wrap:wrap; gap:12px;}  /* ---------- articles conseils ---------- */
+  .article-head{padding-block:48px 26px;}
+  .article-head h1{font-size:clamp(2rem, 1.3rem + 3vw, 3.1rem); line-height:1.05; max-width:24ch; text-wrap:balance; margin:0;}
+  .article-head .lede{margin-top:16px;}
+  .article-meta{margin:14px 0 0; font-family:"IBM Plex Mono", monospace; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);}
+  .article{max-width:760px; margin:0 auto; padding-bottom:36px;}
+  .keypoints{background:var(--glass-strong); border:1px solid var(--glass-border); box-shadow:var(--glass-shadow); border-radius:18px; padding:20px 24px; margin:0 0 10px;}
+  .keypoints .eyebrow{display:block; margin-bottom:10px;}
+  .keypoints ul{margin:0; padding-left:20px; display:grid; gap:8px; color:var(--ink);}
+  .article h2{font-size:clamp(1.35rem, 1.1rem + 1vw, 1.8rem); line-height:1.15; margin:38px 0 12px; text-wrap:balance;}
+  .article p{margin:0 0 14px; color:var(--ink-soft); font-size:1.04rem; max-width:68ch;}
+  .article ul, .article ol{margin:0 0 16px; padding-left:22px; color:var(--ink-soft); display:grid; gap:8px; font-size:1.02rem; max-width:66ch;}
+  .article .more{font-size:.98rem;}
+  .article a{color:var(--accent-deep); font-weight:600;}
+  .faq-more{margin:22px 0 0; font-size:.95rem; color:var(--ink-soft);}
+  .faq-more a{color:var(--accent-deep); font-weight:600;}  #article{padding-top:0;}
+  .article-head{padding-bottom:22px;}
+  .article-figure{margin:0 0 22px;}
+  .article-figure img{width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:18px; border:1px solid var(--glass-border); box-shadow:var(--glass-shadow);}
+  .article-figure figcaption{margin-top:8px; font-size:.86rem; color:var(--ink-soft);}
+  /* ---------- bandeau cadeaux ---------- */
+  .gift-strip{display:grid; grid-template-columns:minmax(200px,240px) 1fr; gap:28px; align-items:center;}
+  .gift-strip-head{display:grid; grid-template-columns:auto 1fr; gap:4px 14px; align-items:center;}
+  .gift-strip-head svg{width:46px; height:46px; color:var(--accent); grid-row:span 2;}
+  .gift-strip-head h2{margin:0; font-size:1rem; letter-spacing:.04em; line-height:1.1; color:var(--ink);}
+  .gift-strip-head h2 span{display:block; font-size:clamp(1.9rem, 1.4rem + 1.6vw, 2.4rem); color:var(--accent); font-weight:700; letter-spacing:.01em;}
+  .gift-strip-note{grid-column:1 / -1; display:flex; align-items:center; gap:10px; margin:14px 0 0; font-size:.9rem; font-weight:600; color:var(--ink-soft);}
+  .gift-strip-note i{flex-shrink:0; width:26px; height:26px; border-radius:50%; background:var(--accent-tint, #fdecec); color:var(--accent); display:grid; place-items:center; font-style:normal; font-weight:700;}
+  .gift-rail{list-style:none; margin:0; padding:4px 2px 8px; display:grid; grid-auto-flow:column; grid-auto-columns:minmax(118px,1fr); gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;}
+  .gift-rail li{scroll-snap-align:start;}
+  .gift-rail a{display:block; text-decoration:none; color:var(--ink);}
+  .gift-tile{display:grid; place-items:center; aspect-ratio:1 / .86; border-radius:18px; overflow:hidden; background:#ff3131; box-shadow:0 10px 22px -12px rgba(183,18,18,.55); transition:transform .2s ease;}
+  .gift-tile img{width:100%; height:100%; object-fit:cover;}
+  .gift-rail a:hover .gift-tile{transform:translateY(-3px);}
+  .gift-name{display:block; margin-top:9px; text-align:center; font-size:.88rem; font-weight:500;}
+  .gift-more .gift-tile{color:#fff; text-align:center; font-family:"Oswald","Arial Narrow",sans-serif; font-weight:600; font-size:1rem; line-height:1.15; letter-spacing:.02em;}
+  .gift-more .gift-tile b{display:block; font-size:1.6rem; font-weight:400; margin-bottom:4px;}
+  @media (prefers-reduced-motion: reduce){ .gift-tile{transition:none;} .gift-rail a:hover .gift-tile{transform:none;} }
+  @media (max-width:900px){ .gift-strip{grid-template-columns:1fr; gap:20px;} .gift-rail{grid-auto-columns:40%;} }
+  @media (max-width:520px){ .gift-rail{grid-auto-columns:44%; gap:12px;} }
+  .page-head{padding-block:48px 10px;}
+  .page-head h1{font-size:clamp(2rem, 1.3rem + 3vw, 3.2rem); line-height:1.05; max-width:22ch; text-wrap:balance; margin:0;}  /* perf mobile */
+  @media (max-width:760px){ .feature-card, .presta-card, .gift-card, .proof-card, .zone-card, details.faq, .offer-callout, .city-list li, .keypoints{backdrop-filter:none; -webkit-backdrop-filter:none;} .liquid-bg{display:none;} }
+  .wrap.wide{max-width:none;}
+  @media (min-width:901px){ .gift-strip{grid-template-columns:minmax(190px,220px) 1fr;} }
+  /* ---------- hero : puces illustrees ---------- */
+  .hero-points{list-style:none; margin:22px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:14px 20px; max-width:600px;}
+  .hero-points li{display:grid; grid-template-columns:46px 1fr; gap:12px; align-items:center;}
+  .hp-ico{width:46px; height:46px; border-radius:14px; display:grid; place-items:center; color:var(--accent); background:rgba(239,28,28,.09); border:1px solid rgba(239,28,28,.16);}
+  .hp-ico svg{width:23px; height:23px;}
+  .hero-points strong{display:block; font-weight:600; font-size:1rem; color:var(--ink); line-height:1.25;}
+  .hero-points small{display:block; font-size:.88rem; color:var(--ink-soft); line-height:1.35; margin-top:2px;}
+  @media (max-width:560px){ .hero-points{grid-template-columns:1fr; gap:12px;} }
+  /* ---------- deroule avec avant / apres ---------- */
+  .process-split{display:grid; grid-template-columns:1fr 1.05fr; gap:36px; align-items:center;}
+  @media (max-width:860px){ .process-split{grid-template-columns:1fr; gap:24px;} }
+  .process-steps{list-style:none; margin:0; padding:0; display:grid; gap:12px;}
+  .process-steps li{display:flex; align-items:center; gap:16px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:15px 18px; box-shadow:var(--shadow-1);}
+  .ps-num{flex-shrink:0; font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:1rem; color:var(--accent); min-width:30px;}
+  .process-steps h3{margin:0; font-size:1.08rem; line-height:1.25;}  /* ---------- hero : photo fondue ---------- */
+  html, body{overflow-x:clip;}
+  .hero-bleed{position:relative;}
+  .hero-bleed > .hero-grid > div:first-child{position:relative; z-index:1;}
+  @media (min-width:861px){
+    .hero-bleed{padding-block:64px 84px; min-height:620px;}
+    .hero-bleed .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);}
+    .hero-bleed .windshield-art{position:absolute; top:0; bottom:0; left:auto; right:min(-20px, calc((1160px - 100vw) / 2)); width:min(62vw, 820px); max-width:none; aspect-ratio:auto; margin:0; border:0; border-radius:0; box-shadow:none; z-index:0;
+      -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 42%), linear-gradient(0deg, transparent 0%, #000 24%); -webkit-mask-composite:source-in;
+      mask-image:linear-gradient(90deg, transparent 0%, #000 42%), linear-gradient(0deg, transparent 0%, #000 24%); mask-composite:intersect;}
+    .hero-bleed .windshield-art img{object-position:42% 60%;}
+  }
+  @media (max-width:860px){
+    .hero-bleed{padding-top:0;}
+    .hero-bleed .windshield-art{order:-1; max-width:none; width:auto; aspect-ratio:auto; height:min(80vw, 400px); margin:0 -20px -104px; border:0; border-radius:0; box-shadow:none;
+      -webkit-mask-image:linear-gradient(180deg, #000 45%, transparent 100%); mask-image:linear-gradient(180deg, #000 45%, transparent 100%);}
+    .hero-bleed .windshield-art img{object-position:45% 62%;}
+  }  /* ---------- bandeau cookies ---------- */
+  .cookie-banner{position:fixed; left:16px; right:16px; bottom:16px; z-index:95; max-width:540px; margin:0 auto; display:grid; gap:12px; padding:18px 20px; background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:18px; box-shadow:0 18px 40px -12px rgba(20,23,28,.35); font-size:.9rem; line-height:1.5;}
+  .cookie-banner[hidden], .cookie-manage[hidden]{display:none !important;}
+  .cookie-banner p{margin:0;}
+  .cookie-banner strong{display:block; font-size:.95rem; margin-bottom:2px;}
+  .cookie-banner a{color:var(--accent-deep); font-weight:600;}
+  .cookie-actions{display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap;}
+  .cookie-actions .btn{padding:10px 22px; font-size:.82rem; background:transparent; color:var(--ink); border:1.5px solid var(--ink); box-shadow:none;}
+  .cookie-actions .btn:hover{background:var(--ink); color:#fff;}
+  @media (max-width:760px){ .cookie-banner{bottom:84px;} .cookie-actions .btn{flex:1;} }
+  .cookie-manage{background:none; border:0; padding:0; font:inherit; color:inherit; text-decoration:underline; cursor:pointer;}
+  /* ==conversion== */
+  /* --- hero accueil : surtitre H1 + accroche au meme rendu que l'ancien titre --- */
+  .hero .hero-title{font-family:"Oswald","Arial Narrow",sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:.01em; text-wrap:balance; margin:0; color:var(--ink); font-size:clamp(2.1rem, 1.3rem + 3.3vw, 3.4rem); line-height:1.05;}
+  .hero .hero-title .hl{color:var(--accent);}
+  .hero h1.hero-kicker{position:relative; display:table; margin:-30px 0 8px; padding:3px 0; font-family:"IBM Plex Mono", monospace; font-size:.72rem; font-weight:600; line-height:16px; letter-spacing:.08em; text-transform:uppercase; white-space:nowrap; color:var(--accent-deep);}
+  @media (max-width:860px){ .hero h1.hero-kicker{padding:3px 10px; border-radius:999px; background:rgba(249,250,251,.92);} }
+  @media (max-width:350px){ .hero h1.hero-kicker{font-size:.66rem; letter-spacing:.04em;} }
+  /* --- badge offre --- */
+  .offer-badge{display:flex; align-items:center; gap:14px; margin-top:18px; max-width:560px; padding:12px 18px 12px 12px; border-radius:18px; color:#fff;
+    background:linear-gradient(135deg, #e11d1d 0%, #a90f0f 100%); box-shadow:0 14px 30px -14px rgba(169,15,15,.7);}
+  .ob-seal{position:relative; flex-shrink:0; width:98px; height:98px; display:grid; place-items:center;}
+  .ob-seal svg{position:absolute; inset:0; width:100%; height:100%;}
+  .ob-seal polygon{fill:#f0b84f; stroke:#fff3d6; stroke-width:1.5;}
+  .ob-seal-txt{position:relative; display:grid; justify-items:center; line-height:1; color:#3b2304; font-family:"Oswald","Arial Narrow",sans-serif; text-transform:uppercase; font-weight:700;}
+  .ob-seal-txt small{font-size:.66rem; letter-spacing:.06em; font-weight:600;}
+  .ob-seal-txt b{font-size:1.6rem; margin:2px 0 1px; letter-spacing:-.01em;}
+  .ob-text{display:grid; gap:4px;}
+  .ob-text strong{font-family:"Oswald","Arial Narrow",sans-serif; font-weight:600; font-size:1.18rem; line-height:1.2; text-transform:uppercase; letter-spacing:.01em;}
+  .ob-text em{font-style:normal; font-size:.76rem; color:rgba(255,255,255,.86);}
+  /* elements cliquables : badge, fiches cadeaux, liens departements */
+  a.offer-badge{text-decoration:none; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;}
+  a.offer-badge:hover{color:#fff; transform:translateY(-2px); filter:brightness(1.06); box-shadow:0 18px 34px -14px rgba(169,15,15,.8);}
+  a.offer-badge:focus-visible{outline:3px solid #f0b84f; outline-offset:3px;}
+  .flyer-link{display:block; border-radius:18px; cursor:pointer; transition:transform .18s ease, filter .18s ease;}
+  .flyer-link:hover{transform:translateY(-3px); filter:brightness(1.03);}
+  .flyer-link:focus-visible{outline:3px solid var(--accent); outline-offset:4px;}
+  a.dept-link{color:var(--accent-deep); text-decoration:underline; text-underline-offset:3px;}
+  @media (prefers-reduced-motion:reduce){ a.offer-badge, .flyer-link{transition:none;} a.offer-badge:hover, .flyer-link:hover{transform:none;} }
+
+  /* --- menu : lien "Nos engagements" (dore, comme le sceau 300 EUR ; distinct du rouge des boutons d'appel) --- */
+  nav.links a.nav-engage{display:inline-flex; align-items:center; gap:6px; margin:-5px 0; padding:4px 11px 4px 9px; border-radius:999px; color:#f5c45e; background:rgba(240,184,79,.10); border:1px solid rgba(240,184,79,.45);}
+  nav.links a.nav-engage svg{width:15px; height:15px; flex-shrink:0;}
+  nav.links a.nav-engage:hover, nav.links a.nav-engage:focus-visible{color:#ffd88a; background:rgba(240,184,79,.18); border-color:rgba(240,184,79,.7);}
+  nav.links a.nav-engage[aria-current="page"]{color:#1a1206; background:#f0b84f; border-color:#f0b84f;}
+  .mobile-menu ul a.nav-engage{gap:10px; margin:6px 0; padding:0 14px; min-height:48px; border:1px solid rgba(240,184,79,.45); border-radius:12px; background:rgba(240,184,79,.08); color:#f5c45e;}
+  .mobile-menu ul a.nav-engage svg{width:20px; height:20px; flex-shrink:0;}
+  .mobile-menu ul a.nav-engage[aria-current="page"]{background:rgba(240,184,79,.2);}
+  /* avec ce lien, logo + menu + numero = ~1270 px : menu complet a partir de 1361 px (header elargi a 1300 px), menu repliable en dessous */
+  @media (max-width:1360px){ nav.links{display:none;} .menu-toggle{display:inline-flex;} }
+  @media (min-width:1201px) and (max-width:1360px){ header.site .mobile-menu:not([hidden]){display:block !important;} }
+  @media (min-width:1361px){ header.site .nav-inner{max-width:1300px;} }
+
+  /* bandeau cadeaux : intertitre "Remplacement de pare-brise / cadeau au choix" sur 2 lignes sur ordinateur */
+  @media (min-width:901px){ #cadeau .gift-strip{grid-template-columns:minmax(340px,370px) 1fr;} }
+
+  /* --- page transparence + liens discrets vers elle --- */
+  .page-head .offer-badge{margin-top:22px;}
+  .trust-doc{display:grid; gap:44px; max-width:780px;}
+  .trust-doc > .trust-block{padding:0;}
+  .trust-block h2{margin:0 0 14px; font-size:clamp(1.45rem, 1.15rem + 1.1vw, 1.95rem); line-height:1.15;}
+  .trust-block p{margin:0 0 12px; max-width:68ch; color:var(--ink-soft); font-size:1.02rem;}
+  .engage-list, .id-list{list-style:none; margin:6px 0 0; padding:0; display:grid; gap:10px;}
+  .engage-list li{display:grid; grid-template-columns:24px 1fr; gap:12px; align-items:start; padding:14px 16px; border-radius:14px; background:var(--surface); border:1px solid var(--line); color:var(--ink-soft); line-height:1.5;}
+  .engage-list svg{width:24px; height:24px; padding:4px; border-radius:50%; background:var(--accent); color:#fff;}
+  .engage-list strong{color:var(--ink);}
+  .trust-reviews{display:flex; flex-wrap:wrap; align-items:center; gap:14px 22px; margin-top:16px;}
+  .id-list{gap:0;}
+  .id-list li{padding:11px 0; border-bottom:1px solid var(--line); color:var(--ink);}
+  .id-list li:first-child{border-top:1px solid var(--line);}
+  .id-list li span{color:var(--ink-soft);}
+  .id-list a{color:inherit;}
+  .gift-trust, .trust-link{margin:16px 0 0; font-size:.92rem;}
+  .gift-trust a, .trust-link a{color:var(--ink-soft); text-decoration:underline; text-underline-offset:3px;}
+  .gift-trust a:hover, .trust-link a:hover{color:var(--accent-deep);}
+  .trust-link{text-align:center;}
+  .hero-wa{flex-basis:100%; font-size:.9rem; color:var(--ink-soft); text-decoration:underline; text-underline-offset:3px;}
+  .hero-wa:hover{color:var(--accent-deep);}
+  .hero .hero-ctas{margin-top:18px; align-items:center;}
+  .hero .hero-points{margin-top:24px;}
+  button.btn{cursor:pointer; font:inherit; font-family:"Oswald", sans-serif; font-weight:600;}
+  @media (max-width:860px){
+    .hero-bleed .windshield-art{height:min(56vw, 30vh, 280px); margin:0 -20px -64px;}
+    .hero-bleed .windshield-art img{object-position:40% 27%;}
+  }
+  /* cadrage : logo SUPER GLASS du camion visible (haut / milieu de la photo) */
+  @media (min-width:861px){
+    .hero-bleed .windshield-art img{object-position:50% 30%;}
+    .hero-bleed .windshield-art{-webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 26%), linear-gradient(0deg, transparent 0%, #000 22%); mask-image:linear-gradient(90deg, transparent 0%, #000 26%), linear-gradient(0deg, transparent 0%, #000 22%);}
+  }
+  @media (max-width:560px){
+    .hero h1, .hero .hero-title{font-size:1.86rem; line-height:1.04;}
+    .offer-badge{gap:12px; padding:10px 14px 10px 10px; margin-top:14px;}
+    .ob-seal{width:84px; height:84px;}
+    .ob-seal-txt b{font-size:1.36rem;}
+    .ob-text strong{font-size:1.02rem;}
+    .hero .hero-ctas{gap:10px; margin-top:14px;}
+    .hero .hero-ctas .btn-lg{flex:1 1 auto; justify-content:center; padding:13px 16px;}
+  }
+  @media (max-width:370px){ .hero h1, .hero .hero-title{font-size:1.7rem;} .ob-text strong{font-size:.95rem;} }
+
+  /* --- avis en carrousel --- */
+  .rv-top{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px;}
+  .rv-score{display:flex; align-items:center; gap:10px; margin:0; font-size:1rem; color:var(--ink-soft);}
+  .rv-score strong{font-family:"Oswald","Arial Narrow",sans-serif; font-size:1.5rem; color:var(--ink);}
+  .rv-score .stars svg{width:20px; height:20px;}
+  .rv-nav{display:flex; gap:8px;}
+  .rv-btn{width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:var(--surface); color:var(--ink); display:grid; place-items:center; cursor:pointer;}
+  .rv-btn:hover{border-color:var(--accent); color:var(--accent-deep);}
+  .rv-btn svg{width:20px; height:20px;}
+  .rv-rail{list-style:none; margin:0; padding:4px 2px 16px; display:grid; grid-auto-flow:column; grid-auto-columns:calc((100% - 40px) / 3); gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding:0 2px; -webkit-overflow-scrolling:touch; overscroll-behavior-x:contain;}
+  .rv-rail > li{scroll-snap-align:start; display:flex;}
+  .rv-rail .proof-card{width:100%;}
+  .rv-rail:focus-visible{outline:3px solid var(--accent); outline-offset:4px; border-radius:12px;}
+  @media (max-width:900px){ .rv-rail{grid-auto-columns:62%;} }
+  @media (max-width:560px){ .rv-rail{grid-auto-columns:86%; gap:14px;} .rv-nav{display:none;} .rv-top{justify-content:center;} }
+
+  /* --- barre mobile a 3 boutons --- */
+  .mobile-cta-bar{gap:8px; padding-inline:12px;}
+  .mobile-cta-bar .btn{padding:13px 6px; font-size:.8rem; gap:6px; justify-content:center;}
+
+  /* --- bandeau cookies compact --- */
+  @media (max-width:760px){
+    .cookie-banner{left:10px; right:10px; padding:12px 14px; gap:10px; font-size:.8rem; line-height:1.4; border-radius:14px;}
+    .cookie-banner strong{display:inline; margin-right:4px;}
+    .cookie-actions{gap:8px;}
+    .cookie-actions .btn{padding:9px 12px;}
+  }
+
+  /* bandeau cookies a droite sur ordinateur : ne cache pas les boutons du hero */
+  @media (min-width:761px){ .cookie-banner{left:auto; right:24px; bottom:24px; margin:0; max-width:440px;} }
+
+  /* --- formulaire de rappel --- */
+  html.rf-lock{overflow:hidden;}
+  .rf{padding:0; border:0; background:transparent; color:var(--ink); width:min(560px, calc(100vw - 32px)); max-width:none; max-height:min(92vh, 860px); overflow:visible;}
+  .rf::backdrop{background:rgba(10,10,12,.62);}
+  .rf-box{display:flex; flex-direction:column; max-height:min(92vh, 860px); background:var(--surface); border-radius:22px; box-shadow:0 30px 70px -20px rgba(0,0,0,.5); overflow:hidden; font-family:"IBM Plex Sans","Segoe UI",Arial,sans-serif;}
+  .rf-head{position:relative; display:flex; align-items:center; justify-content:space-between; padding:16px 18px 14px 22px; border-bottom:1px solid var(--line);}
+  .rf-count{margin:0; font-family:"IBM Plex Mono", monospace; font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft);}
+  .rf-count b{color:var(--accent);}
+  .rf-close{width:40px; height:40px; border-radius:50%; border:0; background:var(--surface-alt); color:var(--ink); display:grid; place-items:center; cursor:pointer;}
+  .rf-close svg{width:20px; height:20px;}
+  .rf-bar{position:absolute; left:0; right:0; bottom:-1px; height:4px; background:var(--surface-alt);}
+  .rf-bar span{display:block; height:100%; width:33.33%; background:linear-gradient(90deg, #f33232, #b71212); transition:width .3s ease;}
+  @media (prefers-reduced-motion: reduce){ .rf-bar span{transition:none;} }
+  .rf-step{padding:22px 22px 24px; overflow-y:auto; -webkit-overflow-scrolling:touch;}
+  .rf-step h2{margin:0 0 6px; font-size:1.55rem; line-height:1.1; outline:none;}
+  .rf-hint{margin:0 0 16px; color:var(--ink-soft); font-size:.94rem;}
+  .rf-choices{display:grid; gap:12px;}
+  .rf-choice input, .rf-gift input{position:absolute; opacity:0; pointer-events:none;}
+  .rf-card{display:grid; grid-template-columns:78px 1fr; grid-template-rows:auto auto; align-items:center; column-gap:14px; padding:14px 16px; border:2px solid var(--line); border-radius:16px; cursor:pointer; background:var(--surface); transition:border-color .15s, background .15s;}
+  .rf-card svg{grid-row:span 2; width:78px; height:48px;}
+  .rf-card svg .c{fill:none; stroke:var(--ink); stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round;}
+  .rf-card svg .g{fill:rgba(239,28,28,.16); stroke:var(--accent); stroke-width:2; stroke-linejoin:round;}
+  .rf-card b{font-size:1.08rem; align-self:end;}
+  .rf-card small{grid-column:2; color:var(--ink-soft); font-size:.86rem; align-self:start;}
+  .rf-card:has(small) b{align-self:end;}
+  .rf-card:not(:has(small)) b{grid-row:span 2; align-self:center;}
+  .rf-choice input:checked + .rf-card{border-color:var(--accent); background:rgba(239,28,28,.06); box-shadow:0 0 0 3px rgba(239,28,28,.12);}
+  .rf-choice input:focus-visible + .rf-card, .rf-gift input:focus-visible + span{outline:3px solid var(--accent); outline-offset:2px;}
+  .rf-gifts{display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; margin-top:14px;}
+  .rf-gift span{display:grid; gap:6px; justify-items:center; text-align:center; padding:6px 6px 8px; border:2px solid var(--line); border-radius:14px; cursor:pointer; height:100%;}
+  .rf-gift img{width:100%; height:auto; aspect-ratio:1; border-radius:10px; background:#ff3131;}
+  .rf-gift b{font-size:.8rem; font-weight:600; line-height:1.2;}
+  .rf-gift input:checked + span{border-color:var(--accent); background:rgba(239,28,28,.06); box-shadow:0 0 0 3px rgba(239,28,28,.12);}
+  .rf-later{grid-column:1 / -1;}
+  .rf-later span{padding:14px;}
+  .rf-later b{font-size:.95rem;}
+  .rf-later small{font-size:.8rem; color:var(--ink-soft); font-weight:400;}
+  .rf-other{margin-top:12px;}
+  .rf-more{margin:10px 0 0; font-size:.86rem;}
+  .rf-more a{color:var(--accent-deep); font-weight:600;}
+  .rf-note{margin:14px 0 0; font-size:.86rem; color:var(--ink-soft);}
+  .rf-fields{display:grid; gap:12px; margin-top:12px;}
+  .rf-field{display:grid; gap:6px;}
+  .rf [hidden]{display:none !important;}
+  .rf-field span{font-size:.9rem; font-weight:600;}
+  .rf-field i{font-style:normal; color:var(--accent);}
+  .rf-field em{font-style:normal; font-weight:400; color:var(--ink-soft); font-size:.82rem; margin-left:4px;}
+  .rf-field input{font:inherit; font-size:16px; padding:13px 14px; border:1.5px solid var(--line); border-radius:12px; background:#fff; color:var(--ink); width:100%;}
+  .rf-field input::placeholder{color:#9aa1ac; font-style:italic;}
+  .rf-field input:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(239,28,28,.15);}
+  .rf-field input[aria-invalid="true"]{border-color:var(--accent-deep);}
+  .rf-err{margin:-4px 0 0; font-size:.86rem; color:var(--accent-deep); font-weight:600;}
+  .rf-send-err{margin:14px 0 0;}
+  .rf-zone{margin:-4px 0 0; font-size:.86rem; color:var(--gold-deep); background:var(--gold-soft); padding:8px 12px; border-radius:10px;}
+  .rf-hp{position:absolute !important; left:-9999px !important; width:1px; height:1px; opacity:0;}
+  .rf-actions{display:flex; align-items:center; justify-content:flex-end; gap:12px; margin-top:20px;}
+  .rf-actions .rf-go{flex:1; justify-content:center;}
+  .rf-actions-col{flex-direction:column; align-items:stretch;}
+  .rf-back{background:none; border:0; padding:12px 8px; font:inherit; font-weight:600; color:var(--ink-soft); cursor:pointer; text-decoration:underline; text-underline-offset:3px;}
+  .rf-legal{margin:14px 0 0; font-size:.8rem; color:var(--ink-soft); line-height:1.45;}
+  .rf-legal a{color:var(--accent-deep); font-weight:600;}
+  .rf-submit[disabled]{opacity:.7; cursor:progress;}
+  .rf-done{text-align:center; padding-top:34px;}
+  .rf-done p{color:var(--ink-soft); max-width:40ch; margin:10px auto 0;}
+  .rf-ok{display:grid; place-items:center; width:64px; height:64px; margin:0 auto 14px; border-radius:50%; background:rgba(31,122,77,.12); color:#1f7a4d;}
+  .rf-ok svg{width:34px; height:34px;}
+  @media (max-width:640px){
+    .rf{width:100vw; height:100dvh; max-height:none; margin:0;}
+    .rf-box{height:100%; max-height:none; border-radius:0;}
+    .rf-step{flex:1; padding:20px 18px calc(22px + env(safe-area-inset-bottom));}
+    .rf-step h2{font-size:1.4rem;}
+  }
+  /* ==/conversion== */
+</style>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png"></head>
+<body>
+
+<div class="liquid-bg" aria-hidden="true">
+  <span class="blob-red"></span>
+  <span class="blob-gold"></span>
+  <span class="blob-blue"></span>
+</div>
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site">
+  <div class="nav-inner">
+    <a class="brand" href="./" aria-label="Super Glass — accueil">
+      <img width="1278" height="150" src="images/logo-super-glass.webp" alt="Super Glass">
+    </a>
+    <nav class="links" aria-label="Navigation principale">
+      <a href="offres-cadeaux.html">Offre cadeau</a>
+      <a class="nav-engage" href="transparence-cadeaux.html" aria-current="page" data-sg-event="clic_engagements_menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg><span>Nos engagements</span></a>
+      <a href="./#avis">Avis</a>
+      <a href="nos-prestations.html">Prestations</a>
+      <a href="./#realisations">Réalisations</a>
+      <a href="./#zone">Zone d'intervention</a>
+      <a href="./#faq">FAQ</a>
+      <a href="./#contact">Contact</a>
+    </nav>
+    <div class="header-ctas">
+      <a class="tel-chip" href="tel:+33651842435">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="num">06 51 84 24 35</span>
+      </a>
+      <a class="btn btn-red" href="https://wa.me/33651842435?text=Bonjour%20Super%20Glass%2C%20je%20souhaite%20profiter%20de%20votre%20offre%20pour%20remplacer%20mon%20pare-brise" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp" title="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.42 1.27 4.86L2 22l5.34-1.31a9.9 9.9 0 0 0 4.7 1.2h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.87 14.2c-.25.7-1.45 1.34-2 1.42-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.69-.63-2.97-1.28-4.9-4.27-5.05-4.47-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.45.27-.29.6-.36.8-.36l.57.01c.18.01.43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.32.03.51-.1.19-.15.31-.3.48-.15.17-.31.38-.45.51-.15.14-.3.29-.13.58.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.65-.05.18-.19.75-.86.95-1.16.2-.29.4-.24.67-.15.28.1 1.75.83 2.05.98.3.15.5.22.57.35.08.13.08.71-.17 1.4z"/></svg>
+        <span class="btn-label">WhatsApp</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+        <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+      <nav class="mobile-menu" id="mobile-menu" aria-label="Menu" hidden>
+        <ul>
+          <li><a href="offres-cadeaux.html">Offre cadeau</a></li>
+          <li><a class="nav-engage" href="transparence-cadeaux.html" aria-current="page" data-sg-event="clic_engagements_menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg><span>Nos engagements</span></a></li>
+          <li><a href="./#avis">Avis clients</a></li>
+          <li><a href="nos-prestations.html">Prestations</a></li>
+          <li><a href="./#realisations">Réalisations</a></li>
+          <li><a href="./#zone">Zone d'intervention</a></li>
+          <li><a href="./#faq">FAQ</a></li>
+          <li><a href="./#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn-red btn-lg menu-call" href="tel:+33651842435">Appeler le 06 51 84 24 35</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <!-- EN-TETE -->
+  <section class="wrap page-head" id="top">
+    <div class="kicker-row">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="./">Accueil</a><span aria-hidden="true">&rsaquo;</span><span>Nos engagements</span></nav>
+      <p class="eyebrow">Transparence</p>
+      <h1>Nos cadeaux, en toute transparence</h1>
+      <p class="lede">Vous avez peut-être lu des articles sur les réparateurs de pare-brise qui offrent des cadeaux : cadeaux jamais livrés, factures gonflées, assurés mis en difficulté. Ces pratiques existent, et nous comprenons que vous vous posiez des questions. Voici exactement comment nous travaillons.</p>
+      <a class="offer-badge" href="#rappel" data-rappel="badge" aria-label="Jusqu'à 300 € offerts : franchise prise en charge et un cadeau au choix, si votre assurance couvre le bris de glace. Être rappelé gratuitement">
+          <span class="ob-seal"><svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 58.4,7.8 69.1,3.8 73.9,14.2 85.4,14.6 85.8,26.1 96.2,30.9 92.2,41.6 100,50 92.2,58.4 96.2,69.1 85.8,73.9 85.4,85.4 73.9,85.8 69.1,96.2 58.4,92.2 50,100 41.6,92.2 30.9,96.2 26.1,85.8 14.6,85.4 14.2,73.9 3.8,69.1 7.8,58.4 0,50 7.8,41.6 3.8,30.9 14.2,26.1 14.6,14.6 26.1,14.2 30.9,3.8 41.6,7.8"/></svg><span class="ob-seal-txt"><small>Jusqu'à</small><b>300&nbsp;€</b><small>offerts*</small></span></span>
+          <span class="ob-text"><strong>Franchise prise en charge + un cadeau au choix*</strong><em>*si votre assurance couvre le bris de glace</em></span>
+        </a>
+    </div>
+  </section>
+
+  <!-- CONTENU -->
+  <section class="surface" id="contenu-page">
+    <div class="wrap">
+      <div class="trust-doc">
+        <section class="trust-block" id="t-cadeau" aria-labelledby="t-cadeau-t">
+          <h2 id="t-cadeau-t">Comment pouvons-nous offrir un cadeau&nbsp;?</h2>
+          <p>Nous facturons votre assurance au tarif constructeur, avec le logiciel XGlass, celui qu'utilisent les experts en assurance. Le prix du pare-brise et de la pose ne change pas parce que vous recevez un cadeau.</p>
+          <p>Le cadeau et la franchise sont pris sur notre marge. Nous gagnons moins sur chaque intervention, et nous comptons sur le bouche-à-oreille et les avis de nos clients pour compenser.</p>
+        </section>
+        <section class="trust-block" id="t-qualite" aria-labelledby="t-qualite-t">
+          <h2 id="t-qualite-t">Un cadeau, pas une pièce au rabais</h2>
+          <p>Le cadeau ne change rien au pare-brise que nous posons. Nous nous fournissons auprès des mêmes fabricants et distributeurs que les grandes enseignes du remplacement de pare-brise.</p>
+          <p>Chaque pare-brise est homologué pour circuler en Europe&nbsp;: son marquage est gravé dans un coin du vitrage, et vous pouvez le vérifier. Si votre véhicule a une caméra d'aide à la conduite, nous la recalibrons après la pose, si nécessaire.</p>
+        </section>
+        <section class="trust-block" id="t-engagements" aria-labelledby="t-engagements-t">
+          <h2 id="t-engagements-t">Nos engagements</h2>
+          <ul class="engage-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Aucune surfacturation.</strong> Votre assurance reçoit une facture au tarif constructeur, comme pour n'importe quel réparateur.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Des pare-brise de même qualité.</strong> Les mêmes fabricants que les grandes enseignes, un vitrage homologué.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Aucune avance de frais.</strong> Nous facturons directement votre assurance.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Votre franchise est systématiquement offerte.</strong></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Aucun reste à charge de notre part.</strong></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Le cadeau est convenu avant l'intervention.</strong> Vous savez ce que vous recevez avant que nous touchions à votre véhicule. Pas de surprise et pas de conditions cachées.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Un devis avant l'intervention, si vous le souhaitez.</strong> Vous pouvez le faire valider par votre assurance avant de nous donner votre accord.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Uniquement des pare-brise réellement endommagés.</strong> Nous refusons toute fausse déclaration. C'est la condition pour que tout se passe bien avec votre assurance.</span></li></ul>
+        </section>
+        <section class="trust-block" id="t-assurance" aria-labelledby="t-assurance-t">
+          <h2 id="t-assurance-t">Et mon assurance, dans tout ça&nbsp;?</h2>
+          <p>Vous êtes libre de choisir votre réparateur&nbsp;: votre assureur ne peut pas vous imposer son réseau (article L211-5-1 du Code des assurances).</p>
+          <p>Un sinistre bris de glace n'entraîne pas de malus. Comme notre facture correspond au tarif constructeur, votre assurance paie le même prix qu'ailleurs.</p>
+        </section>
+        <section class="trust-block" id="t-avis" aria-labelledby="t-avis-t">
+          <h2 id="t-avis-t">Des avis vérifiables</h2>
+          <p>Nos avis sont publiés par nos clients sur notre fiche Google, et chacun peut les consulter. Nous ne les rédigeons pas et nous ne les achetons pas.</p>
+          <div class="trust-reviews"><p class="rv-score"><span class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><strong>5,0/5</strong> sur Google</p><a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Super+Glass+Vernouillet" target="_blank" rel="noopener">Voir nos avis sur Google</a></div>
+        </section>
+        <section class="trust-block" id="t-entreprise" aria-labelledby="t-entreprise-t">
+          <h2 id="t-entreprise-t">Une entreprise identifiable</h2>
+          <p>Super Glass est une société par actions simplifiée (SAS), immatriculée au registre du commerce de Chartres.</p>
+          <ul class="id-list"><li><span>Raison sociale&nbsp;:</span> SUPER GLASS</li><li><span>SIREN&nbsp;:</span> 934 562 042 – RCS Chartres</li><li><span>Siège&nbsp;:</span> 4 chemin des Acacias, 28500 Vernouillet</li><li><span>Téléphone&nbsp;:</span> <a href="tel:+33651842435">06 51 84 24 35</a></li></ul>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="alt" id="faq">
+    <div class="section-band">
+      <div class="wrap kicker-row">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="h-section">Vos questions</h2>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="faq-list">
+        <details class="faq" open>
+          <summary>Le cadeau est-il vraiment remis&nbsp;?</summary>
+          <p>Oui. Il est convenu avec vous avant l'intervention, et vous le recevez une fois le pare-brise remplacé.</p>
+        </details>
+        <details class="faq">
+          <summary>Le pare-brise posé est-il de moins bonne qualité à cause du cadeau&nbsp;?</summary>
+          <p>Non. Nous nous fournissons auprès des mêmes fabricants et distributeurs que les grandes enseignes, et chaque pare-brise est homologué. Le cadeau est pris sur notre marge, pas sur la qualité de la pièce.</p>
+        </details>
+        <details class="faq">
+          <summary>Mon assurance va-t-elle payer plus cher à cause du cadeau&nbsp;?</summary>
+          <p>Non. Nous facturons au tarif constructeur. Le cadeau est pris sur notre marge, pas sur la facture.</p>
+        </details>
+        <details class="faq">
+          <summary>Est-ce que je risque quelque chose avec mon assurance&nbsp;?</summary>
+          <p>Non, tant que le pare-brise est réellement endommagé, ce que nous vérifions systématiquement. Le bris de glace n'entraîne pas de malus.</p>
+        </details>
+        <details class="faq">
+          <summary>Puis-je avoir un devis avant&nbsp;?</summary>
+          <p>Oui, sur simple demande. Vous pouvez le transmettre à votre assurance avant l'intervention.</p>
+        </details>
+        <details class="faq">
+          <summary>Ma voiture a une caméra d'aide à la conduite&nbsp;: faites-vous le calibrage&nbsp;?</summary>
+          <p>Oui. Après le remplacement du pare-brise, nous réalisons le calibrage de la caméra.</p>
+        </details>
+        <details class="faq">
+          <summary>Que se passe-t-il si mon contrat ne couvre pas le bris de glace&nbsp;?</summary>
+          <p>Nous vous l'indiquons dès l'appel, avant toute intervention, et nous vous communiquons un tarif.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+  <!-- FINAL CTA -->
+  <section class="wrap" id="contact">
+    <div class="final-cta">
+      <h2>Une question avant de vous décider&nbsp;?</h2>
+      <p>Appelez-nous au 06 51 84 24 35 ou demandez à être rappelé.</p>
+      <div class="final-ctas">
+        <a class="btn btn-red btn-lg" href="tel:+33651842435">Appeler le 06 51 84 24 35</a>
+        <a class="btn btn-ghost-dark btn-lg" href="https://wa.me/33651842435?text=Bonjour%20Super%20Glass%2C%20je%20souhaite%20profiter%20de%20votre%20offre%20pour%20remplacer%20mon%20pare-brise" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+        <button type="button" class="btn btn-ghost-dark btn-lg" data-rappel="fin">Être rappelé gratuitement</button>
+      </div>
+      <p class="cta-reassure">Équipe réactive · Intervention sous 24 à 72 h</p>
+      <p class="cta-reassure cta-hours">Lun–jeu 9h–18h · Ven 9h–12h / 15h30–18h · Sam 10h–17h · Dim fermé</p>
+    </div>
+  </section>
+</main>
+
+<div class="mobile-cta-bar" role="group" aria-label="Contact rapide">
+  <a class="btn btn-red" href="tel:+33651842435">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Appeler
+  </a>
+  <a class="btn btn-ghost-dark" href="https://wa.me/33651842435?text=Bonjour%20Super%20Glass%2C%20je%20souhaite%20profiter%20de%20votre%20offre%20pour%20remplacer%20mon%20pare-brise" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.42 1.27 4.86L2 22l5.34-1.31a9.9 9.9 0 0 0 4.7 1.2h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.87 14.2c-.25.7-1.45 1.34-2 1.42-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.69-.63-2.97-1.28-4.9-4.27-5.05-4.47-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.45.27-.29.6-.36.8-.36l.57.01c.18.01.43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.32.03.51-.1.19-.15.31-.3.48-.15.17-.31.38-.45.51-.15.14-.3.29-.13.58.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.65-.05.18-.19.75-.86.95-1.16.2-.29.4-.24.67-.15.28.1 1.75.83 2.05.98.3.15.5.22.57.35.08.13.08.71-.17 1.4z"/></svg>
+    WhatsApp
+  </a>
+  <button type="button" class="btn btn-outline" data-rappel="barre">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M21 12a9 9 0 1 1-3.4-7.05"/><path d="M21 4v5h-5"/><path d="M12 7v5l3 2"/></svg>
+    Rappel
+  </button>
+</div>
+
+<!-- ==rappel== -->
+<dialog class="rf" id="rappel" aria-labelledby="rf-t1" data-clarity-mask="true">
+  <form class="rf-box" novalidate>
+    <div class="rf-head">
+      <p class="rf-count">Étape <b>1</b> sur 3</p>
+      <button type="button" class="rf-close" data-rf-close aria-label="Fermer le formulaire"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <div class="rf-bar" aria-hidden="true"><span></span></div>
+    </div>
+
+    <section class="rf-step" data-step="1">
+      <h2 id="rf-t1" tabindex="-1">Quel vitrage est endommagé ?</h2>
+      <p class="rf-hint">Plusieurs choix possibles.</p>
+      <div class="rf-choices">
+        <label class="rf-choice"><input type="checkbox" name="vitrage" value="Pare-brise"><span class="rf-card">
+          <svg viewBox="0 0 64 40" aria-hidden="true"><path class="c" d="M6 34V25l7-15h38l7 15v9"/><path class="g" d="M15 23l5-10h24l5 10z"/><path class="c" d="M4 34h56M12 34v3M52 34v3"/><circle class="c" cx="14" cy="29" r="2.5"/><circle class="c" cx="50" cy="29" r="2.5"/></svg>
+          <b>Pare-brise</b></span></label>
+        <label class="rf-choice"><input type="checkbox" name="vitrage" value="Vitres latérales"><span class="rf-card">
+          <svg viewBox="0 0 64 40" aria-hidden="true"><path class="c" d="M3 29v-6l8-3 9-9h21l10 9 9 2v7H3z"/><path class="g" d="M22 13h8v7H15zM33 13h7l7 7H33z"/><circle class="c" cx="16" cy="30" r="4.5"/><circle class="c" cx="48" cy="30" r="4.5"/></svg>
+          <b>Vitres latérales</b></span></label>
+        <label class="rf-choice"><input type="checkbox" name="vitrage" value="Autres vitres"><span class="rf-card">
+          <svg viewBox="0 0 64 40" aria-hidden="true"><path class="c" d="M6 34V24l6-13h40l6 13v10"/><path class="g" d="M16 22l4-8h24l4 8z"/><path class="g" d="M24 6h16v4H24z"/><path class="c" d="M4 34h56M11 28h7M46 28h7"/></svg>
+          <b>Autres vitres</b><small>Lunette arrière, toit ouvrant…</small></span></label>
+      </div>
+      <p class="rf-err" data-err="vitrage" hidden>Choisissez au moins un vitrage.</p>
+      <div class="rf-actions"><button type="button" class="btn btn-red btn-lg rf-go" data-rf-next>Continuer</button></div>
+    </section>
+
+    <section class="rf-step" data-step="2" hidden>
+      <h2 id="rf-t2" tabindex="-1">Choisissez votre cadeau</h2>
+      <div class="rf-gifts">
+        <label class="rf-gift"><input type="radio" name="cadeau" value="iPad"><span><img src="images/cadeaux/ipad.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>iPad</b></span></label>
+        <label class="rf-gift"><input type="radio" name="cadeau" value="Nintendo Switch 2"><span><img src="images/cadeaux/nintendo-switch-2.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>Nintendo Switch 2</b></span></label>
+        <label class="rf-gift"><input type="radio" name="cadeau" value="4 pneus"><span><img src="images/cadeaux/pneus.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>4 pneus</b></span></label>
+        <label class="rf-gift"><input type="radio" name="cadeau" value="Lisseur Dyson"><span><img src="images/cadeaux/lisseur-dyson.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>Lisseur Dyson</b></span></label>
+        <label class="rf-gift"><input type="radio" name="cadeau" value="Parc Astérix ou Disneyland"><span><img src="images/cadeaux/parc-asterix-disneyland.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>Parc Astérix ou Disneyland</b></span></label>
+        <label class="rf-gift"><input type="radio" name="cadeau" value="Aspirateur Dyson"><span><img src="images/cadeaux/aspirateur-dyson.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>Aspirateur Dyson</b></span></label>
+        <label class="rf-gift"><input type="radio" name="cadeau" value="Trottinette électrique"><span><img src="images/cadeaux/trottinette-electrique.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>Trottinette électrique</b></span></label>
+        <label class="rf-gift"><input type="radio" name="cadeau" value="Air fryer Ninja"><span><img src="images/cadeaux/air-fryer-ninja.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><b>Air fryer Ninja</b></span></label>
+        <label class="rf-gift rf-later"><input type="radio" name="cadeau" value="Autre cadeau"><span><b>Autre cadeau</b><small>Un autre cadeau de nos fiches</small></span></label>
+        <label class="rf-gift rf-later"><input type="radio" name="cadeau" value="Je choisirai plus tard"><span><b>Je choisirai plus tard</b></span></label>
+      </div>
+      <label class="rf-field rf-other" hidden><span>Quel cadeau ? <em>facultatif</em></span><input type="text" name="autre_cadeau" maxlength="80" placeholder="Ex. : Apple Watch"></label>
+      <p class="rf-more"><a href="offres-cadeaux.html" target="_blank" rel="noopener">Voir toutes les fiches cadeaux</a></p>
+      <p class="rf-note">Cadeau remis le jour de l'intervention, si votre assurance couvre le bris de glace.</p>
+      <div class="rf-actions"><button type="button" class="rf-back" data-rf-back>Retour</button><button type="button" class="btn btn-red btn-lg rf-go" data-rf-next>Continuer</button></div>
+    </section>
+
+    <section class="rf-step" data-step="3" hidden>
+      <h2 id="rf-t3" tabindex="-1">Vos coordonnées</h2>
+      <div class="rf-fields">
+        <label class="rf-field"><span>Nom <i>*</i></span><input type="text" name="nom" autocomplete="name" maxlength="80" required aria-describedby="rf-e-nom"></label>
+        <p class="rf-err" id="rf-e-nom" data-err="nom" hidden>Indiquez votre nom.</p>
+        <label class="rf-field"><span>Téléphone <i>*</i></span><input type="tel" name="tel" inputmode="tel" autocomplete="tel" maxlength="20" required aria-describedby="rf-e-tel" placeholder="06 12 34 56 78"></label>
+        <p class="rf-err" id="rf-e-tel" data-err="tel" hidden>Indiquez un numéro de téléphone français valide (10 chiffres).</p>
+        <label class="rf-field"><span>Code postal <i>*</i></span><input type="text" name="cp" inputmode="numeric" autocomplete="postal-code" maxlength="5" required aria-describedby="rf-e-cp rf-zone"></label>
+        <p class="rf-err" id="rf-e-cp" data-err="cp" hidden>Indiquez un code postal à 5 chiffres.</p>
+        <p class="rf-zone" id="rf-zone" hidden>Nous vérifions et vous rappelons si nous pouvons venir chez vous.</p>
+        <label class="rf-field"><span>Véhicule, marque et modèle <em>facultatif</em></span><input type="text" name="vehicule" maxlength="80" placeholder="Ex. : Peugeot 208"></label>
+        <label class="rf-field"><span>Assurance <em>facultatif</em></span><input type="text" name="assurance" maxlength="80"></label>
+        <input type="checkbox" name="botcheck" class="rf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      </div>
+      <p class="rf-err rf-send-err" data-err="envoi" hidden>L'envoi n'a pas fonctionné. Réessayez, ou appelez-nous au 06 51 84 24 35.</p>
+      <div class="rf-actions"><button type="button" class="rf-back" data-rf-back>Retour</button><button type="submit" class="btn btn-red btn-lg rf-go rf-submit">Être rappelé gratuitement</button></div>
+      <p class="rf-legal">Vos coordonnées servent uniquement à vous rappeler au sujet de votre demande. <a href="mentions-legales.html#donnees">Politique de confidentialité</a></p>
+    </section>
+
+    <section class="rf-step rf-done" data-step="ok" hidden>
+      <span class="rf-ok" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <h2 id="rf-tok" tabindex="-1">Merci, c'est bien reçu !</h2>
+      <p>L'équipe Super Glass vous rappelle rapidement. Pour aller plus vite, écrivez-nous sur WhatsApp.</p>
+      <div class="rf-actions rf-actions-col">
+        <a class="btn btn-red btn-lg" href="https://wa.me/33651842435?text=Bonjour%20Super%20Glass%2C%20je%20viens%20de%20demander%20%C3%AAtre%20rappel%C3%A9%20sur%20le%20site" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+        <button type="button" class="rf-back" data-rf-close>Fermer</button>
+      </div>
+    </section>
+  </form>
+</dialog>
+<script src="rappel.js" defer></script>
+<!-- ==/rappel== -->
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <img width="1278" height="150" src="images/logo-super-glass.webp" alt="Super Glass">
+      <p class="footer-tag">Remplacement de pare-brise à domicile, pris en charge par votre assurance.</p>
+    </div>
+    <div>
+      <p class="footer-title">Contact</p>
+      <ul>
+        <li><a href="tel:+33651842435">06 51 84 24 35</a></li>
+        <li><a href="https://wa.me/33651842435" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="mailto:contact@super-glass.fr">contact@super-glass.fr</a></li>
+        <li><a href="https://www.instagram.com/superglass28/" target="_blank" rel="noopener">Instagram @superglass28</a></li>
+        <li><a href="https://www.facebook.com/p/SUPER-GLASS-61582986310866/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+      <p class="footer-title">Horaires</p>
+      <ul>
+        <li>Lundi – jeudi : 9h – 18h</li>
+        <li>Vendredi : 9h – 12h / 15h30 – 18h</li>
+        <li>Samedi : 10h – 17h</li>
+        <li>Dimanche : fermé</li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-title">Zone d'intervention</p>
+      <ul>
+        <li><a href="remplacement-pare-brise-eure-et-loir.html">Eure-et-Loir (28)</a></li>
+        <li><a href="remplacement-pare-brise-yvelines.html">Yvelines (78)</a></li>
+        <li><a href="remplacement-pare-brise-eure.html">Eure (27)</a></li>
+        <li><a href="remplacement-pare-brise-essonne.html">Essonne (91)</a></li>
+        <li><a href="remplacement-pare-brise-val-d-oise.html">Val-d'Oise (95)</a></li>
+        <li><a href="remplacement-pare-brise-paris.html">Paris (75)</a></li>
+        <li><a href="remplacement-pare-brise-hauts-de-seine.html">Hauts-de-Seine (92)</a></li>
+        <li><a href="remplacement-pare-brise-loiret.html">Loiret (45)</a></li>
+        <li><a href="remplacement-pare-brise-loir-et-cher.html">Loir-et-Cher (41)</a></li>
+        <li><a href="remplacement-pare-brise-sarthe.html">Sarthe (72)</a></li>
+        <li><a href="remplacement-pare-brise-orne.html">Orne (61)</a></li>
+        <li><a href="remplacement-pare-brise-oise.html">Oise (60)</a></li>
+        <li><a href="remplacement-pare-brise-seine-saint-denis.html">Seine-Saint-Denis (93)</a></li>
+        <li><a href="remplacement-pare-brise-val-de-marne.html">Val-de-Marne (94)</a></li>
+        <li><a href="remplacement-pare-brise-seine-et-marne.html">Seine-et-Marne (77)</a></li>
+        <li><a href="remplacement-pare-brise-seine-maritime.html">Seine-Maritime (76)</a></li>
+        <li><a href="remplacement-pare-brise-calvados.html">Calvados (14)</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-title">Le site</p>
+      <ul>
+        <li><a href="offres-cadeaux.html">Offre cadeau</a></li>
+        <li><a href="transparence-cadeaux.html">Nos engagements</a></li>
+        <li><a href="./#avis">Avis clients</a></li>
+        <li><a href="nos-prestations.html">Nos prestations</a></li>
+        <li><a href="./#realisations">Nos réalisations</a></li>
+        <li><a href="./#zone">Zone d'intervention</a></li>
+        <li><a href="./#faq">FAQ</a></li>
+        <li><a href="pare-brise-fissure-peut-on-rouler.html">Pare-brise fissuré : peut-on rouler ?</a></li>
+        <li><a href="franchise-bris-de-glace.html">Franchise bris de glace</a></li>
+        <li><a href="loi-hamon-choisir-reparateur-pare-brise.html">Loi Hamon et libre choix</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <a href="mentions-legales.html">Mentions légales</a>
+    <button type="button" class="cookie-manage" hidden>Gérer les cookies</button>
+    <span>SUPER GLASS — SAS au capital de 200 €</span>
+    <span class="mono">SIREN 934 562 042</span>
+    <span>Vernouillet (28500)</span>
+    <span>© 2026 Super Glass. Tous droits réservés.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  if(!toggle || !menu) return;
+  function setOpen(open){
+    menu.hidden = !open;
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  toggle.addEventListener('click', function(){ setOpen(menu.hidden); });
+  menu.addEventListener('click', function(e){ if(e.target.closest('a')) setOpen(false); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && !menu.hidden){ setOpen(false); toggle.focus(); }
+  });
+  window.addEventListener('resize', function(){ if(window.innerWidth > 1200 && !menu.hidden) setOpen(false); });
+})();
+</script>
+
+<script>
+/* Bandeau cookies (CNIL) + conversions Google Ads + Microsoft Clarity (après consentement uniquement). Choix conservé 6 mois. */
+(function(){
+  var KEY = 'sg-consent', MAX = 182 * 864e5, CLARITY_ID = 'yptvd09l6a', clarityOn = false;
+  var GRANTED = { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' };
+  var DENIED = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' };
+  function g(){ if (typeof window.gtag === 'function') window.gtag.apply(null, arguments); }
+  function read(){ try { var v = JSON.parse(localStorage.getItem(KEY)); if (v && Date.now() - v.t < MAX) return v.c; } catch (e) {} return null; }
+  function save(c){ try { localStorage.setItem(KEY, JSON.stringify({ c: c, t: Date.now() })); } catch (e) {} }
+  function loadClarity(){
+    if (clarityOn) return; clarityOn = true;
+    (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){ (c[a].q=c[a].q||[]).push(arguments); }; t=l.createElement(r); t.async=1; t.src='https://www.clarity.ms/tag/'+i; y=l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t,y); })(window, document, 'clarity', 'script', CLARITY_ID);
+    window.clarity('consentv2', { ad_Storage: 'granted', analytics_Storage: 'granted' });
+  }
+  /* événement Clarity (ignoré tant que Clarity n'est pas autorisé) */
+  window.sgTrack = function(name){ if (clarityOn && typeof window.clarity === 'function') window.clarity('event', name); };
+  function clearCookies(){
+    document.cookie.split(';').forEach(function(c){
+      var n = c.split('=')[0].trim();
+      if (/^(_gcl|_ga|_gid|_gac|_clck|_clsk)/.test(n)) { document.cookie = n + '=; Max-Age=0; path=/'; document.cookie = n + '=; Max-Age=0; path=/; domain=.' + location.hostname.replace(/^www\./, ''); }
+    });
+    try { sessionStorage.removeItem('sg-campagne'); } catch (e) {}
+  }
+
+  /* un seul écouteur global : couvre tous les boutons, y compris ceux ajoutés plus tard */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (a.hasAttribute('data-sg-event')) window.sgTrack(a.getAttribute('data-sg-event'));
+    if (/^tel:/i.test(h)) { g('event', 'conversion', { send_to: 'AW-17915506691/X6sNCImLqIEdEIPg495C' }); window.sgTrack('clic_appel'); }
+    else if (/wa\.me|api\.whatsapp\.com/i.test(h)) { g('event', 'conversion', { send_to: 'AW-17915506691/z8-8CIyLqIEdEIPg495C' }); window.sgTrack('clic_whatsapp'); }
+  });
+
+  var bar = document.createElement('div');
+  bar.className = 'cookie-banner'; bar.setAttribute('role', 'dialog'); bar.setAttribute('aria-label', 'Cookies'); bar.hidden = true;
+  bar.innerHTML = '<p><strong>Cookies</strong> Avec votre accord, nous utilisons Google Ads et Microsoft Clarity pour mesurer l’audience du site et l’efficacité de nos publicités. <a href="mentions-legales.html#cookies">En savoir plus</a></p>' +
+    '<div class="cookie-actions"><button type="button" class="btn btn-outline" data-c="denied">Refuser</button><button type="button" class="btn btn-outline" data-c="granted">Accepter</button></div>';
+  document.body.appendChild(bar);
+  bar.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-c]'); if (!b) return;
+    var c = b.getAttribute('data-c'), before = read();
+    save(c); bar.hidden = true;
+    if (c === 'granted') { g('consent', 'update', GRANTED); loadClarity(); }
+    else {
+      g('consent', 'update', DENIED);
+      if (clarityOn && typeof window.clarity === 'function') window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
+      if (before === 'granted') clearCookies();
+    }
+    try { document.dispatchEvent(new CustomEvent('sg:consent', { detail: c })); } catch (err) {}
+  });
+  document.querySelectorAll('.cookie-manage').forEach(function(m){
+    m.hidden = false;
+    m.addEventListener('click', function(){ bar.hidden = false; var f = bar.querySelector('button'); if (f) f.focus(); });
+  });
+  var choice = read();
+  if (choice === 'granted') loadClarity();
+  else if (choice === null) bar.hidden = false;
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://super-glass.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Nos engagements", "item": "https://super-glass.fr/transparence-cadeaux.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Le cadeau est-il vraiment remis ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Il est convenu avec vous avant l'intervention, et vous le recevez une fois le pare-brise remplacé." } },
+        { "@type": "Question", "name": "Le pare-brise posé est-il de moins bonne qualité à cause du cadeau ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Nous nous fournissons auprès des mêmes fabricants et distributeurs que les grandes enseignes, et chaque pare-brise est homologué. Le cadeau est pris sur notre marge, pas sur la qualité de la pièce." } },
+        { "@type": "Question", "name": "Mon assurance va-t-elle payer plus cher à cause du cadeau ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Nous facturons au tarif constructeur. Le cadeau est pris sur notre marge, pas sur la facture." } },
+        { "@type": "Question", "name": "Est-ce que je risque quelque chose avec mon assurance ?", "acceptedAnswer": { "@type": "Answer", "text": "Non, tant que le pare-brise est réellement endommagé, ce que nous vérifions systématiquement. Le bris de glace n'entraîne pas de malus." } },
+        { "@type": "Question", "name": "Puis-je avoir un devis avant ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, sur simple demande. Vous pouvez le transmettre à votre assurance avant l'intervention." } },
+        { "@type": "Question", "name": "Ma voiture a une caméra d'aide à la conduite : faites-vous le calibrage ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Après le remplacement du pare-brise, nous réalisons le calibrage de la caméra." } },
+        { "@type": "Question", "name": "Que se passe-t-il si mon contrat ne couvre pas le bris de glace ?", "acceptedAnswer": { "@type": "Answer", "text": "Nous vous l'indiquons dès l'appel, avant toute intervention, et nous vous communiquons un tarif." } }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

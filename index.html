@@ -27,6 +27,7 @@ gtag('config', 'AW-17915506691');
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="images/hero-super-glass-intervention-mobile.webp" imagesrcset="images/hero-super-glass-intervention-mobile.webp 750w, images/hero-super-glass-intervention.webp 1200w" imagesizes="(max-width: 860px) 100vw, 820px" fetchpriority="high" data-preload="hero">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
   :root{
@@ -722,6 +723,12 @@ gtag('config', 'AW-17915506691');
   @media (max-width:760px){ .cookie-banner{bottom:84px;} .cookie-actions .btn{flex:1;} }
   .cookie-manage{background:none; border:0; padding:0; font:inherit; color:inherit; text-decoration:underline; cursor:pointer;}
   /* ==conversion== */
+  /* --- hero accueil : surtitre H1 + accroche au meme rendu que l'ancien titre --- */
+  .hero .hero-title{font-family:"Oswald","Arial Narrow",sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:.01em; text-wrap:balance; margin:0; color:var(--ink); font-size:clamp(2.1rem, 1.3rem + 3.3vw, 3.4rem); line-height:1.05;}
+  .hero .hero-title .hl{color:var(--accent);}
+  .hero h1.hero-kicker{position:relative; display:table; margin:-30px 0 8px; padding:3px 0; font-family:"IBM Plex Mono", monospace; font-size:.72rem; font-weight:600; line-height:16px; letter-spacing:.08em; text-transform:uppercase; white-space:nowrap; color:var(--accent-deep);}
+  @media (max-width:860px){ .hero h1.hero-kicker{padding:3px 10px; border-radius:999px; background:rgba(249,250,251,.92);} }
+  @media (max-width:350px){ .hero h1.hero-kicker{font-size:.66rem; letter-spacing:.04em;} }
   /* --- badge offre --- */
   .offer-badge{display:flex; align-items:center; gap:14px; margin-top:18px; max-width:560px; padding:12px 18px 12px 12px; border-radius:18px; color:#fff;
     background:linear-gradient(135deg, #e11d1d 0%, #a90f0f 100%); box-shadow:0 14px 30px -14px rgba(169,15,15,.7);}
@@ -743,6 +750,43 @@ gtag('config', 'AW-17915506691');
   .flyer-link:focus-visible{outline:3px solid var(--accent); outline-offset:4px;}
   a.dept-link{color:var(--accent-deep); text-decoration:underline; text-underline-offset:3px;}
   @media (prefers-reduced-motion:reduce){ a.offer-badge, .flyer-link{transition:none;} a.offer-badge:hover, .flyer-link:hover{transform:none;} }
+
+  /* --- menu : lien "Nos engagements" (dore, comme le sceau 300 EUR ; distinct du rouge des boutons d'appel) --- */
+  nav.links a.nav-engage{display:inline-flex; align-items:center; gap:6px; margin:-5px 0; padding:4px 11px 4px 9px; border-radius:999px; color:#f5c45e; background:rgba(240,184,79,.10); border:1px solid rgba(240,184,79,.45);}
+  nav.links a.nav-engage svg{width:15px; height:15px; flex-shrink:0;}
+  nav.links a.nav-engage:hover, nav.links a.nav-engage:focus-visible{color:#ffd88a; background:rgba(240,184,79,.18); border-color:rgba(240,184,79,.7);}
+  nav.links a.nav-engage[aria-current="page"]{color:#1a1206; background:#f0b84f; border-color:#f0b84f;}
+  .mobile-menu ul a.nav-engage{gap:10px; margin:6px 0; padding:0 14px; min-height:48px; border:1px solid rgba(240,184,79,.45); border-radius:12px; background:rgba(240,184,79,.08); color:#f5c45e;}
+  .mobile-menu ul a.nav-engage svg{width:20px; height:20px; flex-shrink:0;}
+  .mobile-menu ul a.nav-engage[aria-current="page"]{background:rgba(240,184,79,.2);}
+  /* avec ce lien, logo + menu + numero = ~1270 px : menu complet a partir de 1361 px (header elargi a 1300 px), menu repliable en dessous */
+  @media (max-width:1360px){ nav.links{display:none;} .menu-toggle{display:inline-flex;} }
+  @media (min-width:1201px) and (max-width:1360px){ header.site .mobile-menu:not([hidden]){display:block !important;} }
+  @media (min-width:1361px){ header.site .nav-inner{max-width:1300px;} }
+
+  /* bandeau cadeaux : intertitre "Remplacement de pare-brise / cadeau au choix" sur 2 lignes sur ordinateur */
+  @media (min-width:901px){ #cadeau .gift-strip{grid-template-columns:minmax(340px,370px) 1fr;} }
+
+  /* --- page transparence + liens discrets vers elle --- */
+  .page-head .offer-badge{margin-top:22px;}
+  .trust-doc{display:grid; gap:44px; max-width:780px;}
+  .trust-doc > .trust-block{padding:0;}
+  .trust-block h2{margin:0 0 14px; font-size:clamp(1.45rem, 1.15rem + 1.1vw, 1.95rem); line-height:1.15;}
+  .trust-block p{margin:0 0 12px; max-width:68ch; color:var(--ink-soft); font-size:1.02rem;}
+  .engage-list, .id-list{list-style:none; margin:6px 0 0; padding:0; display:grid; gap:10px;}
+  .engage-list li{display:grid; grid-template-columns:24px 1fr; gap:12px; align-items:start; padding:14px 16px; border-radius:14px; background:var(--surface); border:1px solid var(--line); color:var(--ink-soft); line-height:1.5;}
+  .engage-list svg{width:24px; height:24px; padding:4px; border-radius:50%; background:var(--accent); color:#fff;}
+  .engage-list strong{color:var(--ink);}
+  .trust-reviews{display:flex; flex-wrap:wrap; align-items:center; gap:14px 22px; margin-top:16px;}
+  .id-list{gap:0;}
+  .id-list li{padding:11px 0; border-bottom:1px solid var(--line); color:var(--ink);}
+  .id-list li:first-child{border-top:1px solid var(--line);}
+  .id-list li span{color:var(--ink-soft);}
+  .id-list a{color:inherit;}
+  .gift-trust, .trust-link{margin:16px 0 0; font-size:.92rem;}
+  .gift-trust a, .trust-link a{color:var(--ink-soft); text-decoration:underline; text-underline-offset:3px;}
+  .gift-trust a:hover, .trust-link a:hover{color:var(--accent-deep);}
+  .trust-link{text-align:center;}
   .hero-wa{flex-basis:100%; font-size:.9rem; color:var(--ink-soft); text-decoration:underline; text-underline-offset:3px;}
   .hero-wa:hover{color:var(--accent-deep);}
   .hero .hero-ctas{margin-top:18px; align-items:center;}
@@ -758,7 +802,7 @@ gtag('config', 'AW-17915506691');
     .hero-bleed .windshield-art{-webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 26%), linear-gradient(0deg, transparent 0%, #000 22%); mask-image:linear-gradient(90deg, transparent 0%, #000 26%), linear-gradient(0deg, transparent 0%, #000 22%);}
   }
   @media (max-width:560px){
-    .hero h1{font-size:1.86rem; line-height:1.04;}
+    .hero h1, .hero .hero-title{font-size:1.86rem; line-height:1.04;}
     .offer-badge{gap:12px; padding:10px 14px 10px 10px; margin-top:14px;}
     .ob-seal{width:84px; height:84px;}
     .ob-seal-txt b{font-size:1.36rem;}
@@ -766,7 +810,7 @@ gtag('config', 'AW-17915506691');
     .hero .hero-ctas{gap:10px; margin-top:14px;}
     .hero .hero-ctas .btn-lg{flex:1 1 auto; justify-content:center; padding:13px 16px;}
   }
-  @media (max-width:370px){ .hero h1{font-size:1.7rem;} .ob-text strong{font-size:.95rem;} }
+  @media (max-width:370px){ .hero h1, .hero .hero-title{font-size:1.7rem;} .ob-text strong{font-size:.95rem;} }
 
   /* --- avis en carrousel --- */
   .rv-top{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px;}
@@ -893,6 +937,7 @@ gtag('config', 'AW-17915506691');
     </a>
     <nav class="links" aria-label="Navigation principale">
       <a href="offres-cadeaux.html">Offre cadeau</a>
+      <a class="nav-engage" href="transparence-cadeaux.html" data-sg-event="clic_engagements_menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg><span>Nos engagements</span></a>
       <a href="#avis">Avis</a>
       <a href="nos-prestations.html">Prestations</a>
       <a href="#realisations">Réalisations</a>
@@ -916,6 +961,7 @@ gtag('config', 'AW-17915506691');
       <nav class="mobile-menu" id="mobile-menu" aria-label="Menu" hidden>
         <ul>
           <li><a href="offres-cadeaux.html">Offre cadeau</a></li>
+          <li><a class="nav-engage" href="transparence-cadeaux.html" data-sg-event="clic_engagements_menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg><span>Nos engagements</span></a></li>
           <li><a href="#avis">Avis clients</a></li>
           <li><a href="nos-prestations.html">Prestations</a></li>
           <li><a href="#realisations">Réalisations</a></li>
@@ -935,7 +981,8 @@ gtag('config', 'AW-17915506691');
   <section class="hero wrap hero-bleed" id="top">
     <div class="hero-grid">
       <div>
-        <h1>Pare-brise fissuré ou cassé ?<br>On le remplace <span class="hl">chez vous</span>, sans avancer un centime.</h1>
+        <h1 class="hero-kicker">Remplacement de pare-brise à domicile</h1>
+        <p class="hero-title">Pare-brise fissuré ou cassé ?<br>On le remplace <span class="hl">chez vous</span>, sans avancer un centime.</p>
         <!-- hero-mid --><a class="offer-badge" href="#rappel" data-rappel="badge" aria-label="Jusqu'à 300 € offerts : franchise prise en charge et un cadeau au choix, si votre assurance couvre le bris de glace. Être rappelé gratuitement">
           <span class="ob-seal"><svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 58.4,7.8 69.1,3.8 73.9,14.2 85.4,14.6 85.8,26.1 96.2,30.9 92.2,41.6 100,50 92.2,58.4 96.2,69.1 85.8,73.9 85.4,85.4 73.9,85.8 69.1,96.2 58.4,92.2 50,100 41.6,92.2 30.9,96.2 26.1,85.8 14.6,85.4 14.2,73.9 3.8,69.1 7.8,58.4 0,50 7.8,41.6 3.8,30.9 14.2,26.1 14.6,14.6 26.1,14.2 30.9,3.8 41.6,7.8"/></svg><span class="ob-seal-txt"><small>Jusqu'à</small><b>300&nbsp;€</b><small>offerts*</small></span></span>
           <span class="ob-text"><strong>Franchise prise en charge + un cadeau au choix*</strong><em>*si votre assurance couvre le bris de glace</em></span>
@@ -966,11 +1013,12 @@ gtag('config', 'AW-17915506691');
       <div class="gift-strip">
         <div class="gift-strip-head">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v10H4V12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/></svg>
-          <h2>Votre cadeau<span>au choix</span></h2>
+          <h2>Remplacement de pare-brise <span>cadeau au choix</span></h2>
           <p class="gift-strip-note"><i aria-hidden="true">&#10003;</i>Remis le jour du rendez-vous</p>
         </div>
         <ul class="gift-rail"><li><a href="offres-cadeaux.html" data-gift="iPad"><span class="gift-tile"><img src="images/cadeaux/ipad.webp" alt="iPad" width="400" height="400" loading="lazy" decoding="async"></span><span class="gift-name">iPad</span></a></li><li><a href="offres-cadeaux.html" data-gift="Nintendo Switch 2"><span class="gift-tile"><img src="images/cadeaux/nintendo-switch-2.webp" alt="Nintendo Switch 2" width="400" height="400" loading="lazy" decoding="async"></span><span class="gift-name">Nintendo Switch 2</span></a></li><li><a href="offres-cadeaux.html" data-gift="4 pneus"><span class="gift-tile"><img src="images/cadeaux/pneus.webp" alt="4 pneus" width="400" height="400" loading="lazy" decoding="async"></span><span class="gift-name">4 pneus</span></a></li><li><a href="offres-cadeaux.html" data-gift="Lisseur Dyson"><span class="gift-tile"><img src="images/cadeaux/lisseur-dyson.webp" alt="Lisseur Dyson" width="400" height="400" loading="lazy" decoding="async"></span><span class="gift-name">Lisseur Dyson</span></a></li><li><a href="offres-cadeaux.html" data-gift="Parc Astérix ou Disneyland"><span class="gift-tile"><img src="images/cadeaux/parc-asterix-disneyland.webp" alt="Parc Astérix ou Disneyland" width="400" height="400" loading="lazy" decoding="async"></span><span class="gift-name">Parc Astérix ou Disneyland</span></a></li><li><a href="offres-cadeaux.html" data-gift="Aspirateur Dyson"><span class="gift-tile"><img src="images/cadeaux/aspirateur-dyson.webp" alt="Aspirateur Dyson" width="400" height="400" loading="lazy" decoding="async"></span><span class="gift-name">Aspirateur Dyson</span></a></li><li><a href="offres-cadeaux.html" data-gift="Trottinette électrique"><span class="gift-tile"><img src="images/cadeaux/trottinette-electrique.webp" alt="Trottinette électrique" width="400" height="400" loading="lazy" decoding="async"></span><span class="gift-name">Trottinette électrique</span></a></li><li><a href="offres-cadeaux.html" data-gift="Air fryer Ninja"><span class="gift-tile"><img src="images/cadeaux/air-fryer-ninja.webp" alt="Air fryer Ninja" width="400" height="400" loading="lazy" decoding="async"></span><span class="gift-name">Air fryer Ninja</span></a></li><li class="gift-more"><a href="offres-cadeaux.html"><span class="gift-tile"><span><b aria-hidden="true">&rarr;</b>Voir toutes les offres</span></span></a></li></ul>
       </div>
+      <p class="gift-trust"><a href="transparence-cadeaux.html">Comment pouvons-nous offrir ces cadeaux&nbsp;?</a></p>
     </div>
   </section>
 
@@ -1140,6 +1188,10 @@ gtag('config', 'AW-17915506691');
     <div class="wrap">
       <div class="faq-list">
         <details class="faq" open>
+          <summary>Combien coûte un remplacement de pare-brise ?</summary>
+          <p>Si votre contrat couvre le bris de glace, vous n'avancez rien : nous facturons directement votre assurance, au tarif constructeur, sans surfacturation. Votre franchise est systématiquement offerte, et vous choisissez un cadeau d'une valeur allant jusqu'à 300 €. Si vous n'êtes pas couvert, nous vous donnons un tarif avant toute intervention.</p>
+        </details>
+        <details class="faq">
           <summary>Le remplacement de mon pare-brise est-il vraiment gratuit ?</summary>
           <p>Si votre contrat inclut la garantie bris de glace, oui : nous avançons les frais et gérons directement la prise en charge avec votre assurance. Vous n'avez rien à payer de votre poche.</p>
         </details>
@@ -1342,6 +1394,7 @@ gtag('config', 'AW-17915506691');
       <p class="footer-title">Le site</p>
       <ul>
         <li><a href="offres-cadeaux.html">Offre cadeau</a></li>
+        <li><a href="transparence-cadeaux.html">Nos engagements</a></li>
         <li><a href="#avis">Avis clients</a></li>
         <li><a href="nos-prestations.html">Nos prestations</a></li>
         <li><a href="#realisations">Nos réalisations</a></li>
@@ -1410,6 +1463,7 @@ gtag('config', 'AW-17915506691');
   document.addEventListener('click', function(e){
     var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
     var h = a.getAttribute('href') || '';
+    if (a.hasAttribute('data-sg-event')) window.sgTrack(a.getAttribute('data-sg-event'));
     if (/^tel:/i.test(h)) { g('event', 'conversion', { send_to: 'AW-17915506691/X6sNCImLqIEdEIPg495C' }); window.sgTrack('clic_appel'); }
     else if (/wa\.me|api\.whatsapp\.com/i.test(h)) { g('event', 'conversion', { send_to: 'AW-17915506691/z8-8CIyLqIEdEIPg495C' }); window.sgTrack('clic_whatsapp'); }
   });
@@ -1491,6 +1545,7 @@ gtag('config', 'AW-17915506691');
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    { "@type": "Question", "name": "Combien coûte un remplacement de pare-brise ?", "acceptedAnswer": { "@type": "Answer", "text": "Si votre contrat couvre le bris de glace, vous n'avancez rien : nous facturons directement votre assurance, au tarif constructeur, sans surfacturation. Votre franchise est systématiquement offerte, et vous choisissez un cadeau d'une valeur allant jusqu'à 300 €. Si vous n'êtes pas couvert, nous vous donnons un tarif avant toute intervention." } },
     { "@type": "Question", "name": "Le remplacement de mon pare-brise est-il vraiment gratuit ?", "acceptedAnswer": { "@type": "Answer", "text": "Si votre contrat inclut la garantie bris de glace, oui : nous avançons les frais et gérons directement la prise en charge avec votre assurance. Vous n'avez rien à payer de votre poche." } },
     { "@type": "Question", "name": "Mon assurance m'oriente vers un autre réparateur : puis-je choisir Super Glass ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Depuis la loi Hamon de 2014 (article L211-5-1 du Code des assurances), vous êtes libre de choisir le professionnel qui remplace votre pare-brise. Votre assureur peut vous recommander un réseau partenaire, mais il ne peut pas vous l'imposer. Il suffit d'indiquer que vous faites appel à Super Glass lors de votre déclaration." } },
     { "@type": "Question", "name": "Dois-je me déplacer en garage ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Nous intervenons directement chez vous, sur votre lieu de travail ou tout autre endroit qui vous convient, dans 17 départements, jusqu'à environ 100 km autour de Dreux. Appelez-nous pour vérifier votre adresse." } },

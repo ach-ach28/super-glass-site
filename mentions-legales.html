@@ -132,7 +132,7 @@ gtag('config', 'AW-17915506691');
 </main>
 
 <footer>
-  <p>© 2026 SUPER GLASS — <a href="./">super-glass.fr</a> · <button type="button" class="cookie-manage" hidden>Gérer les cookies</button></p>
+  <p>© 2026 SUPER GLASS — <a href="./">super-glass.fr</a> · <a href="transparence-cadeaux.html">Nos engagements</a> · <button type="button" class="cookie-manage" hidden>Gérer les cookies</button></p>
 </footer>
 
 <script>
@@ -163,6 +163,7 @@ gtag('config', 'AW-17915506691');
   document.addEventListener('click', function(e){
     var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
     var h = a.getAttribute('href') || '';
+    if (a.hasAttribute('data-sg-event')) window.sgTrack(a.getAttribute('data-sg-event'));
     if (/^tel:/i.test(h)) { g('event', 'conversion', { send_to: 'AW-17915506691/X6sNCImLqIEdEIPg495C' }); window.sgTrack('clic_appel'); }
     else if (/wa\.me|api\.whatsapp\.com/i.test(h)) { g('event', 'conversion', { send_to: 'AW-17915506691/z8-8CIyLqIEdEIPg495C' }); window.sgTrack('clic_whatsapp'); }
   });
